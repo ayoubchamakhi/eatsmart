@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eatsmart — iOS · Soft Kitchen</title>
+<link rel="icon" href="../assets/favicon.ico">
+<link rel="apple-touch-icon" href="../assets/logo.png">
+<link rel="stylesheet" href="tokens/tokens.css">
+<link rel="stylesheet" href="components/components.css">
+<style>
+  body.concept { background: var(--linen-deep); }
+  .stage { max-width: var(--maxw); margin-inline: auto; padding: var(--s-8) var(--gutter) var(--s-9); }
+  .stage-head { display: flex; flex-wrap: wrap; gap: var(--s-4); justify-content: space-between; align-items: flex-end; margin-bottom: var(--s-7); }
+  .device { width: min(400px, 100%); margin-inline: auto; background: var(--ink); border-radius: 52px; padding: 12px; box-shadow: var(--shadow-lift); }
+  .screen { background: var(--linen); border-radius: 42px; overflow: hidden; display: flex; flex-direction: column; height: 780px; max-height: 84vh; position: relative; color: var(--ink); }
+  .statusbar { display: flex; justify-content: space-between; padding: 14px 24px 6px; font-size: 12px; font-weight: 700; }
+  .ios-nav { padding: 10px 20px 12px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+  .ios-nav .large { font: 600 30px/1.08 var(--font-display); color: var(--sage-deep); }
+  .iconbtn { width: 40px; height: 40px; border-radius: 50%; border: 0; background: var(--surface); color: var(--ink); display: grid; place-items: center; font-size: 15px; cursor: pointer; box-shadow: var(--shadow-hug); }
+  .ios-scroll { flex: 1; overflow-y: auto; padding: 12px 18px 132px; scrollbar-width: none; }
+  .ios-scroll::-webkit-scrollbar { display: none; }
+  .scancta { display: flex; align-items: center; gap: 14px; background: var(--sage); color: #fff; border-radius: var(--r-md); padding: 16px 18px; text-decoration: none; box-shadow: var(--shadow-hug); }
+  .scancta .glyph { width: 46px; height: 46px; border-radius: 16px; background: rgba(255,255,255,.2); display: grid; place-items: center; font-size: 20px; flex: none; }
+  .scancta strong { display: block; font: 700 16px/1.3 var(--font-display); }
+  .scancta span { font-size: 12px; opacity: .9; }
+  .grouplabel { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-faint); margin: 22px 0 8px; }
+  .iosrow { display: flex; align-items: center; gap: 14px; background: var(--surface); border-radius: var(--r-md); padding: 12px 14px; text-decoration: none; box-shadow: var(--shadow-hug); }
+  .iosrow + .iosrow { margin-top: 10px; }
+  .iosrow .thumb { width: 48px; height: 48px; border-radius: 18px; background: var(--butter-mist); display: grid; place-items: center; font-size: 23px; flex: none; }
+  .iosrow .body { flex: 1; min-width: 0; }
+  .iosrow h3 { font: 600 15px/1.3 var(--font-display); }
+  .iosrow p { margin: 2px 0 0; font-size: 12.5px; color: var(--ink-soft); }
+  .iosrow .score { width: 44px; height: 44px; font-size: 15px; border-radius: 16px; box-shadow: none; }
+  .sheet-backdrop { position: absolute; inset: 0; background: rgba(61,58,52,.3); border-radius: 0 0 42px 42px; }
+  .sheet { position: absolute; left: 0; right: 0; bottom: 0; background: var(--linen); border-radius: 30px 30px 0 0; padding: 10px 20px calc(20px + env(safe-area-inset-bottom)); box-shadow: 0 -10px 34px -14px rgba(61,58,52,.35); }
+  .grabber { width: 48px; height: 6px; border-radius: 3px; background: var(--blush); border: 0; margin: 2px auto 14px; cursor: grab; display: block; }
+  .sheet-head { display: flex; align-items: center; gap: 12px; }
+  .sheet-head h2 { font: 600 19px/1.25 var(--font-display); flex: 1; }
+  .sheet-body { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 16px; }
+  .fact { background: var(--surface); border-radius: 18px; padding: 12px 8px; text-align: center; box-shadow: var(--shadow-hug); }
+  .fact b { display: block; font: 700 15px var(--font-display); color: var(--sage-deep); }
+  .fact span { font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-faint); }
+  .sheet-actions { display: flex; gap: 10px; margin-top: 16px; }
+  .sheet-actions .btn { flex: 1; padding: 13px 8px; }
+  .tabbar { position: absolute; left: 10px; right: 10px; bottom: 10px; display: flex; justify-content: space-around; background: var(--surface); border-radius: 26px; box-shadow: var(--shadow-lift); padding: 12px 12px calc(14px + env(safe-area-inset-bottom)); font: 700 10.5px var(--font-text); }
+  .tab { display: grid; justify-items: center; gap: 3px; text-decoration: none; color: var(--ink-faint); }
+  .tab .ico { font-size: 19px; }
+  .tab[aria-current="page"] { color: var(--sage-deep); }
+  .tab.spot .ico { width: 52px; height: 52px; margin-top: -34px; border-radius: 20px; background: var(--blush); color: #fff; display: grid; place-items: center; font-size: 22px; box-shadow: var(--shadow-lift); }
+</style>
+</head>
+<body class="concept">
+
+<div class="stage">
+  <header class="stage-head">
+    <img class="stage-head-icon" src="../assets/logo.png" alt="Icône Eatsmart" style="width:48px;height:48px;border-radius:50%;flex:none;">
+    <div>
+      <span class="kicker">Concept 08 · iOS</span>
+      <h2 style="font-size: var(--text-xl); margin-top: var(--s-2);">Un cocon, pas un cockpit.</h2>
+    </div>
+    <a class="btn btn--soft" href="landing.html">← Landing</a>
+  </header>
+
+  <div class="device">
+    <div class="screen">
+      <div class="statusbar" aria-hidden="true"><span>9:41</span><span>◍ ●●●</span></div>
+
+      <div class="ios-nav">
+        <div class="large">Eatsmart</div>
+        <div style="display:flex; gap:8px;">
+          <button class="iconbtn" aria-label="Rechercher">⌕</button>
+          <button class="iconbtn" aria-label="Profil">☺</button>
+        </div>
+      </div>
+
+      <div class="ios-scroll">
+        <a class="scancta" href="#">
+          <span class="glyph" aria-hidden="true">⌗</span>
+          <span><strong>Scanner un produit</strong><span>Code-barres · hors connexion OK</span></span>
+        </a>
+
+        <p class="grouplabel">Récemment scannés</p>
+        <a class="iosrow" href="#">
+          <span class="thumb" aria-hidden="true">🫒</span>
+          <span class="body"><h3>Huile d'olive Chetoui</h3><p>Extra vierge · 500 ml</p></span>
+          <span class="score score--great">92</span>
+        </a>
+        <a class="iosrow" href="#">
+          <span class="thumb" aria-hidden="true">🥛</span>
+          <span class="body"><h3>Yaourt bulgare nature</h3><p>Frais · 4 pots</p></span>
+          <span class="score score--good">74</span>
+        </a>
+        <a class="iosrow" href="#">
+          <span class="thumb" aria-hidden="true">🍰</span>
+          <span class="body"><h3>Gâteau chocolat « Fête »</h3><p>Biscuiterie · 300 g</p></span>
+          <span class="score score--bad">21</span>
+        </a>
+      </div>
+
+      <div class="sheet-backdrop" aria-hidden="true"></div>
+      <section class="sheet" role="dialog" aria-modal="true" aria-label="Détail produit">
+        <button class="grabber" aria-label="Fermer la feuille"></button>
+        <div class="sheet-head">
+          <span class="score score--bad" style="width:54px;height:54px;font-size:17px;">21</span>
+          <h2>Gâteau chocolat « Fête »<br><small style="font:700 12px var(--font-text); color:var(--ink-faint);">Biscuiterie · 300 g</small></h2>
+        </div>
+        <div class="sheet-body">
+          <div class="fact"><b>18 g</b><span>Sucre /100 g</span></div>
+          <div class="fact"><b>6</b><span>Additifs</span></div>
+          <div class="fact"><b>Élevé</b><span>Transformation</span></div>
+        </div>
+        <div class="sheet-actions">
+          <button class="btn btn--soft">Détail</button>
+          <button class="btn btn--sage">Alternatives</button>
+        </div>
+      </section>
+
+      <nav class="tabbar" aria-label="Navigation iOS">
+        <a class="tab" aria-current="page" href="#"><span class="ico">◫</span>Accueil</a>
+        <a class="tab" href="#"><span class="ico">❋</span>Explorer</a>
+        <a class="tab spot" href="#"><span class="ico">⌗</span><span style="visibility:hidden;">Scan</span></a>
+        <a class="tab" href="#"><span class="ico">≡</span>Historique</a>
+        <a class="tab" href="#"><span class="ico">☺</span>Profil</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
