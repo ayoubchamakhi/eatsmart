@@ -1,9 +1,9 @@
 /* ============================================================
    EATSMART — DESIGN 08 · "SOFT KITCHEN"
    Comfort and warmth: muted sage, blush, butter; large radii,
-   gentle shadows, rounded type. Quicksand + Karla.
+   gentle shadows, modern typography. Plus Jakarta Sans + DM Sans.
    ============================================================ */
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Karla:ital,wght@0,400;0,500;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Plus+Jakarta+Sans:ital,wght@0,500..800;1,500..800&display=swap");
 
 :root {
   /* -- Color: linen kitchen -------------------------------------- */
@@ -28,9 +28,9 @@
   --score-mid:   #DFAE5C;
   --score-bad:   #D07B62;
 
-  /* -- Typography: soft round -------------------------------------- */
-  --font-display: "Quicksand", system-ui, sans-serif;
-  --font-text: "Karla", system-ui, sans-serif;
+  /* -- Typography: modern premium ---------------------------------- */
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-text: "DM Sans", system-ui, sans-serif;
   --text-xs: .78rem; --text-sm: .9rem; --text-base: 1rem;
   --text-md: 1.1rem; --text-lg: 1.3rem; --text-xl: 1.6rem;
   --text-2xl: clamp(1.8rem, 3.8vw, 2.5rem);
