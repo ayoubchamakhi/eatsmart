@@ -48,9 +48,9 @@ export default function MentionsLegalesPage() {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12, fontSize: "0.92rem" }}>
           <div><strong>Nom commercial :</strong> Eats.tn (Eatsmart Tunisie)</div>
           <div><strong>Forme juridique :</strong> Société à Responsabilité Limitée (SARL)</div>
-          <div><strong>Capital social :</strong> 10 000 TND</div>
-          <div><strong>Matricule fiscal :</strong> 1845920/A/M/000</div>
-          <div><strong>Code RNE (Registre des Entreprises) :</strong> 1845920A</div>
+          <div><strong>Matricule fiscal / RNE :</strong> 1995597F</div>
+          <div><strong>Siège social :</strong> Rue el Hamra, Raoued, 2083 Ariana, Tunisie</div>
+          <div><strong>Téléphone :</strong> +216 55 349 948</div>
           <div><strong>Devise des transactions :</strong> Dinar Tunisien (TND)</div>
         </div>
       </div>
@@ -66,11 +66,8 @@ export default function MentionsLegalesPage() {
           <li><strong>Dénomination sociale :</strong> EATSMART TUNISIE SARL</li>
           <li><strong>Forme juridique :</strong> Société à Responsabilité Limitée de droit tunisien</li>
           <li><strong>Nom commercial :</strong> Eats.tn / Eatsmart</li>
-          <li><strong>Capital social :</strong> 10 000 Dinars Tunisiens (entièrement libéré)</li>
-          <li><strong>Siège social :</strong> Immeuble Carthage Center, Rue du Lac de Côme, Les Berges du Lac, 1053 Tunis, Tunisie</li>
-          <li><strong>Identifiant Unique au RNE :</strong> 1845920A</li>
-          <li><strong>Matricule Fiscal :</strong> 1845920/A/M/000</li>
-          <li><strong>Code TVA :</strong> 1845920A/T/C/000</li>
+          <li><strong>Siège social :</strong> Rue el Hamra, Raoued, 2083 Ariana, Tunisie</li>
+          <li><strong>Identifiant Unique au RNE / Matricule Fiscal :</strong> 1995597F</li>
         </ul>
       </section>
 
@@ -80,9 +77,9 @@ export default function MentionsLegalesPage() {
         </h2>
         <p>Pour toute information, assistance ou réclamation, vous pouvez contacter nos équipes :</p>
         <ul style={{ paddingLeft: 20, margin: "8px 0" }}>
-          <li><strong>Adresse e-mail :</strong> <a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700 }}>contact@eats.tn</a> ou <a href="mailto:support@eats.tn" style={{ color: "#2D5A27", fontWeight: 700 }}>support@eats.tn</a></li>
-          <li><strong>Téléphone :</strong> <a href="tel:+21671860000" style={{ color: "#2D5A27", fontWeight: 700 }}>+216 71 860 000</a> (du lundi au vendredi de 9h à 18h)</li>
-          <li><strong>Adresse postale :</strong> EATSMART TUNISIE SARL, BP 142, Les Berges du Lac, 1053 Tunis, Tunisie</li>
+          <li><strong>Adresse e-mail :</strong> <a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700 }}>contact@eats.tn</a></li>
+          <li><strong>Téléphone :</strong> <a href="tel:+21655349948" style={{ color: "#2D5A27", fontWeight: 700 }}>+216 55 349 948</a> (du lundi au vendredi de 9h à 18h)</li>
+          <li><strong>Adresse postale :</strong> EATSMART TUNISIE SARL, Rue el Hamra, Raoued, 2083 Ariana, Tunisie</li>
         </ul>
       </section>
 

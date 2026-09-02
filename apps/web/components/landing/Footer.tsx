@@ -42,8 +42,8 @@ export function Footer({ isArabic }: FooterProps) {
           </div>
           <p className="footer-copy">© 2026 Eats.tn (Eatsmart). Tous droits réservés.</p>
           <p style={{ fontSize: "0.78rem", color: "var(--ink-faint)", marginTop: 6, lineHeight: 1.5 }}>
-            EATSMART TUNISIE SARL · Matricule Fiscal : 1845920/A/M/000 · Code RNE : 1845920A<br />
-            Siège social : Les Berges du Lac, 1053 Tunis · Tél : +216 71 860 000
+            EATSMART TUNISIE SARL · Matricule Fiscal / RNE : 1995597F<br />
+            Siège social : Rue el Hamra, Raoued, 2083 Ariana · Tél : +216 55 349 948
           </p>
         </div>
 
@@ -68,7 +68,7 @@ export function Footer({ isArabic }: FooterProps) {
           <a href="/legal/privacy">{isArabic ? "سياسة الخصوصية" : "Politique de confidentialité"}</a>
           <a href="/legal/terms">{isArabic ? "ميثاق الاستقلالية" : "Charte d'indépendance"}</a>
           <a href="mailto:contact@eats.tn">contact@eats.tn</a>
-          <a href="tel:+21671860000">+216 71 860 000</a>
+          <a href="tel:+21655349948">+216 55 349 948</a>
         </div>
       </div>
 

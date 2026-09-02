@@ -434,17 +434,19 @@ html[dir="rtl"] h4 {
 .lang-dropdown-trigger {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   background: #FFFFFF;
   border: 1px solid var(--border-soft);
-  padding: 6px 12px;
+  padding: 4px 10px;
   border-radius: var(--r-pill);
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 700;
   color: var(--ink);
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .lang-dropdown-trigger:hover {
@@ -456,11 +458,12 @@ html[dir="rtl"] h4 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  flex-shrink: 0;
 }
 
 .rounded-flag {
@@ -469,7 +472,7 @@ html[dir="rtl"] h4 {
 }
 
 .lang-name-label {
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   line-height: 1;
 }
 
@@ -707,11 +710,12 @@ body {
 }
 
 .header-inner {
-  min-height: 78px;
+  min-height: 68px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
+  gap: 16px;
+  flex-wrap: nowrap;
 }
 
 .brand {
@@ -719,14 +723,15 @@ body {
   align-items: center;
   text-decoration: none;
   transition: opacity var(--t-fast) var(--ease);
+  flex-shrink: 0;
 }
 .brand:hover {
   opacity: 0.9;
 }
 .brand-logo {
-  height: 40px;
+  height: 34px;
   width: auto;
-  max-width: 180px;
+  max-width: 150px;
   object-fit: contain;
   display: block;
 }
@@ -734,20 +739,22 @@ body {
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   margin-inline: auto;
+  flex-shrink: 0;
 }
 .desktop-nav a,
 .language-toggle {
   border: 0;
   background: transparent;
   color: var(--ink-soft);
-  font: 700 0.88rem var(--font-text);
+  font: 700 0.83rem var(--font-text);
   text-decoration: none;
-  padding: 8px 16px;
+  padding: 6px 12px;
   border-radius: var(--r-pill);
   cursor: pointer;
   transition: all var(--t-fast) var(--ease);
+  white-space: nowrap;
 }
 .desktop-nav a:hover,
 .language-toggle:hover {
@@ -758,11 +765,14 @@ body {
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
+  flex-shrink: 0;
 }
 .btn--small {
-  padding: 10px 20px;
-  font-size: 0.85rem;
+  padding: 7px 14px;
+  font-size: 0.80rem;
+  white-space: nowrap;
+  border-radius: var(--r-pill);
 }
 
 .menu-toggle {

@@ -42,8 +42,8 @@ export function LanguageDropdown({ isArabic, onSelectLanguage }: LanguageDropdow
           <Image
             src={isArabic ? "/assets_v2/flag_tn.svg" : "/assets_v2/flag_fr.svg"}
             alt={isArabic ? "Drapeau Tunisie" : "Drapeau France"}
-            width={20}
-            height={20}
+            width={16}
+            height={16}
             className="rounded-flag"
           />
         </span>
