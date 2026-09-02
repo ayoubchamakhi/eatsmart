@@ -20,6 +20,9 @@ importers:
       '@eatsmart/design-tokens':
         specifier: workspace:*
         version: link:../../packages/design-tokens
+      '@eatsmart/domain':
+        specifier: workspace:*
+        version: link:../../packages/domain
       expo:
         specifier: ~52.0.37
         version: 52.0.49(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(react-native@0.76.9(@babel/core@7.29.7(supports-color@8.1.1))(@babel/preset-env@7.29.7(@babel/core@7.29.7(supports-color@8.1.1))(supports-color@8.1.1))(@types/react@18.3.31)(react@18.3.1)(supports-color@8.1.1))(react@18.3.1)(supports-color@8.1.1)
@@ -54,6 +57,9 @@ importers:
       '@eatsmart/design-tokens':
         specifier: workspace:*
         version: link:../../packages/design-tokens
+      '@eatsmart/domain':
+        specifier: workspace:*
+        version: link:../../packages/domain
       lucide-react:
         specifier: ^1.16.0
         version: 1.39.0(react@19.2.8)
@@ -81,6 +87,16 @@ importers:
         version: 5.9.3
 
   packages/design-tokens:
+    devDependencies:
+      typescript:
+        specifier: ^5.7.3
+        version: 5.9.3
+
+  packages/domain:
+    dependencies:
+      '@eatsmart/design-tokens':
+        specifier: workspace:*
+        version: link:../design-tokens
     devDependencies:
       typescript:
         specifier: ^5.7.3

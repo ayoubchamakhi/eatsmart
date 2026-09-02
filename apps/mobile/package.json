@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@eatsmart/design-tokens": "workspace:*",
+    "@eatsmart/domain": "workspace:*",
     "expo": "~52.0.37",
     "expo-status-bar": "~2.0.1",
     "lucide-react-native": "^1.16.0",
