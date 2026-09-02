@@ -1,125 +1,266 @@
 import Link from "next/link";
-import { ArrowLeft, Scale, Building2, FileText, Phone, Mail, MapPin, Server, ShieldCheck } from "lucide-react";
+import Image from "next/image";
+import { Header } from "@/components/landing/Header";
+import { Footer } from "@/components/landing/Footer";
+import {
+  ShieldCheck,
+  Building2,
+  Phone,
+  Mail,
+  MapPin,
+  Server,
+  FileText,
+  Scale,
+  ChevronRight,
+  Sparkles,
+} from "lucide-react";
 
 export const metadata = {
   title: "Mentions Légales | Eats.tn - Eatsmart Tunisie",
-  description: "Mentions légales, identification de l'éditeur, numéro RNE, matricule fiscal et hébergement du site eats.tn.",
+  description:
+    "Mentions légales, identification officielle de l'éditeur sous statut Auto-entrepreneur, immatriculation RNE 1995597F, siège et hébergement du service Eats.tn.",
 };
 
 export default function MentionsLegalesPage() {
   return (
-    <div style={{ maxWidth: 820, margin: "0 auto", padding: "40px 20px", color: "#3D3A34", lineHeight: 1.75 }}>
-      <Link
-        href="/"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          gap: 8,
-          color: "#2D5A27",
-          textDecoration: "none",
-          fontWeight: 700,
-          marginBottom: 24,
-        }}
-      >
-        <ArrowLeft size={18} />
-        Retour à l'accueil
-      </Link>
+    <>
+      <Header />
 
-      <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 12 }}>
-        <Scale size={34} color="#2D5A27" />
-        <h1 style={{ margin: 0, fontSize: "2.2rem", color: "#1F221B", fontWeight: 800 }}>Mentions Légales</h1>
-      </div>
-      <p style={{ color: "#6E675C", fontSize: "0.95rem", marginBottom: 28 }}>
-        Conformément à la Loi n° 2000-83 du 9 août 2000 relative aux échanges et au commerce électroniques et à la réglementation tunisienne en vigueur.
-      </p>
-
-      <div
-        style={{
-          background: "#F4EFEA",
-          border: "1px solid rgba(45, 90, 39, 0.15)",
-          borderRadius: 12,
-          padding: "20px 24px",
-          marginBottom: 36,
-        }}
-      >
-        <h2 style={{ fontSize: "1.15rem", color: "#2D5A27", margin: "0 0 12px 0", display: "flex", alignItems: "center", gap: 8 }}>
-          <Building2 size={20} /> Synthèse d'identification légale
-        </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 12, fontSize: "0.92rem" }}>
-          <div><strong>Nom commercial :</strong> Eats.tn (Eatsmart Tunisie)</div>
-          <div><strong>Forme juridique :</strong> Société à Responsabilité Limitée (SARL)</div>
-          <div><strong>Matricule fiscal / RNE :</strong> 1995597F</div>
-          <div><strong>Siège social :</strong> Rue el Hamra, Raoued, 2083 Ariana, Tunisie</div>
-          <div><strong>Téléphone :</strong> +216 55 349 948</div>
-          <div><strong>Devise des transactions :</strong> Dinar Tunisien (TND)</div>
+      <main style={{ background: "#FBF9F5", minHeight: "100vh", paddingBottom: 60 }}>
+        {/* Breadcrumb Navigation */}
+        <div style={{ maxWidth: 940, margin: "0 auto", padding: "24px 20px 8px" }}>
+          <nav
+            aria-label="Fil d'Ariane"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 8,
+              fontSize: "0.84rem",
+              color: "#6E675C",
+            }}
+          >
+            <Link href="/" style={{ color: "#2D5A27", textDecoration: "none", fontWeight: 600 }}>
+              Accueil
+            </Link>
+            <ChevronRight size={14} color="#A8A297" />
+            <span style={{ color: "#6E675C" }}>Informations Légales</span>
+            <ChevronRight size={14} color="#A8A297" />
+            <span style={{ color: "#1F221B", fontWeight: 700 }}>Mentions Légales</span>
+          </nav>
         </div>
-      </div>
 
-      <section style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: "1.35rem", color: "#1F221B", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-          <Building2 size={20} color="#2D5A27" /> 1. Éditeur de la plateforme
-        </h2>
-        <p>
-          Le site web <strong>https://eats.tn</strong> et l'application mobile <strong>Eatsmart</strong> sont édités et exploités par :
-        </p>
-        <ul style={{ paddingLeft: 20, margin: "8px 0" }}>
-          <li><strong>Dénomination sociale :</strong> EATSMART TUNISIE SARL</li>
-          <li><strong>Forme juridique :</strong> Société à Responsabilité Limitée de droit tunisien</li>
-          <li><strong>Nom commercial :</strong> Eats.tn / Eatsmart</li>
-          <li><strong>Siège social :</strong> Rue el Hamra, Raoued, 2083 Ariana, Tunisie</li>
-          <li><strong>Identifiant Unique au RNE / Matricule Fiscal :</strong> 1995597F</li>
-        </ul>
-      </section>
+        {/* Hero Section */}
+        <div style={{ maxWidth: 940, margin: "0 auto", padding: "16px 20px 32px" }}>
+          <div
+            style={{
+              background: "#FFFFFF",
+              borderRadius: 24,
+              padding: "36px 36px",
+              border: "1px solid rgba(61, 58, 52, 0.08)",
+              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
+              gap: 32,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 6,
+                  backgroundColor: "#EBF3E8",
+                  color: "#2D5A27",
+                  padding: "6px 14px",
+                  borderRadius: 999,
+                  fontSize: "0.82rem",
+                  fontWeight: 700,
+                  marginBottom: 16,
+                }}
+              >
+                <ShieldCheck size={16} /> Informations Réglementaires & RNE
+              </div>
+              <h1
+                style={{
+                  fontSize: "clamp(2rem, 3.5vw, 2.7rem)",
+                  color: "#1F221B",
+                  fontWeight: 800,
+                  lineHeight: 1.15,
+                  margin: "0 0 16px",
+                  fontFamily: "var(--font-display)",
+                }}
+              >
+                Mentions Légales
+              </h1>
+              <p style={{ color: "#5C564B", fontSize: "1.02rem", lineHeight: 1.6, margin: 0 }}>
+                Conformément aux dispositions de la Loi n° 2000-83 relative aux échanges et au commerce électroniques et aux exigences réglementaires de la République Tunisienne.
+              </p>
+            </div>
 
-      <section style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: "1.35rem", color: "#1F221B", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-          <Phone size={20} color="#2D5A27" /> 2. Coordonnées et Service Client
-        </h2>
-        <p>Pour toute information, assistance ou réclamation, vous pouvez contacter nos équipes :</p>
-        <ul style={{ paddingLeft: 20, margin: "8px 0" }}>
-          <li><strong>Adresse e-mail :</strong> <a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700 }}>contact@eats.tn</a></li>
-          <li><strong>Téléphone :</strong> <a href="tel:+21655349948" style={{ color: "#2D5A27", fontWeight: 700 }}>+216 55 349 948</a> (du lundi au vendredi de 9h à 18h)</li>
-          <li><strong>Adresse postale :</strong> EATSMART TUNISIE SARL, Rue el Hamra, Raoued, 2083 Ariana, Tunisie</li>
-        </ul>
-      </section>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: 240,
+                borderRadius: 18,
+                overflow: "hidden",
+                boxShadow: "0 6px 20px rgba(0, 0, 0, 0.05)",
+              }}
+            >
+              <Image
+                src="/assets_v2/legal_mentions_seal.jpg"
+                alt="Sceau officiel et certificat légal Eats.tn"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </div>
+          </div>
+        </div>
 
-      <section style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: "1.35rem", color: "#1F221B", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-          <Server size={20} color="#2D5A27" /> 3. Hébergement
-        </h2>
-        <p>
-          La plateforme eats.tn et les services d'API sont hébergés sur une infrastructure Cloud dédiée et sécurisée :
-        </p>
-        <ul style={{ paddingLeft: 20, margin: "8px 0" }}>
-          <li><strong>Hébergeur :</strong> Cloud VPS Datacenter Haute Disponibilité</li>
-          <li><strong>Localisation des données :</strong> Serveurs européens sécurisés conformes aux normes de sécurité internationales (ISO 27001)</li>
-          <li><strong>Sauvegardes :</strong> Sauvegardes automatisées chiffrées quotidiennes avec rétention glissante</li>
-        </ul>
-      </section>
+        {/* Content Container */}
+        <div style={{ maxWidth: 940, margin: "0 auto", padding: "0 20px" }}>
+          {/* Quick Identification Dashboard */}
+          <div
+            style={{
+              background: "#FFFFFF",
+              borderRadius: 20,
+              padding: "30px",
+              border: "1px solid rgba(45, 90, 39, 0.16)",
+              marginBottom: 24,
+              boxShadow: "0 4px 18px rgba(45, 90, 39, 0.04)",
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 20 }}>
+              <div
+                style={{
+                  width: 40,
+                  height: 40,
+                  borderRadius: 12,
+                  background: "#EBF3E8",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  color: "#2D5A27",
+                }}
+              >
+                <Building2 size={22} />
+              </div>
+              <div>
+                <h2 style={{ fontSize: "1.25rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
+                  Synthèse d'immatriculation légale
+                </h2>
+                <p style={{ margin: 0, fontSize: "0.85rem", color: "#6E675C" }}>
+                  Informations certifiées conformes au Registre National des Entreprises (RNE)
+                </p>
+              </div>
+            </div>
 
-      <section style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: "1.35rem", color: "#1F221B", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-          <ShieldCheck size={20} color="#2D5A27" /> 4. Protection des données personnelles (INPDP)
-        </h2>
-        <p>
-          Le traitement des données à caractère personnel collectées sur ce site est réalisé conformément à la <strong>Loi organique n° 2004-63 du 27 juillet 2004</strong>, portant sur la protection des données à caractère personnel en Tunisie.
-        </p>
-        <p>
-          Conformément à la législation, vous disposez d'un droit d'accès, de rectification, d'opposition et de suppression de vos données personnelles. Vous pouvez exercer ces droits à tout moment en écrivant à <strong>dpo@eats.tn</strong> ou par courrier recommandé au siège social.
-        </p>
-      </section>
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+                gap: 16,
+              }}
+            >
+              <div style={{ background: "#FBF9F5", padding: "16px 20px", borderRadius: 14, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
+                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
+                  Nom commercial & Marque
+                </span>
+                <strong style={{ color: "#1F221B", fontSize: "1.1rem" }}>Eats.tn (Eatsmart)</strong>
+              </div>
 
-      <section style={{ marginBottom: 32 }}>
-        <h2 style={{ fontSize: "1.35rem", color: "#1F221B", marginBottom: 12, display: "flex", alignItems: "center", gap: 8 }}>
-          <FileText size={20} color="#2D5A27" /> 5. Propriété intellectuelle et Droit applicable
-        </h2>
-        <p>
-          L'ensemble du contenu du site eats.tn (textes, logos, algorithmes d'analyse, marques, chartes graphiques) est protégé par le Code de la propriété intellectuelle tunisien. Toute reproduction totale ou partielle sans autorisation expresse de EATSMART TUNISIE SARL est strictement interdite.
-        </p>
-        <p>
-          Le présent site est soumis au <strong>droit tunisien</strong>. Tout litige relatif à sa validité, son interprétation ou son exécution sera soumis à la compétence exclusive des <strong>tribunaux de Tunis</strong>.
-        </p>
-      </section>
-    </div>
+              <div style={{ background: "#FBF9F5", padding: "16px 20px", borderRadius: 14, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
+                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
+                  Forme juridique
+                </span>
+                <strong style={{ color: "#2D5A27", fontSize: "1.1rem" }}>Auto-entrepreneur</strong>
+              </div>
+
+              <div style={{ background: "#FBF9F5", padding: "16px 20px", borderRadius: 14, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
+                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
+                  Numéro RNE / Matricule fiscal
+                </span>
+                <strong style={{ color: "#1F221B", fontSize: "1.1rem", fontFamily: "monospace" }}>1995597F</strong>
+              </div>
+
+              <div style={{ background: "#FBF9F5", padding: "16px 20px", borderRadius: 14, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
+                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
+                  Adresse du siège social
+                </span>
+                <strong style={{ color: "#1F221B", fontSize: "0.95rem" }}>Rue el Hamra, Raoued, 2083 Ariana, Tunisie</strong>
+              </div>
+
+              <div style={{ background: "#FBF9F5", padding: "16px 20px", borderRadius: 14, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
+                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
+                  Ligne téléphonique directe
+                </span>
+                <a href="tel:+21655349948" style={{ color: "#2D5A27", fontWeight: 700, fontSize: "1.05rem", textDecoration: "none" }}>
+                  +216 55 349 948
+                </a>
+              </div>
+
+              <div style={{ background: "#FBF9F5", padding: "16px 20px", borderRadius: 14, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
+                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
+                  Courrier électronique officiel
+                </span>
+                <a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700, fontSize: "1.05rem", textDecoration: "none" }}>
+                  contact@eats.tn
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Detailed Regulatory Cards */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
+            {/* Card 1 */}
+            <div style={{ background: "#FFFFFF", borderRadius: 20, padding: "28px 32px", border: "1px solid rgba(61, 58, 52, 0.08)" }}>
+              <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 10, fontWeight: 700 }}>
+                <Building2 size={20} color="#2D5A27" /> 1. Éditeur de la plateforme et statut juridique
+              </h3>
+              <p style={{ color: "#3D3A34", lineHeight: 1.7, margin: 0, fontSize: "0.98rem" }}>
+                Le site web accessible à l'adresse <strong>https://eats.tn</strong> et l'application mobile <strong>Eatsmart</strong> sont édités et exploités par l'entreprise individuelle régie par le statut officiel d'<strong>Auto-entrepreneur</strong> en Tunisie, inscrite au Registre National des Entreprises sous le numéro <strong>1995597F</strong>.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div style={{ background: "#FFFFFF", borderRadius: 20, padding: "28px 32px", border: "1px solid rgba(61, 58, 52, 0.08)" }}>
+              <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 10, fontWeight: 700 }}>
+                <Phone size={20} color="#2D5A27" /> 2. Service utilisateur et réclamations
+              </h3>
+              <p style={{ color: "#3D3A34", lineHeight: 1.7, margin: 0, fontSize: "0.98rem" }}>
+                Pour toute demande d'assistance, suggestion citoyenne, signalement de mise à jour d'étiquetage ou question relative au fonctionnement de l'application :<br />
+                • <strong>Email :</strong> <a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700 }}>contact@eats.tn</a><br />
+                • <strong>Téléphone :</strong> <a href="tel:+21655349948" style={{ color: "#2D5A27", fontWeight: 700 }}>+216 55 349 948</a> (du lundi au vendredi, de 9h à 18h)<br />
+                • <strong>Courrier :</strong> Rue el Hamra, Raoued, 2083 Ariana, Tunisie
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div style={{ background: "#FFFFFF", borderRadius: 20, padding: "28px 32px", border: "1px solid rgba(61, 58, 52, 0.08)" }}>
+              <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 10, fontWeight: 700 }}>
+                <Server size={20} color="#2D5A27" /> 3. Hébergement et sécurité de l'infrastructure
+              </h3>
+              <p style={{ color: "#3D3A34", lineHeight: 1.7, margin: 0, fontSize: "0.98rem" }}>
+                L'ensemble des services, API et bases de données d'Eatsmart sont hébergés sur une infrastructure Cloud haute disponibilité avec sauvegardes chiffrées automatiques, conforme aux standards internationaux de protection physique et logique des données (certifications ISO 27001, SOC 2).
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div style={{ background: "#FFFFFF", borderRadius: 20, padding: "28px 32px", border: "1px solid rgba(61, 58, 52, 0.08)" }}>
+              <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 12px", display: "flex", alignItems: "center", gap: 10, fontWeight: 700 }}>
+                <FileText size={20} color="#2D5A27" /> 4. Données personnelles (INPDP) et juridiction
+              </h3>
+              <p style={{ color: "#3D3A34", lineHeight: 1.7, margin: 0, fontSize: "0.98rem" }}>
+                Conformément à la <strong>Loi organique n° 2004-63</strong> du 27 juillet 2004 portant sur la protection des données à caractère personnel, l'utilisateur dispose d'un droit permanent d'accès, d'opposition et de suppression de ses données sur simple demande à <strong>contact@eats.tn</strong>. Les présentes mentions sont régies par le droit de la République Tunisienne. Tout litige relève de la compétence des tribunaux compétents de Tunis et de l'Ariana.
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer />
+    </>
   );
 }

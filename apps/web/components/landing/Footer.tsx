@@ -1,8 +1,8 @@
 interface FooterProps {
-  isArabic: boolean;
+  isArabic?: boolean;
 }
 
-export function Footer({ isArabic }: FooterProps) {
+export function Footer({ isArabic = false }: FooterProps) {
   return (
     <footer className="site-footer">
       <div className="wrap footer-main">
@@ -42,23 +42,23 @@ export function Footer({ isArabic }: FooterProps) {
           </div>
           <p className="footer-copy">© 2026 Eats.tn (Eatsmart). Tous droits réservés.</p>
           <p style={{ fontSize: "0.78rem", color: "var(--ink-faint)", marginTop: 6, lineHeight: 1.5 }}>
-            EATSMART TUNISIE SARL · Matricule Fiscal / RNE : 1995597F<br />
+            Eats.tn · Auto-entrepreneur · RNE / Identifiant Fiscal : 1995597F<br />
             Siège social : Rue el Hamra, Raoued, 2083 Ariana · Tél : +216 55 349 948
           </p>
         </div>
 
         <div className="footer-col">
           <strong>L'Application</strong>
-          <a href="#evaluer">{isArabic ? "كيفاش يخدم" : "Comment ça marche"}</a>
-          <a href="#independance">{isArabic ? "استقلاليتنا" : "Notre indépendance"}</a>
-          <a href="#recommandations">{isArabic ? "التوصيات والبدائل" : "Recommandations"}</a>
+          <a href="/#evaluer">{isArabic ? "كيفاش يخدم" : "Comment ça marche"}</a>
+          <a href="/#independance">{isArabic ? "استقلاليتنا" : "Notre indépendance"}</a>
+          <a href="/#recommandations">{isArabic ? "التوصيات والبدائل" : "Recommandations"}</a>
         </div>
 
         <div className="footer-col">
           <strong>Méthodologie</strong>
-          <a href="#evaluer">{isArabic ? "القيمة الغذائية" : "Qualité nutritionnelle"}</a>
-          <a href="#evaluer">{isArabic ? "تحليل المواد الحافظة" : "Analyse des additifs"}</a>
-          <a href="#evaluer">{isArabic ? "قاعدة البيانات" : "Base de données"}</a>
+          <a href="/methodologie/qualite-nutritionnelle">{isArabic ? "القيمة الغذائية" : "Qualité nutritionnelle"}</a>
+          <a href="/methodologie/analyse-des-additifs">{isArabic ? "تحليل المواد الحافظة" : "Analyse des additifs"}</a>
+          <a href="/methodologie/base-de-donnees">{isArabic ? "قاعدة البيانات" : "Base de données"}</a>
         </div>
 
         <div className="footer-col">

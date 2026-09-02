@@ -41,15 +41,16 @@ export function LanguageDropdown({ isArabic, onSelectLanguage }: LanguageDropdow
         <span className="flag-icon-wrap">
           <Image
             src={isArabic ? "/assets_v2/flag_tn.svg" : "/assets_v2/flag_fr.svg"}
-            alt={isArabic ? "Drapeau Tunisie" : "Drapeau France"}
-            width={16}
-            height={16}
+            alt=""
+            width={15}
+            height={15}
             className="rounded-flag"
+            priority
           />
         </span>
-        <span className="lang-name-label">{isArabic ? "عربي" : "Français"}</span>
+        <span className="lang-name-label">{isArabic ? "عربي" : "FR"}</span>
         <ChevronDown
-          size={14}
+          size={12}
           className={`lang-chevron ${isOpen ? "chevron-rotated" : ""}`}
         />
       </button>
