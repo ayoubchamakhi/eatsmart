@@ -1,6 +1,7 @@
 {
   "name": "@eatsmart/domain",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -14,7 +15,8 @@
   "scripts": {
     "build": "tsc",
     "typecheck": "tsc --noEmit",
-    "test": "tsc && node --test dist/scoring.test.js"
+    "test": "node --test dist/scoring.test.js",
+    "export-catalog": "tsx scripts/export-tunisian-catalog.ts"
   },
   "dependencies": {
     "@eatsmart/design-tokens": "workspace:*"

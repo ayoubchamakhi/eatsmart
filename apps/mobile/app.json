@@ -33,6 +33,12 @@
         {
           "cameraPermission": "Eatsmart utilise la caméra pour scanner les codes-barres de vos produits en rayon."
         }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Eatsmart utilise vos photos pour ajouter les emballages des produits alimentaires."
+        }
       ]
     ]
   }

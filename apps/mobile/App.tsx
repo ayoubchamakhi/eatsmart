@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, SafeAreaView, View } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, SafeAreaView, View, BackHandler } from 'react-native';
 import { StatusBar as ExpoStatusBar } from 'expo-status-bar';
 import { colors } from '@eatsmart/design-tokens';
 import type { Product } from '@eatsmart/domain';
@@ -20,6 +20,27 @@ export default function App() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [contributingBarcode, setContributingBarcode] = useState<string | null>(null);
   const [isArabic, setIsArabic] = useState(false);
+
+  useEffect(() => {
+    const onBackPress = () => {
+      if (contributingBarcode) {
+        setContributingBarcode(null);
+        return true;
+      }
+      if (selectedProduct) {
+        setSelectedProduct(null);
+        return true;
+      }
+      if (activeTab === 'scan') {
+        setActiveTab('history');
+        return true;
+      }
+      return false;
+    };
+
+    const subscription = BackHandler.addEventListener('hardwareBackPress', onBackPress);
+    return () => subscription.remove();
+  }, [contributingBarcode, selectedProduct, activeTab]);
 
   const handleSelectProduct = (product: Product) => {
     setSelectedProduct(product);

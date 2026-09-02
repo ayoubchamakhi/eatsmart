@@ -1,0 +1,5927 @@
+[
+  {
+    "id": "tn-harissa-sicam",
+    "barcode": "6194001900123",
+    "name": "Harissa Berbère Pur Piment",
+    "brand": "SICAM",
+    "category": "Condiments & Sauces",
+    "origin": "Cap Bon, Tunisie",
+    "isLocal": true,
+    "isBio": true,
+    "image": "/assets_v2/product_harissa_jar.png",
+    "score": {
+      "value": 83,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 85,
+      "additivesScore": 80,
+      "confidence": 95
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "servingSize": "100g",
+      "energyKcal": 72,
+      "sugars": 2.1,
+      "saturatedFat": 0.4,
+      "salt": 1.2,
+      "fiber": 4.8,
+      "proteins": 2.9
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Piments rouges séchés, ail de Medjez el Bab, coriandre, carvi, sel marin."
+  },
+  {
+    "id": "tn-huile-ruspina",
+    "barcode": "6194002400456",
+    "name": "Huile d'Olive Vierge Extra",
+    "brand": "Ruspina",
+    "category": "Huiles & Matières grasses",
+    "origin": "Sahel, Tunisie",
+    "isLocal": true,
+    "isBio": true,
+    "image": "/assets_v2/product_olive_oil.jpg",
+    "score": {
+      "value": 92,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 94,
+      "additivesScore": 90,
+      "confidence": 98
+    },
+    "nutriScore": "c",
+    "novaGroup": 1,
+    "nutrition": {
+      "servingSize": "100ml",
+      "energyKcal": 824,
+      "sugars": 0,
+      "saturatedFat": 14,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "100% Huile d'olive vierge extra tunisienne de première pression à froid."
+  },
+  {
+    "id": "tn-couscous-epi",
+    "barcode": "6194007100888",
+    "name": "Couscous Fin Pur Blé Dur",
+    "brand": "L'Épi d'Or",
+    "category": "Pâtes & Céréales",
+    "origin": "Sousse, Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "/assets_v2/product_warda_sables.jpg",
+    "score": {
+      "value": 88,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 90,
+      "additivesScore": 85,
+      "confidence": 96
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "servingSize": "100g",
+      "energyKcal": 355,
+      "sugars": 1.8,
+      "saturatedFat": 0.3,
+      "salt": 0.01,
+      "fiber": 5.2,
+      "proteins": 12.5
+    },
+    "additives": [],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "Semoule de blé dur de qualité supérieure, eau."
+  },
+  {
+    "id": "tn-dattes-oasis",
+    "barcode": "6194008200555",
+    "name": "Dattes Branchées Deglet Nour",
+    "brand": "Oasis Tozeur",
+    "category": "Fruits & Terroir",
+    "origin": "Tozeur, Tunisie",
+    "isLocal": true,
+    "isBio": true,
+    "image": "/assets_v2/product_delice_yogurt.jpg",
+    "score": {
+      "value": 94,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 95,
+      "additivesScore": 92,
+      "confidence": 99
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "servingSize": "100g",
+      "energyKcal": 282,
+      "sugars": 63.4,
+      "saturatedFat": 0.1,
+      "salt": 0.01,
+      "fiber": 8,
+      "proteins": 2.5
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "100% Dattes naturelles branchées de l'oasis de Tozeur sans sirop ajouté."
+  },
+  {
+    "id": "tn-thon-elmanar",
+    "barcode": "6194009300666",
+    "name": "Thon Entier à l'Huile d'Olive",
+    "brand": "El Manar",
+    "category": "Conserves de Poissons",
+    "origin": "Zarzis, Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "/assets_v2/product_harissa_jar.png",
+    "score": {
+      "value": 86,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 88,
+      "additivesScore": 82,
+      "confidence": 94
+    },
+    "nutriScore": "b",
+    "novaGroup": 3,
+    "nutrition": {
+      "servingSize": "100g",
+      "energyKcal": 210,
+      "sugars": 0,
+      "saturatedFat": 2.8,
+      "salt": 0.9,
+      "fiber": 0,
+      "proteins": 26
+    },
+    "additives": [],
+    "allergens": [
+      "Poisson"
+    ],
+    "ingredientsSummary": "Thon blanc (Thunnus alalunga), huile d'olive vierge, sel marin."
+  },
+  {
+    "id": "tn-sables-warda",
+    "barcode": "6194006200334",
+    "name": "Sablés Pur Beurre Artisanal",
+    "brand": "Warda Terroir",
+    "category": "Biscuits & Pâtisseries",
+    "origin": "Sfax, Tunisie",
+    "isLocal": true,
+    "isBio": true,
+    "image": "/assets_v2/product_warda_sables.jpg",
+    "score": {
+      "value": 74,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 72,
+      "additivesScore": 78,
+      "confidence": 93
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "servingSize": "100g",
+      "energyKcal": 410,
+      "sugars": 14.5,
+      "saturatedFat": 4.8,
+      "salt": 0.2,
+      "fiber": 3.1,
+      "proteins": 7.5
+    },
+    "additives": [],
+    "allergens": [
+      "Gluten",
+      "Lait"
+    ],
+    "ingredientsSummary": "Farine complète tunisienne, beurre frais de ferme, sucre de canne brut, vanille naturelle."
+  },
+  {
+    "id": "tn-yaourt-delice",
+    "barcode": "6194003300789",
+    "name": "Yaourt Brassé Nature",
+    "brand": "Délice Danone",
+    "category": "Produits Laitiers",
+    "origin": "Soliman, Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "/assets_v2/product_delice_yogurt.jpg",
+    "score": {
+      "value": 58,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 62,
+      "additivesScore": 52,
+      "confidence": 92
+    },
+    "nutriScore": "b",
+    "novaGroup": 3,
+    "nutrition": {
+      "servingSize": "100g",
+      "energyKcal": 62,
+      "sugars": 4.7,
+      "saturatedFat": 2.1,
+      "salt": 0.1,
+      "proteins": 3.8
+    },
+    "additives": [
+      {
+        "code": "E440",
+        "nameFr": "Pectine",
+        "nameAr": "بكتين",
+        "risk": "safe",
+        "functionCategory": "Épaississant naturel",
+        "descriptionFr": "Gélifiant végétal extrait de pépins de pommes ou d'agrumes, inoffensif pour la santé.",
+        "descriptionAr": "مستخلص نباتي طبيعي لتكثيف القوام، آمن على الصحة."
+      },
+      {
+        "code": "E330",
+        "nameFr": "Acide citrique",
+        "nameAr": "حمض الستريك",
+        "risk": "safe",
+        "functionCategory": "Correcteur d'acidité",
+        "descriptionFr": "Régulateur d'acidité naturellement présent dans le citron, sans danger avéré.",
+        "descriptionAr": "معدل حموضة طبيعي موجود في الليمون، لا يشكل خطورة."
+      }
+    ],
+    "allergens": [
+      "Lait"
+    ],
+    "ingredientsSummary": "Lait entier pasteurisé, ferments lactiques vivants, pectine, acide citrique."
+  },
+  {
+    "id": "tn-fromage-landor",
+    "barcode": "6194004100222",
+    "name": "Fromage Carré Toast Fondu",
+    "brand": "Land'Or",
+    "category": "Fromages Fondus",
+    "origin": "Bou Argoub, Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "/assets_v2/product_delice_yogurt.jpg",
+    "score": {
+      "value": 38,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 32,
+      "additivesScore": 45,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "servingSize": "100g",
+      "energyKcal": 275,
+      "sugars": 3.8,
+      "saturatedFat": 14.5,
+      "salt": 2.3,
+      "proteins": 11
+    },
+    "additives": [
+      {
+        "code": "E452",
+        "nameFr": "Polyphosphates",
+        "nameAr": "بوليفوسفات",
+        "risk": "moderate",
+        "functionCategory": "Sels de fonte",
+        "descriptionFr": "Additif émulsifiant phosphaté pouvant perturber l'absorption du calcium en consommation fréquente.",
+        "descriptionAr": "أملاح تذويب صناعية قد تؤثر على امتصاص الكالسيوم مع الاستهلاك المفرط."
+      },
+      {
+        "code": "E160a",
+        "nameFr": "Bêta-carotène",
+        "nameAr": "بيتا كاروتين",
+        "risk": "safe",
+        "functionCategory": "Colorant naturel",
+        "descriptionFr": "Colorant orange extrait de végétaux.",
+        "descriptionAr": "ملون برتقالي نباتي آمن."
+      }
+    ],
+    "allergens": [
+      "Lait"
+    ],
+    "ingredientsSummary": "Fromages, eau, beurre, protéines de lait, sels de fonte E452, colorant E160a."
+  },
+  {
+    "id": "tn-biscuits-bimo",
+    "barcode": "6194005100112",
+    "name": "Biscuits Choco Fourrés",
+    "brand": "BIMO",
+    "category": "Biscuits & Snacks",
+    "origin": "Mégrine, Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "/assets_v2/product_bimo_choco.jpg",
+    "score": {
+      "value": 34,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 30,
+      "additivesScore": 40,
+      "confidence": 91
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "servingSize": "100g",
+      "energyKcal": 485,
+      "sugars": 32,
+      "saturatedFat": 9.5,
+      "salt": 0.6,
+      "proteins": 6.2
+    },
+    "additives": [
+      {
+        "code": "E500",
+        "nameFr": "Carbonates de sodium",
+        "nameAr": "كربونات الصوديوم",
+        "risk": "safe",
+        "functionCategory": "Poudre à lever",
+        "descriptionFr": "Bicarbonate de soude utilisé pour la levée de pâte, sans risque pour la santé.",
+        "descriptionAr": "خميرة كيميائية كربونات الصوديوم آمنة."
+      },
+      {
+        "code": "E322",
+        "nameFr": "Lécithine de soja",
+        "nameAr": "ليسيثين الصويا",
+        "risk": "safe",
+        "functionCategory": "Émulsifiant",
+        "descriptionFr": "Émulsifiant d'origine végétale permettant de lier l'huile et l'eau.",
+        "descriptionAr": "مستحلب نباتي مستخرج من فول الصويا."
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Soja"
+    ],
+    "ingredientsSummary": "Farine de blé, sucre, matière grasse végétale hydrogénée, cacao maigre, poudre à lever."
+  },
+  {
+    "id": "tn-soda-boga",
+    "barcode": "6194004500999",
+    "name": "Boisson Gazeuse Cidre",
+    "brand": "Boga",
+    "category": "Boissons & Sodas",
+    "origin": "Tunis, Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "/assets_v2/product_boga_cidre.jpg",
+    "score": {
+      "value": 22,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 18,
+      "additivesScore": 28,
+      "confidence": 96
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "servingSize": "100ml",
+      "energyKcal": 44,
+      "sugars": 10.8,
+      "saturatedFat": 0,
+      "salt": 0.02
+    },
+    "additives": [
+      {
+        "code": "E150d",
+        "nameFr": "Caramel au sulfite d'ammonium",
+        "nameAr": "كراميل الكبريتيت",
+        "risk": "moderate",
+        "functionCategory": "Colorant de synthèse",
+        "descriptionFr": "Colorant chimique brun foncé soupçonné de contenir des résidus de composés indésirables (4-MEI).",
+        "descriptionAr": "ملون كيميائي بني غامق يحتوي على شوائب كيميائية يفضل تفاديها."
+      },
+      {
+        "code": "E338",
+        "nameFr": "Acide phosphorique",
+        "nameAr": "حمض الفوسفوريك",
+        "risk": "moderate",
+        "functionCategory": "Acidifiant minéral",
+        "descriptionFr": "Acidifiant puissant lié à l'érosion de l'émail dentaire et à la déminéralisation.",
+        "descriptionAr": "حمض صناعي قوي قد يضر بمينا الأسنان وتوازن المعادن."
+      },
+      {
+        "code": "E211",
+        "nameFr": "Benzoate de sodium",
+        "nameAr": "بنزوات الصوديوم",
+        "risk": "moderate",
+        "functionCategory": "Conservateur",
+        "descriptionFr": "Conservateur chimique déconseillé chez les personnes sensibles et asthmatiques.",
+        "descriptionAr": "مادة حافظة كيميائية قد تسبب حساسية لدى بعض الأشخاص."
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifiée, sucre, colorant caramel E150d, acidifiant E338, conservateur E211, arôme cidre."
+  },
+  {
+    "id": "tn-5449000054227",
+    "barcode": "5449000054227",
+    "name": "Coca-Cola Original Taste",
+    "brand": "COCA-COLA SERVICES SA/NV",
+    "category": "Colas",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/544/900/005/4227/front_en.563.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 42,
+      "sugars": 10.6,
+      "saturatedFat": 0,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E150D",
+        "nameFr": "E150D",
+        "nameAr": "E150D",
+        "risk": "moderate",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E290",
+        "nameFr": "E290",
+        "nameAr": "E290",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E338",
+        "nameFr": "E338",
+        "nameAr": "E338",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifiée , sucre , colorant : E150d , acidifiant : acide phosphorique,  arômes naturels dont caféine."
+  },
+  {
+    "id": "tn-3017620425035",
+    "barcode": "3017620425035",
+    "name": "Nutella",
+    "brand": "Nutella",
+    "category": "Pâtes à tartiner aux noisettes et au cacao",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/301/762/042/5035/front_en.583.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 539,
+      "sugars": 56.3,
+      "saturatedFat": 10.6,
+      "salt": 0.11,
+      "proteins": 6.3
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Sucre, huile de palme, NOISETTES 13%, LAIT écrémé en poudre 8,7%, cacao maigre 7,4%, émulsifiants: lécithines [SOJA]; vanilline. Sans gluten"
+  },
+  {
+    "id": "tn-8410376009392",
+    "barcode": "8410376009392",
+    "name": "Sans sucres Fibre",
+    "brand": "gullón",
+    "category": "Biscuits",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/600/9392/front_en.104.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 431,
+      "sugars": 5,
+      "saturatedFat": 17,
+      "salt": 0.65,
+      "fiber": 9.3,
+      "proteins": 6.1
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Farine de _blé_ complet 57,5%, édulcorant (maltitol), huile de tournesol oléique 16,5%, fibre végétale 3,5%, fibre de pois 3,5%, poudre à lever (bicarbonate de sodium et d'ammonium), emulsifiant (lécithine de _soja_), sel, arômes."
+  },
+  {
+    "id": "tn-80176800",
+    "barcode": "80176800",
+    "name": "Nutella 750g",
+    "brand": "Nutella",
+    "category": "Schoko- und Haselnussaufstriche",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/000/008/017/6800/front_en.321.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 533,
+      "sugars": 56,
+      "saturatedFat": 10.7,
+      "salt": 1.07,
+      "fiber": 0,
+      "proteins": 6
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Sucre, graisse végétale, noisettes, lait écrémé en poudre, cacao maigre en poudre, émulsifiant (lécithine), soja, arôme"
+  },
+  {
+    "id": "tn-5449000000439",
+    "barcode": "5449000000439",
+    "name": "Coca Cola Original taste",
+    "brand": "Coca-Cola",
+    "category": "Cola sucré",
+    "origin": "États-Unis",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/544/900/000/0439/front_en.292.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 45,
+      "sugars": 11.2,
+      "saturatedFat": 0,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E150D",
+        "nameFr": "E150D",
+        "nameAr": "E150D",
+        "risk": "moderate",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E338",
+        "nameFr": "E338",
+        "nameAr": "E338",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifiée, sucre, colorant (caramel (E150d)), acidifiant(acide phosphorique), arômes, caféine"
+  },
+  {
+    "id": "tn-3045140105502",
+    "barcode": "3045140105502",
+    "name": "Chocolat au lait",
+    "brand": "Milka",
+    "category": "Tablette de chocolat au lait",
+    "origin": "Non indiqué",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/304/514/010/5502/front_fr.625.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 539,
+      "sugars": 55,
+      "saturatedFat": 19,
+      "salt": 0.28,
+      "fiber": 2.3,
+      "proteins": 6.5
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Sucre, Beurre de cacao, pâte de cacao, Lait écrémé en poudre, lactosérum en poudre (Lait), Beurre concentré, Émulsifiant (Lécithine de soja), Pâte de noisette, Arôme naturel"
+  },
+  {
+    "id": "tn-6111018501480",
+    "barcode": "6111018501480",
+    "name": "Nescafé classic",
+    "brand": "Nescafe",
+    "category": "Café instantané non sucré",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/611/101/850/1480/front_en.36.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "100% café soluble"
+  },
+  {
+    "id": "tn-5449000133328",
+    "barcode": "5449000133328",
+    "name": "Cocacola zero sugar",
+    "brand": "Coke ZERO",
+    "category": "Boissons sans sucre ajouté",
+    "origin": "Serbie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/544/900/013/3328/front_en.316.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.02,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E150D",
+        "nameFr": "E150D",
+        "nameAr": "E150D",
+        "risk": "moderate",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E331",
+        "nameFr": "E331",
+        "nameAr": "E331",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E338",
+        "nameFr": "E338",
+        "nameAr": "E338",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E950",
+        "nameFr": "E950",
+        "nameAr": "E950",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E951",
+        "nameFr": "E951",
+        "nameAr": "E951",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifiée, colorant E150d, acidifiants , acide phosphorique, citrate de sodium, édulcorants , aspartame, acésulfame-K, arômes naturels (extraits végétaux), dont caféine, Contient une source de phénylalanine,"
+  },
+  {
+    "id": "tn-7622210995087",
+    "barcode": "7622210995087",
+    "name": "chocolat noir noisettes entieres",
+    "brand": "cote d\\'or",
+    "category": "Chocolats noirs aux noisettes",
+    "origin": "Non indiqué",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/762/221/099/5087/front_fr.242.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 570,
+      "sugars": 40,
+      "saturatedFat": 16,
+      "salt": 0.01,
+      "fiber": 7.8,
+      "proteins": 7.3
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Sucre, pâte de cacao, NOISETTES (24%), beurre de cacao, BEURRE concentré, émulsifiant (lécithines de SOJA), arôme naturel de vanille, LAIT écrémé en poudre."
+  },
+  {
+    "id": "tn-54491472",
+    "barcode": "54491472",
+    "name": "coca-cola",
+    "brand": "Coca-Cola",
+    "category": "Colas",
+    "origin": "Kazakhstan, Великобритания",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/000/005/449/1472/front_en.774.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 44,
+      "sugars": 10.9,
+      "saturatedFat": 0,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E150D",
+        "nameFr": "E150D",
+        "nameAr": "E150D",
+        "risk": "moderate",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E290",
+        "nameFr": "E290",
+        "nameAr": "E290",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E338",
+        "nameFr": "E338",
+        "nameAr": "E338",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifiée, sucre, colorant : caramel (E150d), acidifiant : acide phosphorique, arômes, caféine."
+  },
+  {
+    "id": "tn-5449000131836",
+    "barcode": "5449000131836",
+    "name": "Zéro Sucre",
+    "brand": "Coca-Cola",
+    "category": "Diet cola soft drink",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/544/900/013/1836/front_en.673.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.05,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E150D",
+        "nameFr": "E150D",
+        "nameAr": "E150D",
+        "risk": "moderate",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E331",
+        "nameFr": "E331",
+        "nameAr": "E331",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E338",
+        "nameFr": "E338",
+        "nameAr": "E338",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E950",
+        "nameFr": "E950",
+        "nameAr": "E950",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E951",
+        "nameFr": "E951",
+        "nameAr": "E951",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E952",
+        "nameFr": "E952",
+        "nameAr": "E952",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifiée ; colorant : E150 ; acidifiant : acide phosphorique ; édulcorants : aspartame acesulfame-K ; arômes naturels dont caféine ; correcteur d'acidité : citrates de sodium."
+  },
+  {
+    "id": "tn-6132500711040",
+    "barcode": "6132500711040",
+    "name": "El Mordjene Crème De Noisettes Grillées",
+    "brand": "Cebon",
+    "category": "Produits laitiers",
+    "origin": "Algérie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/613/250/071/1040/front_fr.55.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 550,
+      "sugars": 52.2,
+      "saturatedFat": 9.9,
+      "salt": 0.16,
+      "fiber": 2.41,
+      "proteins": 8
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Sucre, graisse végétale, noisettes, lait écrémé en poudre, lactosérum, émulsifiants: lecithine de soja SIN322, arôme vanille."
+  },
+  {
+    "id": "tn-8410376037784",
+    "barcode": "8410376037784",
+    "name": "Sandwich Zero Sin Azúcares",
+    "brand": "Gullón",
+    "category": "Galletas de chocolate",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/603/7784/front_es.130.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 434,
+      "sugars": 4,
+      "saturatedFat": 7.4,
+      "salt": 0.58,
+      "fiber": 7.8,
+      "proteins": 7
+    },
+    "additives": [
+      {
+        "code": "E223",
+        "nameFr": "E223",
+        "nameAr": "E223",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soybeans",
+      "Sulphur-dioxide-and-sulphites"
+    ],
+    "ingredientsSummary": "Harina de _trigo_ 47%, crema de chocolate 37% (edulcorante (maltitol), grasa vegetal (palma), cacao desgrasado en polvo 12%, almidón de _trigo_, _leche_ desnatada en polvo, proteínas de la _leche_, emulgente (lecitina de _soja_), aroma), edulcorante (maltitol), aceite vegetal (girasol alto oleico), fibra vegetal, _leche_ desnatada en polvo, proteínas de la _leche_, gasificantes (carbonato ácido de sodio, carbonato ácido de amonio), sal, emulgente (lecitina de _soja_), aromas, antioxidante (metabisulfito sódico)."
+  },
+  {
+    "id": "tn-5053990101597",
+    "barcode": "5053990101597",
+    "name": "Sour Cream & Onion",
+    "brand": "Pringles",
+    "category": "en:Stacked extruded potato crisps",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/505/399/010/1597/front_en.55.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 517,
+      "sugars": 2.1,
+      "saturatedFat": 2.9,
+      "salt": 1.18,
+      "fiber": 3.5,
+      "proteins": 6.3
+    },
+    "additives": [
+      {
+        "code": "E160B",
+        "nameFr": "E160B",
+        "nameAr": "E160B",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E270",
+        "nameFr": "E270",
+        "nameAr": "E270",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E296",
+        "nameFr": "E296",
+        "nameAr": "E296",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E471",
+        "nameFr": "E471",
+        "nameAr": "E471",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E621",
+        "nameFr": "E621",
+        "nameAr": "E621",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E627",
+        "nameFr": "E627",
+        "nameAr": "E627",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E631",
+        "nameFr": "E631",
+        "nameAr": "E631",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ],
+    "ingredientsSummary": "Pommes de terre déshydratées, huiles végétales (tournesol, maïs), farine de riz, amidon de _blé_, assaisonnement crème acidulée et oignon (oignon en poudre, sucre, dextrose, lactosérum doux en poudre (_lait_), crème acidulée en poudre (_lait_, arômes (_lait_), sirop de glucose, fécule de pomme de terre, lactose (_lait_), protéines de _lait_, acidifiants (acide citrique, acide lactique, acide malique), extrait de levure), émulsifiant (E471), maltodextrine, sel."
+  },
+  {
+    "id": "tn-5285000396437",
+    "barcode": "5285000396437",
+    "name": "Nouilles Instantanées Goût Boeuf",
+    "brand": "indomie",
+    "category": "Nouilles instantanées",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/528/500/039/6437/front_en.49.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 442,
+      "sugars": 4,
+      "saturatedFat": 8,
+      "salt": 4,
+      "fiber": 4,
+      "proteins": 10
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": ""
+  },
+  {
+    "id": "tn-0089686120110",
+    "barcode": "0089686120110",
+    "name": "Indomie Goût Crevette",
+    "brand": "indomie",
+    "category": "en:Instant noodles",
+    "origin": "إندونيسيا",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/008/968/612/0110/front_fr.48.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 448,
+      "sugars": 3,
+      "saturatedFat": 7,
+      "salt": 4.5,
+      "fiber": 4,
+      "proteins": 9
+    },
+    "additives": [
+      {
+        "code": "E319",
+        "nameFr": "E319",
+        "nameAr": "E319",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E412",
+        "nameFr": "E412",
+        "nameAr": "E412",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E452",
+        "nameFr": "E452",
+        "nameAr": "E452",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E452I",
+        "nameFr": "E452I",
+        "nameAr": "E452I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500I",
+        "nameFr": "E500I",
+        "nameAr": "E500I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E501",
+        "nameFr": "E501",
+        "nameAr": "E501",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E501I",
+        "nameFr": "E501I",
+        "nameAr": "E501I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E502",
+        "nameFr": "E502",
+        "nameAr": "E502",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E621",
+        "nameFr": "E621",
+        "nameAr": "E621",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "de Blé tendre, huile s (94,0%) de palme, sel, Stabilisateurs : carbonate assium (E501i), polyphosphate de sodium (E500i), Épaississant : V(E412), Colorant : B2 ânüoxydant : TBHQ (E319). Sel, d'assaisonnement (5.6%) exhausteur de gout (E621), aroma du exfrait de levure, poudre d'ail, piment (0.4%)."
+  },
+  {
+    "id": "tn-7613287366665",
+    "barcode": "7613287366665",
+    "name": "Nesquik Cereal",
+    "brand": "Nesquik",
+    "category": "Cacaos et chocolats en poudre",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/761/328/736/6665/front_fr.22.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 373,
+      "sugars": 22.4,
+      "saturatedFat": 0.9,
+      "salt": 0.45,
+      "fiber": 8.5,
+      "proteins": 8.4
+    },
+    "additives": [
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "whole grain wheat flour, sugar, maize semolina, wheat bran, fat-reduced cocoa powder, calcium carbonate, salt, raising agent (sodium bicarbonate), oil (sunflower), malt extract (barley), vitamins (niacin, pantothenic acid, B6, riboflavin (B2), thiamin (B1), folic acid), iron"
+  },
+  {
+    "id": "tn-8000500037560",
+    "barcode": "8000500037560",
+    "name": "Kinder Bueno",
+    "brand": "Kinder",
+    "category": "Chocolate biscuity bars",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/800/050/003/7560/front_en.298.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E502",
+        "nameFr": "E502",
+        "nameAr": "E502",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Chocolat au LAIT 31,5% (sucre, beurre de cacao, pâte de cacao, LAIT écrémé en poudre, BEURRE concentré, émulsifiants : lécithines [SOJA]; vanilline), sucre, huile de palme, farine de FROMENT, NOISETTES broyées 10,8%, LAIT écrémé en poudre 8,5%, LAIT en poudre 5,5%, chocolat noir (sucre, pâte de cacao, beurre de cacao, émulsifiants : lécithines [SOJA] ; vanilline), cacao maigre, émulsifiants : lécithines [SOJA]; poudres à lever: carbonate acide de sodium; sel, vanilline. Sur le total : produits laitiers 19,5 %. Le chocolat utilisé est un chocolat pur beurre de cacao."
+  },
+  {
+    "id": "tn-8410376009408",
+    "barcode": "8410376009408",
+    "name": "Doradas al horno zero sin azúcares",
+    "brand": "GALLETAS GULLON S.A.",
+    "category": "Biscuits",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/600/9408/front_es.181.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 429,
+      "sugars": 0.5,
+      "saturatedFat": 1.5,
+      "salt": 0.4,
+      "fiber": 4,
+      "proteins": 6
+    },
+    "additives": [
+      {
+        "code": "E502",
+        "nameFr": "E502",
+        "nameAr": "E502",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E953",
+        "nameFr": "E953",
+        "nameAr": "E953",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "wheat flour 62%, vegetable oils (high oleic sunflower 18%, sunflower), sweeteners (maltitol and isomalt), oligofructose, raising agents (sodium acid carbonate and ammonium acid carbonate), salt, flavouring, pea protein, dextrose, maltodextrin, starch,"
+  },
+  {
+    "id": "tn-90162602",
+    "barcode": "90162602",
+    "name": "Red Bull Energy Drink",
+    "brand": "Red Bull",
+    "category": "Sodas",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/000/009/016/2602/front_en.151.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 46,
+      "sugars": 11,
+      "saturatedFat": 0,
+      "salt": 0.1,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E101",
+        "nameFr": "E101",
+        "nameAr": "E101",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E101I",
+        "nameFr": "E101I",
+        "nameAr": "E101I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E150",
+        "nameFr": "E150",
+        "nameAr": "E150",
+        "risk": "moderate",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E290",
+        "nameFr": "E290",
+        "nameAr": "E290",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E504",
+        "nameFr": "E504",
+        "nameAr": "E504",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E504I",
+        "nameFr": "E504I",
+        "nameAr": "E504I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Water, Sucrose, Glucose, Acidifier (Citric Acid), Carbon Dioxide, Taurine (0.4%), Acidity Regulators (Sodium Bicarbonate, Magnesium Carbonate), Flavourings, Colours (Caramel, Riboflavin), Caffeine (0.03%), Vitamins (Niacin, Pantothenic Acid, B6, B12)."
+  },
+  {
+    "id": "tn-0089686120073",
+    "barcode": "0089686120073",
+    "name": "indoumi goût poulet",
+    "brand": "indomie",
+    "category": "Instant noodles",
+    "origin": "Saudi Arabia",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/008/968/612/0073/front_en.118.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 453,
+      "sugars": 2.9,
+      "saturatedFat": 8.6,
+      "salt": 4.6,
+      "fiber": 2.86,
+      "proteins": 11.42
+    },
+    "additives": [
+      {
+        "code": "E101",
+        "nameFr": "E101",
+        "nameAr": "E101",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E101I",
+        "nameFr": "E101I",
+        "nameAr": "E101I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E319",
+        "nameFr": "E319",
+        "nameAr": "E319",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E412",
+        "nameFr": "E412",
+        "nameAr": "E412",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E452",
+        "nameFr": "E452",
+        "nameAr": "E452",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E452I",
+        "nameFr": "E452I",
+        "nameAr": "E452I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500I",
+        "nameFr": "E500I",
+        "nameAr": "E500I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E501",
+        "nameFr": "E501",
+        "nameAr": "E501",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E501I",
+        "nameFr": "E501I",
+        "nameAr": "E501I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Nouilles (94.2%): Farine de blé tendre, huile végétale de palme, sel, Stabilisateurs : carbonate de potassium (E501i), polyphosphate de sodium (E452i), carbonate sodium (E500i), Épaississant : Colorant : guar gum (E412), Riboflavine/Vitamine B2 (E101), Antioxydant: TBHQ (E319). Poudre d'assaisonnement (5.4%): Sucre, sel, extrait de levure, poudre d'ail, poivre, arôme artificiel de poulet, poudre de gingembre, Poudre de piment (0.4%)."
+  },
+  {
+    "id": "tn-5900617012197",
+    "barcode": "5900617012197",
+    "name": "Masło orzechowe",
+    "brand": "Sante",
+    "category": "en:Creamy peanut butters",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/590/061/701/2197/front_en.28.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 616,
+      "sugars": 9,
+      "saturatedFat": 8.8,
+      "salt": 0.73,
+      "fiber": 6.9,
+      "proteins": 24
+    },
+    "additives": [],
+    "allergens": [
+      "Peanuts"
+    ],
+    "ingredientsSummary": "Prażone orzeszki arachidowe 90%, cukier, olej słonecznikowy, całkowicie utwardzony olej rzepakowy, olej rzepakowy, sól."
+  },
+  {
+    "id": "tn-8410376026979",
+    "barcode": "8410376026979",
+    "name": "Digestive Muesli",
+    "brand": "Gullón",
+    "category": "Galletas de avena",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/602/6979/front_es.89.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 462,
+      "sugars": 21,
+      "saturatedFat": 2,
+      "salt": 0.7,
+      "fiber": 7,
+      "proteins": 7.5
+    },
+    "additives": [
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E422",
+        "nameFr": "E422",
+        "nameAr": "E422",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E440",
+        "nameFr": "E440",
+        "nameAr": "E440",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Harina integral de trigo 50%, aceite vegetal (girasol alto oleico) 16,5%, azúcar, trozos de soja caramelizada 5,5% (semillas de soja, azúcar), copos de avena 5%, jarabe de glucosa y fructosa, pasas 2%, preparado de albaricoque 2% [jarabe de fructosa y glucosa, concentrado de puré de albaricoque, jarabe de glucosa, humectante (glicerol), azúcar, fibra de trigo, gelificante (pectina), aceite vegetal (girasol), corrector de acidez (ácido citrico), aromas), gasificantes (carbonato ácido de sodio, carbonato ácido de amonio), sal, y aroma de melocotón, Puede contener trazas de leche, Alto contenido en fibra,"
+  },
+  {
+    "id": "tn-8410376042498",
+    "barcode": "8410376042498",
+    "name": "Diet nature galletas de desayuno con cereales",
+    "brand": "Gullón",
+    "category": "en:Biscuit with reduced sugar",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/604/2498/front_en.58.400.jpg",
+    "score": {
+      "value": 79,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 79,
+      "additivesScore": 79,
+      "confidence": 90
+    },
+    "nutriScore": "b",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 410,
+      "sugars": 1.4,
+      "saturatedFat": 1.3,
+      "salt": 0.65,
+      "fiber": 9.8,
+      "proteins": 6.8
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Wholegrains 48% (whole wheat Flour, oat flakes, whole barley flour, whole rye flour), sweetener (maltitol), wegetable oil 13 % (high oleic sunflower oil), wheat flour 10%, vegetable fibre, ouffed rice 4% (rice flour, wheat flour, salt), skimmed milk powder 1%, raising gents (sodium and ammonium hydrogen carbonate), emulsifier (soya lecithin), alt, flavours. High fibre. May contain traces of nuts and eggs. Keep cool and ry. Protect from sunlight. Once opened, keep in the same conditions and close fter each use. (PT) BOLACHA COM CEREAIS INTEGRAIS SEM ADIÇÃO DE ÇÚCARES E COM EDULCORANTE. Ingredientes: Cereais integrais 48% arinha integral de trigo, flocos d'aveia, farinha integral de cevada, farinha tegral de centeio), edulcorante (maltitol), óleo vegetal 13 % (óleo de girassol e alto teor oleico), farinha de trigo 10%, fibra vegetal, arroz tufado 4% (farinha arroz, farinha de trigo, sal), leite magro em pó 1%, levedantes drogenocarbonato de sódio e de amónio), emulsionante (lecitina de soja), sal, omas. Rico em fibras. Pode conter vestígios de frutos secos e ovos. mazenar em local fresco e seco. Preservar dos raios solares. Uma vez aberto, anter nas mesmas condições e fechar depois de cada uso. (HU) KEKSZ LJES KIORLÉSŰ GABONÁVAL, CUKOR HOZZÁADÁSÀ NÉLKÜL, ESÍTŐSZER. Osszetevők: a teljes kiőrlésű gabonák 48% (teljes kiőrlésű zaliszt, zabpehely, teljes kiőrlésű árpa liszt, teljes kiőrlésű rozsliszt), sítőszer (maltitol), (magas olajsavtartalmú) 13% napraforgó olaj, búzaliszt o, növényi rost, puffasztott rizs 4% (rizsliszt, búzaliszt, étkezési só), 1% ány tejpor, térfogatnövelő szer (nátrium-hidrogén-karbonát és mónium-hidrogén-karbonát), emulgeálószer (szójalectin), só, aroma. Élelmi ban gazdag. Nyomokban tojást és dióféléket tartalmazhat. Napfénytől we, száraz, hűvös helyen tárolandó. Felbontás után a csomagolás zazárandó és az előírt körülmények közt tárolandó. Información Nutricional/Nutrition Facts /Informação Nutricional/ Átlagos tápérték /ás1á) iyl 100g Valor Energético / Energy /Energia /Energia/ 3lal) Grasas / Fat/Lipidos / Zsír / u g de las cuales/ of which /dos quais /Amelyből / 4sio Saturadas / Saturates/Saturados/ Telített zsírsavak / issans Monoinsaturadas/Mono-unsaturates/Monoinsaturados / Egyszeresen telítetlen zsírsavak/ Poliinsaturadas/ Polyunsaturates /Polinsaturados/ Töbszörősen telítetlen zsírsavak / * saiall aia all ciolka Hidratos de Carbono / Carbohydrate /Hidratos de carbono / Szénhidrát/ sle 65 g de los cuales/ of which / dos quais / Amelyből / kis Azúcares / Sugars / Açúcares/ Cukrok/S Fibra alimentaria / Fibre / Fibra / Rost/lll GyI Proteínas / Protein / Proteínas / Fehérje / li Sal / Salt/Sal /Só / 1719 kJ/"
+  },
+  {
+    "id": "tn-8410376010701",
+    "barcode": "8410376010701",
+    "name": "Diet Nature María sin azúcares",
+    "brand": "gullón",
+    "category": "Botanas",
+    "origin": "España",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/601/0701/front_en.127.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 408,
+      "sugars": 0.5,
+      "saturatedFat": 1.3,
+      "salt": 1.02,
+      "fiber": 0,
+      "proteins": 7
+    },
+    "additives": [
+      {
+        "code": "E223",
+        "nameFr": "E223",
+        "nameAr": "E223",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Soybeans",
+      "Sulphur-dioxide-and-sulphites"
+    ],
+    "ingredientsSummary": "Farine de blé 67%, édulcorant (maltitol), huile de tournesol oléique 10%, fibre végétale, poudre à lever (carbonate acide de sodium, carbonate acide d'ammonium, sel, émulsifiant : (lécithine de soja), arômes, antioxydant : (métabisulpfite de sodium)."
+  },
+  {
+    "id": "tn-5449000052926",
+    "barcode": "5449000052926",
+    "name": "Fanta orange 1.5l",
+    "brand": "Fanta",
+    "category": "Orange soft drinks",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/544/900/005/2926/front_en.83.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 48,
+      "sugars": 11.7,
+      "saturatedFat": 0,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E300",
+        "nameFr": "E300",
+        "nameAr": "E300",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifiée, sucre, acidifiant : acide citrique, émulsifiants (E414, E444, E445), conservateur : benzoate de sodium, arômes, édulcorant : glycosides de stéviol (extrait de stevia rebaudiana), colorants : jaune orangé s et azorubine antioxydant : acide ascorbique."
+  },
+  {
+    "id": "tn-5900617003454",
+    "barcode": "5900617003454",
+    "name": "Peanut Butter Crunchy",
+    "brand": "Délices Terra",
+    "category": "Masło z orzeszków ziemnych",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/590/061/700/3454/front_en.24.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 594,
+      "sugars": 6.2,
+      "saturatedFat": 27.5,
+      "salt": 2.24,
+      "fiber": 21.5625,
+      "proteins": 75
+    },
+    "additives": [],
+    "allergens": [
+      "Peanuts",
+      "Pl:Orzeszki",
+      "Pl:orzeszki"
+    ],
+    "ingredientsSummary": "Arachides grillées (91%), huile végétale, sel, emulsifiant."
+  },
+  {
+    "id": "tn-5285000397465",
+    "barcode": "5285000397465",
+    "name": "Indomie",
+    "brand": "indomie",
+    "category": "en:Instant noodles",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/528/500/039/7465/front_ar.21.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 437,
+      "sugars": 1.4,
+      "saturatedFat": 15,
+      "salt": 0,
+      "proteins": 10
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "protéines végétales, huile végétale, épices, arôme, sucre, sel"
+  },
+  {
+    "id": "tn-8410376023831",
+    "barcode": "8410376023831",
+    "name": "Diet Nature Digestive sin azúcares",
+    "brand": "gullón",
+    "category": "Galletas",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/602/3831/front_en.74.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 430,
+      "sugars": 0.5,
+      "saturatedFat": 1.5,
+      "salt": 0.88,
+      "fiber": 6.5,
+      "proteins": 6.2
+    },
+    "additives": [
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E953",
+        "nameFr": "E953",
+        "nameAr": "E953",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "wheat flour 65,5%, sweeteners (isomalt, maltitol), vegetable oil (sunflower high oleic) was 15,5%, vegetable fibre, raising agents (hydrogen carbonate sodium and ammonium), salt,"
+  },
+  {
+    "id": "tn-5999884034469",
+    "barcode": "5999884034469",
+    "name": "HELL ENERGY DRINK CLASSIC",
+    "brand": "Hell",
+    "category": "en:Energy drink with sugar",
+    "origin": "Rumania",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/599/988/403/4469/front_en.61.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 46,
+      "sugars": 11,
+      "saturatedFat": 0,
+      "salt": 0.5,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E101",
+        "nameFr": "E101",
+        "nameAr": "E101",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E101I",
+        "nameFr": "E101I",
+        "nameAr": "E101I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Soybeans"
+    ],
+    "ingredientsSummary": "esumle Sever joutses, boisson sans alcoo. Pasteursbe ingrent s su 06 G ne, corecteur dacidité ctrate de sodium, caffine aroma, coloran t ammoniacal vitamines: niacin (B3), paniolherique (B5 pyicoine B nse ba zenfants et au meea iantos (calbne 32mg/100m). Mélanger avec de l'alcool déconsenet Ne pasdenasser une caneha tar r.260tde boson contient B0mg de caleine, équivalente à une tasse de café espresso. La caféine contribue á augmenter a ca c Servir frais"
+  },
+  {
+    "id": "tn-3564700010846",
+    "barcode": "3564700010846",
+    "name": "Chocolat dessert pâtissier",
+    "brand": "Marque Repère",
+    "category": "Chocolat noir à moins de 70% de cacao en tablette",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/356/470/001/0846/front_fr.92.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 513,
+      "sugars": 48,
+      "saturatedFat": 18,
+      "salt": 0,
+      "fiber": 8,
+      "proteins": 5
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Pâte de cacao, sucre, beurre de cacao, émulsifiant : lécithines (tournesol), arôme.\r\nTraces de fruits à coque, lait et gluten. \r\nCacao : 52 % minimum."
+  },
+  {
+    "id": "tn-8410376043686",
+    "barcode": "8410376043686",
+    "name": "Traditional Roll Oats Biscuits",
+    "brand": "gullón",
+    "category": "Biscotti",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/604/3686/front_en.50.400.jpg",
+    "score": {
+      "value": 79,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 79,
+      "additivesScore": 79,
+      "confidence": 90
+    },
+    "nutriScore": "b",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 446,
+      "sugars": 1,
+      "saturatedFat": 2,
+      "salt": 0.65,
+      "fiber": 14,
+      "proteins": 7.8
+    },
+    "additives": [
+      {
+        "code": "E1200",
+        "nameFr": "E1200",
+        "nameAr": "E1200",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E306",
+        "nameFr": "E306",
+        "nameAr": "E306",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E502",
+        "nameFr": "E502",
+        "nameAr": "E502",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Energia,Grassi,di cui/de las cuales,carboidrati,Hidratos de carbono,Di cui de Los cuales,zuccheri,azúcares,fibre/fibra alimentaria,protéine/protéines,sale,sal,salt"
+  },
+  {
+    "id": "tn-8410376039979",
+    "barcode": "8410376039979",
+    "name": "Cuor di cereale cioccolato",
+    "brand": "gullón",
+    "category": "Biscotti al cioccolato",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/603/9979/front_en.69.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 438,
+      "sugars": 22,
+      "saturatedFat": 4,
+      "salt": 0.98,
+      "fiber": 10,
+      "proteins": 7.8
+    },
+    "additives": [
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Farina integrale 17,5% (frumento, orzo, segale), farina di frumento 13,5%, zucchero, gocce di cioccolato nero 10% (zucchero, pasta di cacao, burro di cacao, emulsionante (lecitina di soia), aromi), olio vegetale (girasole altamente oleicol 9%, so soffiato 9% arma di gulined menta, mud frumento, zucchero, sale, destrusio), frumento soffiato 9% (farina di frumento, zucchero, malto di frumento, amido di frumento, agente lievitante (carbonato acido di sodio), sale, burro di cacao, aroma), fibra vegetale, fiocchi di avena 6%, cioccolato al latte 5% (zucchero, burro di cacao, pasta di cacao, latte in polvere, sed in polvet, ente (lecitina di soia), aromi), cacao in polvere, agenti lievitanti (carbonato acido di sodio, carbonato acido di ammonio), aromi, sale,"
+  },
+  {
+    "id": "tn-6194039501011",
+    "barcode": "6194039501011",
+    "name": "Eau minérale naturelle",
+    "brand": "Hayet",
+    "category": "Eau minérale naturelle non gazeuse",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/403/950/1011/front_en.58.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Eau Minérale Naturelle."
+  },
+  {
+    "id": "tn-8410376029079",
+    "barcode": "8410376029079",
+    "name": "Ronditas 32% Chocolate",
+    "brand": "Gullón",
+    "category": "Galletas",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/037/602/9079/front_es.91.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 469,
+      "sugars": 0.5,
+      "saturatedFat": 9,
+      "salt": 0.53,
+      "fiber": 4,
+      "proteins": 7
+    },
+    "additives": [
+      {
+        "code": "E160A",
+        "nameFr": "E160A",
+        "nameAr": "E160A",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E160AI",
+        "nameFr": "E160AI",
+        "nameAr": "E160AI",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E502",
+        "nameFr": "E502",
+        "nameAr": "E502",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Farine de blé 43%, chocolat noir avec édulcorant 32% [pâte de cacao, édulcorant (maltitol), beurre de cacao, matière grasse laitière anhydre (lait), émulsifiant (lécithines)], huile végétale 12% (huile de tournesol oléique), édulcorant (maltitol), poudre à lever (carbonate acide de sodium), sel, arôme naturel, émulsifiant (lécithine de soja), arôme, colorant (B-carotène). Il peut contenir des traces de fruits à coque. Source de fibres."
+  },
+  {
+    "id": "tn-40822938",
+    "barcode": "40822938",
+    "name": "PET 50CL FANTA ORANGE",
+    "brand": "Fanta",
+    "category": "Băuturi îndulcite artificial",
+    "origin": "Franța",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/000/004/082/2938/front_en.164.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 19,
+      "sugars": 4.4,
+      "saturatedFat": 0,
+      "salt": 0.01,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E160A",
+        "nameFr": "E160A",
+        "nameAr": "E160A",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E160AI",
+        "nameFr": "E160AI",
+        "nameAr": "E160AI",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E290",
+        "nameFr": "E290",
+        "nameAr": "E290",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E300",
+        "nameFr": "E300",
+        "nameAr": "E300",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E412",
+        "nameFr": "E412",
+        "nameAr": "E412",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifiée, jus d'orange à base de concentré (10%), sucre, jus de citron à base de concentré (2%), conservateur : sorbate de potassium, arômes naturels d'orange avec autres arômes naturels, édulcorants : acésulfame-K, sucralose , stabilisant : gomme de guar, colorant : caroténoïdes,"
+  },
+  {
+    "id": "tn-7613037792935",
+    "barcode": "7613037792935",
+    "name": "Nan Optipro 1",
+    "brand": "Nestlé",
+    "category": "Laits",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/761/303/779/2935/front_fr.3.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0
+    },
+    "additives": [],
+    "allergens": []
+  },
+  {
+    "id": "tn-4008400401829",
+    "barcode": "4008400401829",
+    "name": "Nutella",
+    "brand": "Nutella",
+    "category": "Frühstücke",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/400/840/040/1829/front_en.134.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 539,
+      "sugars": 56.3,
+      "saturatedFat": 10.6,
+      "salt": 0.11,
+      "fiber": 2.1,
+      "proteins": 6.3
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Sucre, huile de palme, _NOISETTES_ 13%, _LAIT_ écrémé en poudre 8,7%, cacao maigre 7,4%, émulsifiants: lécithines [_SOJA_]; vanilline."
+  },
+  {
+    "id": "tn-5900020043306",
+    "barcode": "5900020043306",
+    "name": "Lion Caramel & Chocolate",
+    "brand": "Nestlé",
+    "category": "Céréales pour petit-déjeuner",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/590/002/004/3306/front_en.22.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0
+    },
+    "additives": [],
+    "allergens": []
+  },
+  {
+    "id": "tn-6191496000026",
+    "barcode": "6191496000026",
+    "name": "Eau minérale naturelle",
+    "brand": "délice",
+    "category": "Eaux minérales naturelles",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/149/600/0026/front_en.40.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.02
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Eau minérale naturelle."
+  },
+  {
+    "id": "tn-6194043001019",
+    "barcode": "6194043001019",
+    "name": "Lait demi-écrémé UHT",
+    "brand": "Délice",
+    "category": "Laits demi-écrémés UHT",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/404/300/1019/front_fr.22.400.jpg",
+    "score": {
+      "value": 79,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 79,
+      "additivesScore": 79,
+      "confidence": 90
+    },
+    "nutriScore": "b",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 44,
+      "sugars": 4.5,
+      "saturatedFat": 1.1,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 3
+    },
+    "additives": [
+      {
+        "code": "E339",
+        "nameFr": "E339",
+        "nameAr": "E339",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "lait, E339"
+  },
+  {
+    "id": "tn-7613031370641",
+    "barcode": "7613031370641",
+    "name": "Céréales Lion caramel et chocolat",
+    "brand": "Nestlé",
+    "category": "Chocolate cereals",
+    "origin": "France",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/761/303/137/0641/front_en.69.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 407,
+      "sugars": 24.5,
+      "saturatedFat": 1.1,
+      "salt": 0.48,
+      "fiber": 7,
+      "proteins": 8.1
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk"
+    ],
+    "ingredientsSummary": "BLE entier (41%), Farine de BLE, Sucre, Sirop de glucose, Huile végétale non hydrogénée (tournesol), Cacao réduit en matière grasse en poudre (1,7%), Calcium, Pâte de cacao, Sel, Arôme Naturel Chocolat Caramel, Arôme Naturel goût Vanille, émulsifiant: lécithine (d'origine végétale), Sirop de sucre caramélisé, Fer, Vitamines: Niacine (B3), Acide pantothénique (B5), Riboflavine (B2), Vitamine B6, Thiamine (B1), Acide folique (B9), Vitamine D. Contient des céréales contenant du GLUTEN. Peut contenir du LAIT de vache et des FRUITS COQUE اسم المنتح ليون"
+  },
+  {
+    "id": "tn-8437000906797",
+    "barcode": "8437000906797",
+    "name": "Wraps ble complet",
+    "brand": "Mission",
+    "category": "Flatbreads",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/843/700/090/6797/front_en.19.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 301,
+      "sugars": 1.5,
+      "saturatedFat": 3.8,
+      "salt": 0,
+      "fiber": 9.8,
+      "proteins": 9.7
+    },
+    "additives": [
+      {
+        "code": "E202",
+        "nameFr": "E202",
+        "nameAr": "E202",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E281",
+        "nameFr": "E281",
+        "nameAr": "E281",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E296",
+        "nameFr": "E296",
+        "nameAr": "E296",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E422",
+        "nameFr": "E422",
+        "nameAr": "E422",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E450",
+        "nameFr": "E450",
+        "nameAr": "E450",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E466",
+        "nameFr": "E466",
+        "nameAr": "E466",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E471",
+        "nameFr": "E471",
+        "nameAr": "E471",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E920",
+        "nameFr": "E920",
+        "nameAr": "E920",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "Wholemeal wheat flour, water, vegetable fat, palm oil, stabilisers E 422, E 466, gluten, salt, acidity regulator E 296, emulsifier E 471, raising agents E 500, E 450, preservatives E 281, E 202, flour treatment agent E 920"
+  },
+  {
+    "id": "tn-5285000396819",
+    "barcode": "5285000396819",
+    "name": "Poulet citron",
+    "brand": "indomie",
+    "category": "Nouilles instantanées",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/528/500/039/6819/front_fr.3.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 447,
+      "sugars": 2.9,
+      "saturatedFat": 7.1,
+      "salt": 1.82,
+      "fiber": 2.85714285714286,
+      "proteins": 10
+    },
+    "additives": [
+      {
+        "code": "E101",
+        "nameFr": "E101",
+        "nameAr": "E101",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E101I",
+        "nameFr": "E101I",
+        "nameAr": "E101I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E319",
+        "nameFr": "E319",
+        "nameAr": "E319",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E412",
+        "nameFr": "E412",
+        "nameAr": "E412",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E452",
+        "nameFr": "E452",
+        "nameAr": "E452",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E452I",
+        "nameFr": "E452I",
+        "nameAr": "E452I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500I",
+        "nameFr": "E500I",
+        "nameAr": "E500I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E501",
+        "nameFr": "E501",
+        "nameAr": "E501",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E501I",
+        "nameFr": "E501I",
+        "nameAr": "E501I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E621",
+        "nameFr": "E621",
+        "nameAr": "E621",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Celery",
+      "Gluten"
+    ],
+    "ingredientsSummary": "Farine de blé tendre, huile de palme végétale, sel, carbonate de potassium (E501i), carbonate de sodium (E500ii), polyphosphate de sodium (E452i), gomme de guar (E412), riboflavine/vitamine B2 (E101), TBHQ (E319), sel, exhausteur de goût (E621), sucre, poudre de poulet, poudre de poivre blanc, poudre d'ail, poudre d'oignon, acide citrique, arôme de citron, poudre de curcuma, poudre de céleri, poudre de piment"
+  },
+  {
+    "id": "tn-6194007510014",
+    "barcode": "6194007510014",
+    "name": "eau minérale naturelle",
+    "brand": "Sabrine",
+    "category": "Boissons sans sucre ajouté",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/751/0014/front_fr.39.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.01
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Eau minérale naturelle"
+  },
+  {
+    "id": "tn-6191475200010",
+    "barcode": "6191475200010",
+    "name": "eau minérale naturelle",
+    "brand": "TIJEN WATER",
+    "category": "Boissons sans alcool",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/147/520/0010/front_fr.8.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "EAU MINERALE NATURELLE."
+  },
+  {
+    "id": "tn-5449000006271",
+    "barcode": "5449000006271",
+    "name": "Fanta orange",
+    "brand": "Fanta",
+    "category": "Sodas à l'orange",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/544/900/000/6271/front_fr.91.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 48,
+      "sugars": 11.7,
+      "saturatedFat": 0,
+      "salt": 0,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E202",
+        "nameFr": "E202",
+        "nameAr": "E202",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E300",
+        "nameFr": "E300",
+        "nameAr": "E300",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E331",
+        "nameFr": "E331",
+        "nameAr": "E331",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E412",
+        "nameFr": "E412",
+        "nameAr": "E412",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau pétillante , sucre , jus d'orange à base de concentré (6%) , acidifiants , acide citrique, citrate de sodium , conservateur : sorbate de potassium , arômes naturels d'orange avec autres arômes naturels , antioxydant : acide ascorbique , concentré de carottes , stabilisant : gomme de guar,"
+  },
+  {
+    "id": "tn-6194043001668",
+    "barcode": "6194043001668",
+    "name": "Lait demi écrémé UHT",
+    "brand": "délice",
+    "category": "Laits demi-écrémés UHT",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/404/300/1668/front_fr.58.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 44,
+      "sugars": 4.5,
+      "saturatedFat": 0,
+      "salt": 0,
+      "proteins": 3
+    },
+    "additives": [],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "Ce lait est produit selon le procédé UHT. Il peut se conserver à une température ambiante. Tenir au frais et au sec"
+  },
+  {
+    "id": "tn-6111018903208",
+    "barcode": "6111018903208",
+    "name": "Nescafé classic",
+    "brand": "Nescafe",
+    "category": "Boissons",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/611/101/890/3208/front_fr.24.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": ""
+  },
+  {
+    "id": "tn-6194001800111",
+    "barcode": "6194001800111",
+    "name": "Safia",
+    "brand": "Safia",
+    "category": "Eaux gazeuses",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/180/0111/front_fr.81.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.01
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Eau minérale naturelle."
+  },
+  {
+    "id": "tn-3387390326468",
+    "barcode": "3387390326468",
+    "name": "Chocolat au Lait",
+    "brand": "Nestlé",
+    "category": "Copos de cereales con chocolate",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/338/739/032/6468/front_es.216.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 396,
+      "sugars": 17.5,
+      "saturatedFat": 4,
+      "salt": 0.49,
+      "fiber": 9.1,
+      "proteins": 8.6
+    },
+    "additives": [
+      {
+        "code": "E1200",
+        "nameFr": "E1200",
+        "nameAr": "E1200",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E306",
+        "nameFr": "E306",
+        "nameAr": "E306",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E414",
+        "nameFr": "E414",
+        "nameAr": "E414",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "TRIGO integral (50%), arroz (28,2%), chocolate con LECHE (14,8 %) (azúcar, manteca de cacao*, LECHE entera en polvo, cacao*, suero de LECHE en polvo, emulgente (lecitina de SOJA), aroma natural de vainilla), azúcar, chocolate (3,7%) (cacao*, azúcar, manteca de cacao*, emulgente (lecitina de SOJA), aroma natural de vainilla), oligofructosa, jarabe de azúcar invertido, carbonato cálcico, extracto de malta de CEBADA, sal, aceite de girasol, agente de recubrimiento (goma arábiga, polidextrosa), melazas, jarabe de glucosa, hierro, antioxidante (extracto rico en tocoferoles), ácido pantoténico, niacina, riboflavina, ácido fólico, vitamina B6. Puede contener FRUTOS DE CÁSCARA. *Certificado Rainforest Alliance. Más información en ra.org"
+  },
+  {
+    "id": "tn-6191534200081",
+    "barcode": "6191534200081",
+    "name": "Eau minérale naturelle",
+    "brand": "jannet",
+    "category": "Boissons sans sucre ajouté",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/153/420/0081/front_en.64.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.01,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Eau minérale naturelle"
+  },
+  {
+    "id": "tn-3387390339499",
+    "barcode": "3387390339499",
+    "name": "Fitness Original",
+    "brand": "Nestlé",
+    "category": "gemischte Getreideflocken",
+    "origin": "Frankreich, Europäische Union",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/338/739/033/9499/front_en.211.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 366,
+      "sugars": 8.8,
+      "saturatedFat": 0.6,
+      "salt": 0.56,
+      "fiber": 10.7,
+      "proteins": 9.4
+    },
+    "additives": [
+      {
+        "code": "E306",
+        "nameFr": "E306",
+        "nameAr": "E306",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "61,1 % BLÉ complet, riz, sucre, fructo-oligosaccharides, sirop de sucre inverti, carbonate de calcium, extrait de malt d'ORGE, huile de tournesol, sel, mélasse, arômes naturels, fer, antioxydant (extrait riches en tocopherols), acide pantothénique, niacine, riboflavine (vit. B2), acide folique, vitamine B6. Peut contenur du LAIT et des FRUITS À COQUE. ** **CH: AMANDES, NOISETTES, NOIX, NOIX DE CAJOU, NOIX DE PÉCAN, NOIX DU BRÉSIL, PISTACHES, NOIX DE MACADAMIA."
+  },
+  {
+    "id": "tn-6194055500135",
+    "barcode": "6194055500135",
+    "name": "Double Concentré de Tomates",
+    "brand": "Sicam",
+    "category": "Tomates",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/405/550/0135/front_fr.86.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 84,
+      "sugars": 13.8,
+      "saturatedFat": 0.2,
+      "salt": 0.13,
+      "fiber": 3.8,
+      "proteins": 3.9
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Tomates"
+  },
+  {
+    "id": "tn-5900617002266",
+    "barcode": "5900617002266",
+    "name": "Musli Sante Traditinal",
+    "brand": "Sante",
+    "category": "Мюсли с фруктами",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/590/061/700/2266/front_en.7.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 357,
+      "sugars": 12,
+      "saturatedFat": 0.8,
+      "salt": 0.25,
+      "fiber": 11,
+      "proteins": 12
+    },
+    "additives": [],
+    "allergens": [
+      "Apple",
+      "Gluten",
+      "Pl:Jęczmienne"
+    ],
+    "ingredientsSummary": "Wholegrain flakes 82 % [oat flakes 44,3 %, barley flakes 23%, corn flakes 9,4% (corn grits, unrefined cane sugar, sea salt, cane molasses), fibre sticks 4,3% (wheat bran 2,4%, wholegrain flour 0,86%, oat flakes 0,6%, barley grits 0,4%, wholegrain buckwheat flour 0,04%, sea salt), rice-fruit flakes 1% (rice, concentrated fruit juice (apple, cherry), natural flavour)], dried fruits 18% [raisin, date (date, nice flour), apple may contain soy, milk and nuts."
+  },
+  {
+    "id": "tn-6191507220214",
+    "barcode": "6191507220214",
+    "name": "Lait U.H.T demi-écrémé",
+    "brand": "Vitalait",
+    "category": "Laits demi-écrémés UHT",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/150/722/0214/front_fr.61.400.jpg",
+    "score": {
+      "value": 79,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 79,
+      "additivesScore": 79,
+      "confidence": 90
+    },
+    "nutriScore": "b",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 43,
+      "sugars": 4.4,
+      "saturatedFat": 0.9,
+      "salt": 0.15,
+      "proteins": 3
+    },
+    "additives": [
+      {
+        "code": "E339",
+        "nameFr": "E339",
+        "nameAr": "E339",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "lait demi-écrémé, additif alimentaire (E339 0.3%)"
+  },
+  {
+    "id": "tn-6194008511010",
+    "barcode": "6194008511010",
+    "name": "Biscuits super extra",
+    "brand": "Saïda",
+    "category": "Biscuits secs",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/851/1010/front_fr.41.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 433,
+      "sugars": 30,
+      "saturatedFat": 4.2,
+      "salt": 0.27,
+      "fiber": 2.27,
+      "proteins": 6.1
+    },
+    "additives": [
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E336",
+        "nameFr": "E336",
+        "nameAr": "E336",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E336I",
+        "nameFr": "E336I",
+        "nameAr": "E336I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Eggs",
+      "Gluten",
+      "Milk",
+      "Nuts",
+      "Peanuts",
+      "Sulphur-dioxide-and-sulphites"
+    ],
+    "ingredientsSummary": "Farine de blé, sucre, graisse végétale (palme), lait en poudre, additifs alimentaires autorisés (agents de levée (bicarbonate de sodium, bicarbonate d'ammonium, crème de tartre) selon BPF, extrait de malt, sel, arôme identique nature (vanille), additifs alimentaires autorisés (correcteur d'acidité (acide citrique) selon BPF, agent de traitement de la farine (métabisulfite E223)). Contient: blé, gluten, lait, sulfite. Peut contenir: fruits à coques (amande, noisette), œuf, arachide (cacahuète), soja."
+  },
+  {
+    "id": "tn-6194003800317",
+    "barcode": "6194003800317",
+    "name": "Le Nature",
+    "brand": "Danone",
+    "category": "Yaourts natures",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/380/0317/front_fr.74.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 63,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0,
+      "proteins": 3.3
+    },
+    "additives": [],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "Lait frais entier enrichi, crème fraîche, ferments lactiques de yaourts."
+  },
+  {
+    "id": "tn-6191540700087",
+    "barcode": "6191540700087",
+    "name": "eau minérale naturelle",
+    "brand": "Fourat",
+    "category": "Boissons sans sucre ajouté",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/154/070/0087/front_fr.52.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.01,
+      "proteins": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "eau minérale naturelle"
+  },
+  {
+    "id": "tn-7613038323701",
+    "barcode": "7613038323701",
+    "name": "Nestlé",
+    "brand": "Nestlé",
+    "category": "Milks",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/761/303/832/3701/front_en.75.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 325,
+      "sugars": 54.9,
+      "saturatedFat": 4.6,
+      "salt": 0.2,
+      "fiber": 0,
+      "proteins": 7.5
+    },
+    "additives": [],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "Pasteurized full cream cow's milk, Sugar, Lactose. Milk Fat: 8%, Total Milk Solids: 28% Min, Protein Non-Fat: 34%, Prepared from fresh milk."
+  },
+  {
+    "id": "tn-5900617002099",
+    "barcode": "5900617002099",
+    "name": "Sante Tropical Muesli Whole Grain Oat 350G",
+    "brand": "Santé",
+    "category": "Mueslis with fruits",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/590/061/700/2099/front_en.49.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 356,
+      "sugars": 15,
+      "saturatedFat": 0.4,
+      "salt": 0.18,
+      "proteins": 8.2
+    },
+    "additives": [],
+    "allergens": [
+      "Apple",
+      "Gluten"
+    ],
+    "ingredientsSummary": "wholegrain flakes 82% [barley flakes 32%, oat flakes 21,1%, rice-fruit flakes 11,49% (rice, unrefined cane sugar, concentrated fruit juice (apple, dchery), natural flavours), w flakes 10,5%, com flakes 7% (com grits, unrefined cane sugar, sea salt, cane molasses)], fruits 18% [dried date (date, rice flour), candied fruits (cane sugar, pineapple, papaya)]."
+  },
+  {
+    "id": "tn-6191513502014",
+    "barcode": "6191513502014",
+    "name": "Carré president 6 portion",
+    "brand": "Lactalis",
+    "category": "Fromages",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/151/350/2014/front_fr.7.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 307,
+      "sugars": 0.2,
+      "saturatedFat": 30.3,
+      "salt": 1,
+      "proteins": 8.5
+    },
+    "additives": [],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "lait frais, crème"
+  },
+  {
+    "id": "tn-6191513502052",
+    "barcode": "6191513502052",
+    "name": "fraidoux",
+    "brand": "Président",
+    "category": "Cheeses",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/151/350/2052/front_en.31.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 195,
+      "sugars": 2.5,
+      "saturatedFat": 15,
+      "salt": 0.4,
+      "proteins": 5
+    },
+    "additives": [
+      {
+        "code": "E1420",
+        "nameFr": "E1420",
+        "nameAr": "E1420",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E14XX",
+        "nameFr": "E14XX",
+        "nameAr": "E14XX",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E202",
+        "nameFr": "E202",
+        "nameAr": "E202",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E410",
+        "nameFr": "E410",
+        "nameAr": "E410",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E415",
+        "nameFr": "E415",
+        "nameAr": "E415",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "Fromage blanc (lait frais, beurre, ferments lactiques), poudre de lait écrémé, amidon modifié (E1420), sel de cuisine, épaississants (E410, E415), agent de conservation (E202). 60% G/S."
+  },
+  {
+    "id": "tn-6194003804223",
+    "barcode": "6194003804223",
+    "name": "Oikos",
+    "brand": "Danone",
+    "category": "Yaourts à la grecque",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/380/4223/front_en.53.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 128,
+      "sugars": 4.1,
+      "saturatedFat": 6.5,
+      "salt": 0.13,
+      "proteins": 4
+    },
+    "additives": [],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "lait frais entier enrichi, crème fraîche, ferments lactiques du yaourt.\r\npeut contenir des traces de gluten."
+  },
+  {
+    "id": "tn-90338052",
+    "barcode": "90338052",
+    "name": "Coca-Cola Plastic",
+    "brand": "Coca cola",
+    "category": "Sodas au cola",
+    "origin": "Afrique, Union européenne",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/000/009/033/8052/front_fr.44.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 38,
+      "sugars": 9.7,
+      "saturatedFat": 0,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [
+      {
+        "code": "E150D",
+        "nameFr": "E150D",
+        "nameAr": "E150D",
+        "risk": "moderate",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E338",
+        "nameFr": "E338",
+        "nameAr": "E338",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "EAU GAZÉIFIÉE, SUCRE, COLORANT: CARAMEL (E150d), ACIDIFIANT: ACIDE PHOSPHORIQUE, ARÔMES, CAFÉINE."
+  },
+  {
+    "id": "tn-6194008515520",
+    "barcode": "6194008515520",
+    "name": "Start",
+    "brand": "saïda",
+    "category": "biscuits",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/851/5520/front_fr.43.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 483,
+      "sugars": 23.9,
+      "saturatedFat": 7.5,
+      "salt": 0.39,
+      "fiber": 2.4,
+      "proteins": 5.6
+    },
+    "additives": [
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Eggs",
+      "Gluten",
+      "Milk",
+      "Nuts",
+      "Peanuts"
+    ],
+    "ingredientsSummary": "Farine de blé, sucre, graisse végétale (palme), additiis alimentaires autorisés (agents de levée (bicarbonate de sodium, bicarbonate d'ammonium) selon BPF), lait en poudre, sel, additif alimentaire autorisé (correcteur d'acidité (acide citrique) selon BPF), arôme identique nature (vanille). Contient: blé, gluten, lait. Peut contenir: soja, fruits à coque (amande, noisette), arachide (cacahuète), œufs."
+  },
+  {
+    "id": "tn-6191416500384",
+    "barcode": "6191416500384",
+    "name": "Healthy cookies",
+    "brand": "CAMPI plus",
+    "category": "fr:Biscuits édulcorés",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/141/650/0384/front_en.24.400.jpg",
+    "score": {
+      "value": 79,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 79,
+      "additivesScore": 79,
+      "confidence": 90
+    },
+    "nutriScore": "b",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 437,
+      "sugars": 0.5,
+      "saturatedFat": 1.2,
+      "salt": 0.23,
+      "fiber": 6.2,
+      "proteins": 8.1
+    },
+    "additives": [
+      {
+        "code": "E450",
+        "nameFr": "E450",
+        "nameAr": "E450",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E450I",
+        "nameFr": "E450I",
+        "nameAr": "E450I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Eggs",
+      "Gluten",
+      "Milk",
+      "Nuts"
+    ],
+    "ingredientsSummary": "Farine de blé; maltitol (polyol d'origine végétale); huile végétale (tournesol,maïs); flocon d avoine; graines de chia; amidon de mais; fibre, agent de levée (bicarbonate d'ammonium (INS 503ii); bicarbonate de sodium (INS500 ii); sodium acide pyrophosphate (INS 4501)) ceufs de poulet;. extrait de malt; sel; arome (beurre fraiche). Les additifs alimentaires utilisées selon les bonnes pratiques de fabrication. Les allergènes : ce produit contient gluten de blé ; des oeufs et peut contenir des traces de soja; dérivées de lait et des fruits secs (amandes; noisette)."
+  },
+  {
+    "id": "tn-6194000521017",
+    "barcode": "6194000521017",
+    "name": "Chocotom",
+    "brand": "L'Appetissante",
+    "category": "Biscuits au chocolat",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/052/1017/front_en.18.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 476,
+      "sugars": 48.9,
+      "saturatedFat": 7.8,
+      "salt": 0.47,
+      "fiber": 7.55,
+      "proteins": 5.46
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503",
+        "nameFr": "E503",
+        "nameAr": "E503",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E503II",
+        "nameFr": "E503II",
+        "nameAr": "E503II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "farine de blé, sucre, graisse végétale palme, poudre de cacao, amidon de maïs, agents levants: carbonate acide d'ammonium, carbonate acide de sodium, diphophate disodique, émulsifiant: lécithine de soja, sel, correcteur d'acidité: acide citrique, arômes naturels noisette et chocolat"
+  },
+  {
+    "id": "tn-54491069",
+    "barcode": "54491069",
+    "name": "Sprite",
+    "brand": "SPRITE",
+    "category": "Artificially sweetened beverages",
+    "origin": "Belgium",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/000/005/449/1069/front_en.293.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0
+    },
+    "additives": [
+      {
+        "code": "E211",
+        "nameFr": "E211",
+        "nameAr": "E211",
+        "risk": "moderate",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E290",
+        "nameFr": "E290",
+        "nameAr": "E290",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E331",
+        "nameFr": "E331",
+        "nameAr": "E331",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E950",
+        "nameFr": "E950",
+        "nameAr": "E950",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E951",
+        "nameFr": "E951",
+        "nameAr": "E951",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E959",
+        "nameFr": "E959",
+        "nameAr": "E959",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau gazéifié, sucre, acidifiants : acide citrique, citrate de sodium, édulcorants : acésulfame-K, aspartame, néohespéridine DC, arômes naturels de citron-citron vert"
+  },
+  {
+    "id": "tn-6194000521895",
+    "barcode": "6194000521895",
+    "name": "Choco Tom gaufrettes",
+    "brand": "Tom",
+    "category": "Gaufrettes fourrées au chocolat",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/052/1895/front_fr.44.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 518,
+      "sugars": 37,
+      "saturatedFat": 16.1,
+      "salt": 0.81,
+      "fiber": 9.44,
+      "proteins": 7.12
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E450",
+        "nameFr": "E450",
+        "nameAr": "E450",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E450I",
+        "nameFr": "E450I",
+        "nameAr": "E450I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Farine De Blé, Sucre, Graisses Végétales Coprah, Oléine De Palme, Poudre De Cacao, Lait Écrémé En Poudre Vache, Poudre De Glucose, Émulsifiant Végétal Lécithine De Soja Sin322i, Agents Levants Bicarbonate De Sodium Sin5001, Diphosphate Disodique Sin450i, Sel, Correcteur Dacidité Acide Ascorbique Sin300i, Acide Citrique Sin330i, Masse De Cacao, Vanilline. Additifs Utilisés Sont Alimentaires Et Selon Les Bonnes Pratiques De Fabrication. Allergènes: Ce Produit Contient Gluten, Lait, Lécithine De Soja Et Peut Contenir Des Traces De Noisette."
+  },
+  {
+    "id": "tn-6191507249383",
+    "barcode": "6191507249383",
+    "name": "Vitalait Yaourt Nature",
+    "brand": "Vitalait",
+    "category": "Yaourts natures",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/150/724/9383/front_en.56.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 60,
+      "sugars": 0,
+      "saturatedFat": 1.8,
+      "salt": 0.07,
+      "fiber": 0,
+      "proteins": 3.6
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Lait frais entier enrichi en matière sèche, ferments lactiques de yaourt"
+  },
+  {
+    "id": "tn-6191442600010",
+    "barcode": "6191442600010",
+    "name": "Lait demi écrémé",
+    "brand": "Natilait",
+    "category": "Laits de vache",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/144/260/0010/front_fr.36.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 44,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0,
+      "proteins": 3
+    },
+    "additives": [
+      {
+        "code": "E339",
+        "nameFr": "E339",
+        "nameAr": "E339",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "Contient au minimum 15g/l de matière grasse Additif alimentaire: E339 (0,2g/l)"
+  },
+  {
+    "id": "tn-7613287366726",
+    "barcode": "7613287366726",
+    "name": "Fitness",
+    "brand": "Fitness",
+    "category": "Céréales extrudées",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/761/328/736/6726/front_fr.20.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 372,
+      "sugars": 13.8,
+      "saturatedFat": 1,
+      "salt": 1.11,
+      "fiber": 74.2,
+      "proteins": 9.3
+    },
+    "additives": [],
+    "allergens": []
+  },
+  {
+    "id": "tn-8412600047040",
+    "barcode": "8412600047040",
+    "name": "Blue Heat",
+    "brand": "Takis",
+    "category": "Botanas",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/260/004/7040/front_en.38.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 513,
+      "sugars": 2.3,
+      "saturatedFat": 2.7,
+      "salt": 1.7,
+      "fiber": 6.2,
+      "proteins": 6
+    },
+    "additives": [
+      {
+        "code": "E133",
+        "nameFr": "E133",
+        "nameAr": "E133",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E508",
+        "nameFr": "E508",
+        "nameAr": "E508",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E621",
+        "nameFr": "E621",
+        "nameAr": "E621",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E627",
+        "nameFr": "E627",
+        "nameAr": "E627",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E631",
+        "nameFr": "E631",
+        "nameAr": "E631",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Soybeans"
+    ],
+    "ingredientsSummary": "HARINA DE MAÍZ PRECOCIDA, ACEITES VEGETALES EN PROPORCIONES VARIABLES (GIRASOL, MAÍZ), MALTODEXTRINA, SAL, ACIDULANTE (ÁCIDO CITRICO), AZÚCAR, POTENCIADORES DEL SABOR (GLUTAMATO DE MONOSODIO, GUANILATO DISÓDICO, INOSINATO DISÓDICO), AROMA, CLORURO POTÁSICO, EXTRACTO DE ESPIRULINA, ESPECIAS, EMULGENTE (LECITINAS (SOJA)), COLORANTE (AZUL BRILLANTE FCF). PUEDE CONTENER LECHE Y CEREALES QUE CONTENGAN GLUTEN."
+  },
+  {
+    "id": "tn-8594017141945",
+    "barcode": "8594017141945",
+    "name": "Emco Muesli With Chocolate & Hazelnut",
+    "brand": "Emco",
+    "category": "Mueslis au chocolat",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/859/401/714/1945/front_en.15.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 439,
+      "sugars": 25,
+      "saturatedFat": 4.2,
+      "salt": 0.15,
+      "fiber": 6.4,
+      "proteins": 8.4
+    },
+    "additives": [
+      {
+        "code": "E304",
+        "nameFr": "E304",
+        "nameAr": "E304",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E304I",
+        "nameFr": "E304I",
+        "nameAr": "E304I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E307",
+        "nameFr": "E307",
+        "nameAr": "E307",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten",
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "flocons d'avoine 46 %, sucre, huile de colza, chocolat au lait 6 % (sucre, lait entier en poudre, beurre de cacao, masse de cacao, lactosérum seché, lécithine de soja, extrait de vanille, teneur en composant cacao min, 30 %),extrudat de blé (semoule de blé, semoule de son), farine de blé, poudre de cacao 3 %, noix de coco 2 %, pépites de chocolat noir 2 % (sucre, masse de cacao, beurre de cacao, dextrose, émulsifiant: lécithine de soja, extrait de vanille, teneur en cacao solide 50 %), croustilles de blé de cacao (semoule de blé, farine de blé, sucre, poudre de cacao 2 %, farine de malt d'orge, sel), raisins secs 2 % (raisins secs, huile de tournesol), amidon de blé, noisettes 1 %, antioxydants alpha-tocophérols (naturel), lécithine, huile de tournesol), Le produit peut contenir des cacahuètes et autres fruits à coque, (palmitate d'ascorbyle, extrait riche en"
+  },
+  {
+    "id": "tn-6132500710371",
+    "barcode": "6132500710371",
+    "name": "El Mordjene pâte à tartiner",
+    "brand": "CEBON",
+    "category": "Cacao et dérivés",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/613/250/071/0371/front_en.33.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 550,
+      "sugars": 52.2,
+      "saturatedFat": 9.9,
+      "salt": 0.16,
+      "fiber": 2.41,
+      "proteins": 8
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Nuts"
+    ],
+    "ingredientsSummary": "Sucre, huile de palme, noisettes, lait écrémé en poudre, lactosérum, poudre de cacao, émulsifiants: lecithine, arôme vanille."
+  },
+  {
+    "id": "tn-3564707137577",
+    "barcode": "3564707137577",
+    "name": "Pois chiches",
+    "brand": "Bio Village",
+    "category": "Pois chiches en conserve",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/356/470/713/7577/front_fr.29.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 122,
+      "sugars": 0.5,
+      "saturatedFat": 0.3,
+      "salt": 0.67,
+      "fiber": 5.5,
+      "proteins": 6.7
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Pois chiches secs trempés*, eau, sel.\n* Ingrédients issus de l'agriculture biologique."
+  },
+  {
+    "id": "tn-8412600028605",
+    "barcode": "8412600028605",
+    "name": "Takis Queso Volcano",
+    "brand": "Takis",
+    "category": "Crisps",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/841/260/002/8605/front_es.68.400.jpg",
+    "score": {
+      "value": 47,
+      "tier": "mid",
+      "label": {
+        "fr": "Choix mitigé",
+        "ar": "اختيار متوسط"
+      },
+      "nutritionScore": 47,
+      "additivesScore": 47,
+      "confidence": 90
+    },
+    "nutriScore": "d",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 511,
+      "sugars": 3,
+      "saturatedFat": 3,
+      "salt": 1.6,
+      "fiber": 6.2,
+      "proteins": 5.8
+    },
+    "additives": [
+      {
+        "code": "E307",
+        "nameFr": "E307",
+        "nameAr": "E307",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "FARINE DE MAIS PRETE PASSE DE PALME ASSAISONNEMENT PREPARE AROMATISE GOUT FROMAGE ET MENT LACTOSERUM EN POUDRE MALTODEXTRINE, SEL, AROME, EXHAUSTEURS DE GOUT (GLUTAMATE MONOSCOQUE NOSINATE DISODIQUE, GUANYLATE DISODIQUE, FROMAGE EN POUDRE DAN CORRECTEURS D'ACIDITE (ACETATES DE SODIUM, ACIDE CITRIQUE COLORANTS EXTRAIT DE PAPRIKA, BIXINE DE ROCOU), ANTIOXYDANTS (ACIDE ASCORBIQUE EXTRAITS DE ROMARIN, BUTYLHYDROXY-ANISOL, GALLATE DE PROPYLE ALPHA-TOCOPHEROL, EXTRAIT RICHE EN TOCOPHEROLS, HUILE DE TOURNESOL EXPRIME POUR LE PRODUIT FINIL PEUT CONTENIR DES RACES DE SOJA ET DE GLUTEN مقبلات الذرة المقلية بنكهة الجبن و الفلفل الحار المكونات: دقيق الذرة المطبوخ مسبقاء دهن نباتي (النخيل)، توابل محضرة بنكهة الحين و الفلفل الحار زنك وجوانيلات ثنائي الصوديوم)، مسحوق الجبن (0.4%) ، منظم الحموضة السينات الصوديوم. سحوق مصل الحليب، مالتوديكسترين ملح نكهات معززات النكهة (غلوتامات أحادية الصوديوم يك مستخلصات إكليل الجبل بوتيل هيدروكسياتيسول، بروبيل ،جالات ألفا توكوفيرول مست الستريك) توان مستخلص البابريكا، اناتو بيكسين)، مضادات الأكسدة (حمض توكوفيرول)]، زيت نباتي (دوار الشمس) الحليب. قد يحتوي على الصويا و/أو الغلوتين PESO NETO:/PESO LÍQUIDO:/ الوزن الصافي: POIDSNET: I 90g 605 AMARELO DESCUBRE MÁS"
+  },
+  {
+    "id": "tn-7622202211102",
+    "barcode": "7622202211102",
+    "name": "MILKA ALPINE",
+    "brand": "Milka",
+    "category": "Chocolates",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/762/220/221/1102/front_en.11.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 532,
+      "sugars": 58,
+      "saturatedFat": 18,
+      "salt": 0.27,
+      "fiber": 1.8,
+      "proteins": 6.1
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "sugar, cocoa butter, skimmed milk powder, cocoa mass, whey powder (from milk), milk fat, emulsifier (soya lecithin), hazelnuts, flavouring"
+  },
+  {
+    "id": "tn-6191428900073",
+    "barcode": "6191428900073",
+    "name": "Eau de source naturelle",
+    "brand": "mira",
+    "category": "Eaux de sources",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/142/890/0073/front_fr.30.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.01,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "eau de source naturelle"
+  },
+  {
+    "id": "tn-5900617037213",
+    "barcode": "5900617037213",
+    "name": "Fit Granola no added sugar strawberry & cherry",
+    "brand": "Sana",
+    "category": "Mueslis",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/590/061/703/7213/front_en.13.400.jpg",
+    "score": {
+      "value": 79,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 79,
+      "additivesScore": 79,
+      "confidence": 90
+    },
+    "nutriScore": "b",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 264,
+      "sugars": 8.7,
+      "saturatedFat": 1.7,
+      "salt": 0.59,
+      "fiber": 13,
+      "proteins": 8.6
+    },
+    "additives": [
+      {
+        "code": "E965",
+        "nameFr": "E965",
+        "nameAr": "E965",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "Cereal flakes 59% (whole grain oat flakes 41%, barley flakes), sweeteners: maltitol; sunflower oil, soluble corn fiber, dried dates, flour (barley, corn), freeze-dried fruits 2.5% in variable proportions (cherry, strawberry), sea salt, flavors, cinnamon."
+  },
+  {
+    "id": "tn-6194005446100",
+    "barcode": "6194005446100",
+    "name": "Dégustation - Chocolat Noir 72% Cacao",
+    "brand": "Maestro",
+    "category": "Chocolats noirs extra fin",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/544/6100/front_fr.11.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 590,
+      "sugars": 28,
+      "saturatedFat": 23,
+      "salt": 0.08,
+      "fiber": 11,
+      "proteins": 8
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500II",
+        "nameFr": "E500II",
+        "nameAr": "E500II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Nuts",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Chocolat noir 72%: (pâte de cacao, sucre, cacao en poudre, beurre de cacao, émulsifiant (lécithine de soja) selon BPF, arôme vanille, régulateur d'acidité (E/SIN 500ii) selon BPF. Ce produit contient du soja et peut contenir des traces de lait, fruits à coque et de gluten. Cela peut provoquer une hypersensibilité."
+  },
+  {
+    "id": "tn-6132501549512",
+    "barcode": "6132501549512",
+    "name": "daily 30cl",
+    "brand": "Bifa..",
+    "category": "Boissons lactées",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/613/250/154/9512/front_fr.45.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 46,
+      "sugars": 11,
+      "saturatedFat": 0.1,
+      "salt": 1,
+      "fiber": 0,
+      "proteins": 0.1
+    },
+    "additives": [
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E466",
+        "nameFr": "E466",
+        "nameAr": "E466",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Orange"
+    ],
+    "ingredientsSummary": "Eau traitée, sucre, concentré de fruits (orange, pomme, ananas, pêche, poire et mangue), pulpe dorange, [acide citrique (SIN 330) correcteur d'acidité. Gomme cellulosique (SIN 466) Epaississant, acide ascorbique (SIN300) Antioxydant] BPF, arômes Tropical identique au naturel, béta carotène SIN160(ai) colorant."
+  },
+  {
+    "id": "tn-3033710061983",
+    "barcode": "3033710061983",
+    "name": "Nestle chocapic strong chocolate taste",
+    "brand": "Produit Tunisien",
+    "category": "Céréales pour petit déjeuner riches en fibres",
+    "origin": "France",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/303/371/006/1983/front_en.38.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 384,
+      "sugars": 22.4,
+      "saturatedFat": 1.3,
+      "salt": 0.22,
+      "fiber": 7.7,
+      "proteins": 8.5
+    },
+    "additives": [
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "Céréales 62,4% (blé complet 31,8%, farine de blé, semoule de maïs), chocolat en poudre 22,5% (sucre, cacao en poudre), sucre, sirop de glucose, extrait de malt d'orge, huile végétale, émulsifiant (lécithine de tournesol), sel, arômes"
+  },
+  {
+    "id": "tn-8437000906803",
+    "barcode": "8437000906803",
+    "name": "Mission wraps",
+    "brand": "Mission",
+    "category": "Tortillas de blé",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/843/700/090/6803/front_fr.21.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 311,
+      "sugars": 2.2,
+      "saturatedFat": 3.5,
+      "salt": 2.7,
+      "fiber": 2.8,
+      "proteins": 7.8
+    },
+    "additives": [
+      {
+        "code": "E202",
+        "nameFr": "E202",
+        "nameAr": "E202",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E281",
+        "nameFr": "E281",
+        "nameAr": "E281",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E296",
+        "nameFr": "E296",
+        "nameAr": "E296",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E412",
+        "nameFr": "E412",
+        "nameAr": "E412",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E422",
+        "nameFr": "E422",
+        "nameAr": "E422",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E450",
+        "nameFr": "E450",
+        "nameAr": "E450",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E466",
+        "nameFr": "E466",
+        "nameAr": "E466",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E471",
+        "nameFr": "E471",
+        "nameAr": "E471",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E500",
+        "nameFr": "E500",
+        "nameAr": "E500",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E920",
+        "nameFr": "E920",
+        "nameAr": "E920",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Gluten"
+    ],
+    "ingredientsSummary": "WHEAT flour, water, vegetable fat (palm), stabilisers (E 422, E 412, E 466), salt, dextrose, emulsifier (E 471), raising agents (E 450, E 500), rice semolina, acidity regulator (E 296), preservatives (E 281, E 202), flour treatment agent (E 920)"
+  },
+  {
+    "id": "tn-6191509900664",
+    "barcode": "6191509900664",
+    "name": "Huile d'olive vierge extra",
+    "brand": "Terra Delyssa",
+    "category": "Extra-virgin olive oils",
+    "origin": "Tunisia",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/150/990/0664/front_en.114.400.jpg",
+    "score": {
+      "value": 79,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 79,
+      "additivesScore": 79,
+      "confidence": 90
+    },
+    "nutriScore": "b",
+    "novaGroup": 2,
+    "nutrition": {
+      "energyKcal": 821,
+      "sugars": 0,
+      "saturatedFat": 19.3,
+      "salt": 0,
+      "fiber": 0,
+      "proteins": 0
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Huile d'olive Vierge Extra."
+  },
+  {
+    "id": "tn-6194003802076",
+    "barcode": "6194003802076",
+    "name": "Danao pêche abricot",
+    "brand": "Danone",
+    "category": "Boissons au fruit et au lait",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/380/2076/front_fr.42.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 42,
+      "sugars": 10,
+      "saturatedFat": 0,
+      "salt": 0,
+      "proteins": 0.45
+    },
+    "additives": [
+      {
+        "code": "E160A",
+        "nameFr": "E160A",
+        "nameAr": "E160A",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E160AI",
+        "nameFr": "E160AI",
+        "nameAr": "E160AI",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E330",
+        "nameFr": "E330",
+        "nameAr": "E330",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E412",
+        "nameFr": "E412",
+        "nameAr": "E412",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E466",
+        "nameFr": "E466",
+        "nameAr": "E466",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [],
+    "ingredientsSummary": "Eau, lait écrémé enrichi en matière sèche 15%, sucre, jus de fruits à base de concentrés 10%, gomme de cellulose E466, gomme guar E412, acidifiant :acide citrique, colorant: bêta carotène, arômes identique nature"
+  },
+  {
+    "id": "tn-3518070012078",
+    "barcode": "3518070012078",
+    "name": "Novalac lait 1er age",
+    "brand": "Novalac",
+    "category": "Laits pour bébé",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/351/807/001/2078/front_fr.3.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0
+    },
+    "additives": [
+      {
+        "code": "E306",
+        "nameFr": "E306",
+        "nameAr": "E306",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322",
+        "nameFr": "E322",
+        "nameAr": "E322",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E322I",
+        "nameFr": "E322I",
+        "nameAr": "E322I",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E339II",
+        "nameFr": "E339II",
+        "nameAr": "E339II",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk",
+      "Soybeans"
+    ],
+    "ingredientsSummary": "Lait écrémé, protéines de lait, maltodextrines, huiles végétales (palme, coprah), citrate tricalcique, émulsifiant (lécithine de soja), vitamines (A, B1, B12, B2, B6, C, D3, E, K1, acide folique, acide pantothénique, biotine, niacine), chlorure de potassium, chlorure de sodium, chlorure de magnésium, sulfate de fer, oxyde de magnésium, sulfate de zinc, antioxydants (extrait riche en tocophérols), sulfate de cuivre, sélénite de sodium, iodure de potassium, sulfate de manganèse, bitartrate de choline, phosphate disodique"
+  },
+  {
+    "id": "tn-8712566463862",
+    "barcode": "8712566463862",
+    "name": "Knorr Soupe Liquide Poule Vermicelles 30cl",
+    "brand": "Knorr",
+    "category": "Soupes à réchauffer",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/871/256/646/3862/front_en.37.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 27,
+      "sugars": 0.5,
+      "saturatedFat": 0.3,
+      "salt": 0.66,
+      "fiber": 0.5,
+      "proteins": 1.4
+    },
+    "additives": [
+      {
+        "code": "E14XX",
+        "nameFr": "E14XX",
+        "nameAr": "E14XX",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Celery",
+      "Eggs",
+      "Gluten",
+      "Milk",
+      "Mustard"
+    ],
+    "ingredientsSummary": "Eau, vermicelle cuit : 12% (semoule de BLÉ dur, blanc d'ŒUF), viande de poule : 3%, carotte¹ : 1,3%, oignon¹ : 1,3%, CÉLERI-RAVE¹ : 1%, poireau¹ : 1%, amidon modifié de maïs, graisse de poule : 0,7%, arômes, amidon de pomme de terre, sel, épices et aromates (cerfeuil¹, persil¹ : 0,03%, poivre, curcuma¹), jus de carotte concentré : 0,02%, jus de citron concentré. Peut contenir : autres céréales contenant du gluten, lait, moutarde, soja. ¹Ingrédients issus de l'Agriculture durable : 4,7%."
+  },
+  {
+    "id": "tn-6132175402564",
+    "barcode": "6132175402564",
+    "name": "premium story chocolat pistache",
+    "brand": "Bifa",
+    "category": "Type de produit incorrect",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/613/217/540/2564/front_en.8.400.jpg",
+    "score": {
+      "value": 29,
+      "tier": "bad",
+      "label": {
+        "fr": "À limiter",
+        "ar": "يُستحسن تجنبه"
+      },
+      "nutritionScore": 29,
+      "additivesScore": 29,
+      "confidence": 90
+    },
+    "nutriScore": "e",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 542,
+      "sugars": 47.9,
+      "saturatedFat": 13.6,
+      "salt": 0.06,
+      "proteins": 8.57
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": ""
+  },
+  {
+    "id": "tn-6191466400030",
+    "barcode": "6191466400030",
+    "name": "Eau de source naturelle",
+    "brand": "DENYA",
+    "category": "Eau minérale naturelle non gazeuse",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/146/640/0030/front_fr.5.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.02
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "Calcium, Magnesium, Sodium, Potassium, Bicarbonates, Sulfates, Chlorures, Nitrates, Fluorures"
+  },
+  {
+    "id": "tn-6191496000019",
+    "barcode": "6191496000019",
+    "name": "Eau minérale naturelle",
+    "brand": "délice",
+    "category": "Eaux minérales naturelles",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/149/600/0019/front_fr.29.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.02
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "eau minérale naturelle"
+  },
+  {
+    "id": "tn-6194003804810",
+    "barcode": "6194003804810",
+    "name": "Muesli",
+    "brand": "Blendy",
+    "category": "Mueslis",
+    "origin": "Tunisia",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/400/380/4810/front_en.3.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 120,
+      "sugars": 9,
+      "saturatedFat": 1,
+      "salt": 0,
+      "fiber": 0.5,
+      "proteins": 3
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": ""
+  },
+  {
+    "id": "tn-6194043002863",
+    "barcode": "6194043002863",
+    "name": "Lait D’amande",
+    "brand": "Délice",
+    "category": "Laits d'amande",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/404/300/2863/front_fr.6.400.jpg",
+    "score": {
+      "value": 79,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 79,
+      "additivesScore": 79,
+      "confidence": 90
+    },
+    "nutriScore": "b",
+    "novaGroup": 3,
+    "nutrition": {
+      "energyKcal": 29,
+      "sugars": 0.5,
+      "saturatedFat": 0.1,
+      "salt": 0,
+      "fiber": 0.27,
+      "proteins": 0.95
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": ""
+  },
+  {
+    "id": "tn-6191443100038",
+    "barcode": "6191443100038",
+    "name": "Eau de source naturelle",
+    "brand": "BARGOU",
+    "category": "Eaux de sources",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/144/310/0038/front_fr.3.400.jpg",
+    "score": {
+      "value": 93,
+      "tier": "great",
+      "label": {
+        "fr": "Excellent choix",
+        "ar": "اختيار ممتاز"
+      },
+      "nutritionScore": 93,
+      "additivesScore": 93,
+      "confidence": 90
+    },
+    "nutriScore": "a",
+    "novaGroup": 1,
+    "nutrition": {
+      "energyKcal": 0,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0.01
+    },
+    "additives": [],
+    "allergens": [],
+    "ingredientsSummary": "eau de source naturelle"
+  },
+  {
+    "id": "tn-6191513501086",
+    "barcode": "6191513501086",
+    "name": "Fromage fondu président 24 portions",
+    "brand": "President",
+    "category": "Fromages fondus",
+    "origin": "Tunisie",
+    "isLocal": true,
+    "isBio": false,
+    "image": "https://images.openfoodfacts.org/images/products/619/151/350/1086/front_en.25.400.jpg",
+    "score": {
+      "value": 63,
+      "tier": "good",
+      "label": {
+        "fr": "Bon choix",
+        "ar": "اختيار جيد"
+      },
+      "nutritionScore": 63,
+      "additivesScore": 63,
+      "confidence": 90
+    },
+    "nutriScore": "c",
+    "novaGroup": 4,
+    "nutrition": {
+      "energyKcal": 261,
+      "sugars": 0,
+      "saturatedFat": 0,
+      "salt": 0,
+      "proteins": 9.5
+    },
+    "additives": [
+      {
+        "code": "E331",
+        "nameFr": "E331",
+        "nameAr": "E331",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E339",
+        "nameFr": "E339",
+        "nameAr": "E339",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E450",
+        "nameFr": "E450",
+        "nameAr": "E450",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      },
+      {
+        "code": "E452",
+        "nameFr": "E452",
+        "nameAr": "E452",
+        "risk": "safe",
+        "functionCategory": "Additif alimentaire"
+      }
+    ],
+    "allergens": [
+      "Milk"
+    ],
+    "ingredientsSummary": "Fromage, beure factosérum, lait, sels de fonte (E452-E331-E450-E339), protéines laitières. 55% de G/S"
+  }
+]

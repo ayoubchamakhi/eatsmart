@@ -1,9 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, Image } from 'react-native';
 import { ChevronRight, Leaf, ShieldAlert } from 'lucide-react-native';
 import { colors, radii } from '@eatsmart/design-tokens';
 import type { Product } from '@eatsmart/domain';
 import { ScoreBadge } from './ScoreBadge';
+import { resolveProductImage } from '../utils/imageResolver';
 
 interface ProductListItemProps {
   product: Product;
@@ -19,6 +20,12 @@ export function ProductListItem({ product, onPress, isActive, isArabic }: Produc
       onPress={onPress}
       activeOpacity={0.7}
     >
+      <Image
+        source={resolveProductImage(product.image)}
+        style={styles.thumbnail}
+        resizeMode="contain"
+      />
+
       <ScoreBadge score={product.score} size="small" showScale={false} />
 
       <View style={styles.details}>
@@ -69,6 +76,12 @@ const styles = StyleSheet.create({
   cardActive: {
     borderColor: colors.sageDeep,
     borderWidth: 1.5,
+  },
+  thumbnail: {
+    width: 38,
+    height: 38,
+    borderRadius: radii.sm,
+    backgroundColor: '#F7F5EE',
   },
   details: {
     flex: 1,

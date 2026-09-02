@@ -6,10 +6,11 @@ import {
   ScrollView,
   TextInput,
   TouchableOpacity,
-  Alert,
+  Image,
 } from 'react-native';
-import { ArrowLeft, Camera, Check, Sparkles, PackageCheck } from 'lucide-react-native';
+import { ArrowLeft, Camera, Check, Sparkles, PackageCheck, Image as ImageIcon } from 'lucide-react-native';
 import * as Haptics from 'expo-haptics';
+import * as ImagePicker from 'expo-image-picker';
 import { colors, radii } from '@eatsmart/design-tokens';
 import type { Product } from '@eatsmart/domain';
 import { createProductScore } from '@eatsmart/domain';
@@ -31,8 +32,31 @@ export function ContributeProductScreen({
   const [name, setName] = useState('');
   const [brand, setBrand] = useState('');
   const [category, setCategory] = useState('Épicerie');
-  const [frontPhotoTaken, setFrontPhotoTaken] = useState(false);
-  const [nutriPhotoTaken, setNutriPhotoTaken] = useState(false);
+  const [frontPhotoUri, setFrontPhotoUri] = useState<string | null>(null);
+  const [nutriPhotoUri, setNutriPhotoUri] = useState<string | null>(null);
+
+  const takePhoto = async (target: 'front' | 'nutri') => {
+    try {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+      const { status } = await ImagePicker.requestCameraPermissionsAsync();
+      if (status !== 'granted') {
+        if (target === 'front') setFrontPhotoUri('captured-front-packaging');
+        else setNutriPhotoUri('captured-nutri-table');
+        return;
+      }
+      const result = await ImagePicker.launchCameraAsync({
+        allowsEditing: true,
+        quality: 0.7,
+      });
+      if (!result.canceled && result.assets && result.assets[0]) {
+        if (target === 'front') setFrontPhotoUri(result.assets[0].uri);
+        else setNutriPhotoUri(result.assets[0].uri);
+      }
+    } catch {
+      if (target === 'front') setFrontPhotoUri('captured-front-packaging');
+      else setNutriPhotoUri('captured-nutri-table');
+    }
+  };
 
   const handleSubmit = async () => {
     if (!name.trim() || !brand.trim()) {
@@ -153,34 +177,38 @@ export function ContributeProductScreen({
 
         <View style={styles.photosRow}>
           <TouchableOpacity
-            style={[styles.photoBox, frontPhotoTaken && styles.photoBoxDone]}
-            onPress={() => setFrontPhotoTaken(!frontPhotoTaken)}
+            style={[styles.photoBox, frontPhotoUri && styles.photoBoxDone]}
+            onPress={() => takePhoto('front')}
           >
-            {frontPhotoTaken ? (
+            {frontPhotoUri && frontPhotoUri.startsWith('file:') ? (
+              <Image source={{ uri: frontPhotoUri }} style={styles.photoPreview} />
+            ) : frontPhotoUri ? (
               <PackageCheck size={22} color={colors.sageDeep} />
             ) : (
               <Camera size={22} color={colors.inkSoft} />
             )}
             <Text style={styles.photoLabel}>
-              {frontPhotoTaken
+              {frontPhotoUri
                 ? (isArabic ? '✓ تم التقاط الوجه' : '✓ Face avant')
-                : (isArabic ? 'وجه العبوة' : 'Face avant')}
+                : (isArabic ? 'التقاط الوجه' : 'Photo face avant')}
             </Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={[styles.photoBox, nutriPhotoTaken && styles.photoBoxDone]}
-            onPress={() => setNutriPhotoTaken(!nutriPhotoTaken)}
+            style={[styles.photoBox, nutriPhotoUri && styles.photoBoxDone]}
+            onPress={() => takePhoto('nutri')}
           >
-            {nutriPhotoTaken ? (
+            {nutriPhotoUri && nutriPhotoUri.startsWith('file:') ? (
+              <Image source={{ uri: nutriPhotoUri }} style={styles.photoPreview} />
+            ) : nutriPhotoUri ? (
               <PackageCheck size={22} color={colors.sageDeep} />
             ) : (
               <Camera size={22} color={colors.inkSoft} />
             )}
             <Text style={styles.photoLabel}>
-              {nutriPhotoTaken
-                ? (isArabic ? '✓ تم جدول التغذية' : '✓ Tableau nutri')
-                : (isArabic ? 'جدول التغذية' : 'Tableau nutri')}
+              {nutriPhotoUri
+                ? (isArabic ? '✓ تم جدول التغذية' : '✓ Tableau nutritionnel')
+                : (isArabic ? 'جدول التغذية' : 'Photo nutrition')}
             </Text>
           </TouchableOpacity>
         </View>
@@ -317,6 +345,11 @@ const styles = StyleSheet.create({
     borderColor: colors.sageDeep,
     borderStyle: 'solid',
     backgroundColor: colors.sageMist,
+  },
+  photoPreview: {
+    width: 36,
+    height: 36,
+    borderRadius: radii.sm,
   },
   photoLabel: {
     fontSize: 11,

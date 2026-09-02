@@ -1,0 +1,78 @@
+services:
+  # ------------------------------------------------------------
+  # Next.js Web App & API
+  # ------------------------------------------------------------
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-eatsmart}:${POSTGRES_PASSWORD:-eatsmart_secret}@postgres:5432/${POSTGRES_DB:-eatsmart}?schema=public
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - eatsmart-net
+
+  # ------------------------------------------------------------
+  # Free PostgreSQL 16 Alpine Database
+  # ------------------------------------------------------------
+  postgres:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-eatsmart}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-eatsmart_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-eatsmart}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backups:/backups
+    ports:
+      - "127.0.0.1:5432:5432" # Bind to localhost only on VPS for security
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-eatsmart} -d ${POSTGRES_DB:-eatsmart}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - eatsmart-net
+
+  # ------------------------------------------------------------
+  # Automated Backup Service (daily at 03:00 AM)
+  # ------------------------------------------------------------
+  backup:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-eatsmart}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-eatsmart_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-eatsmart}
+      POSTGRES_HOST: postgres
+      RETENTION_DAYS: 14
+    volumes:
+      - ./scripts/backup-db.sh:/backup-db.sh:ro
+      - ./backups:/backups
+    entrypoint: |
+      sh -c '
+        echo "0 3 * * * /backup-db.sh >> /var/log/cron.log 2>&1" > /etc/crontabs/root
+        chmod +x /backup-db.sh
+        crond -f -l 8
+      '
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - eatsmart-net
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  eatsmart-net:
+    driver: bridge
