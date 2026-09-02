@@ -8,10 +8,12 @@ import { EvaluationSection } from "@/components/landing/EvaluationSection";
 import { AlternativesSection } from "@/components/landing/AlternativesSection";
 import { DownloadCta } from "@/components/landing/DownloadCta";
 import { Footer } from "@/components/landing/Footer";
+import { WebScannerModal } from "@/components/landing/WebScannerModal";
 
 export default function LandingPage() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isArabic, setIsArabic] = useState(false);
+  const [isScannerOpen, setIsScannerOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,10 +40,14 @@ export default function LandingPage() {
         isArabic={isArabic}
         toggleLanguage={toggleLanguage}
         isScrolled={isScrolled}
+        onOpenScanner={() => setIsScannerOpen(true)}
       />
 
       <main id="main">
-        <Hero isArabic={isArabic} />
+        <Hero
+          isArabic={isArabic}
+          onOpenScanner={() => setIsScannerOpen(true)}
+        />
         <IndependenceSection isArabic={isArabic} />
         <EvaluationSection isArabic={isArabic} />
         <AlternativesSection isArabic={isArabic} />
@@ -49,6 +55,13 @@ export default function LandingPage() {
       </main>
 
       <Footer isArabic={isArabic} />
+
+      {/* Interactive Web Barcode Demo Modal */}
+      <WebScannerModal
+        isOpen={isScannerOpen}
+        onClose={() => setIsScannerOpen(false)}
+        isArabic={isArabic}
+      />
     </>
   );
 }

@@ -1,8 +1,9 @@
 interface HeroProps {
   isArabic: boolean;
+  onOpenScanner?: () => void;
 }
 
-export function Hero({ isArabic }: HeroProps) {
+export function Hero({ isArabic, onOpenScanner }: HeroProps) {
   return (
     <section className="hero">
       <div className="hero-backdrop" aria-hidden="true"></div>
@@ -20,22 +21,35 @@ export function Hero({ isArabic }: HeroProps) {
               : "Scannez le code-barres de vos produits en rayon pour obtenir un diagnostic nutritionnel clair, repérer les additifs indésirables et repérer de meilleures alternatives locales."}
           </p>
 
-          <div className="store-badges">
-            <a href="#download" className="store-badge-link" aria-label="Télécharger dans l'App Store">
-              <img
-                className="store-badge-img"
-                src="/assets_v2/play_store_FR.svg"
-                alt="Télécharger dans l'App Store"
-              />
-            </a>
+          <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "14px" }}>
+            {onOpenScanner && (
+              <button
+                type="button"
+                className="btn btn--sage"
+                onClick={onOpenScanner}
+                style={{ cursor: "pointer", fontSize: "0.95rem" }}
+              >
+                <span>{isArabic ? "🔍 جرب مسح المنتوجات الآن" : "🔍 Tester le scanner en ligne"}</span>
+              </button>
+            )}
 
-            <a href="#download" className="store-badge-link" aria-label="Disponible sur Google Play">
-              <img
-                className="store-badge-img"
-                src="/assets_v2/apps_store_FR.svg"
-                alt="Disponible sur Google Play"
-              />
-            </a>
+            <div className="store-badges" style={{ margin: 0 }}>
+              <a href="#download" className="store-badge-link" aria-label="Télécharger dans l'App Store">
+                <img
+                  className="store-badge-img"
+                  src="/assets_v2/play_store_FR.svg"
+                  alt="Télécharger dans l'App Store"
+                />
+              </a>
+
+              <a href="#download" className="store-badge-link" aria-label="Disponible sur Google Play">
+                <img
+                  className="store-badge-img"
+                  src="/assets_v2/apps_store_FR.svg"
+                  alt="Disponible sur Google Play"
+                />
+              </a>
+            </div>
           </div>
 
           <div className="hero-trust">

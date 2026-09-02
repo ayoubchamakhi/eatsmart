@@ -1,9 +1,26 @@
-﻿/* ============================================================
+/* ============================================================
    EATSMART â€” DESIGN 08 Â· "SOFT KITCHEN"
    Comfort and warmth: muted sage, blush, butter; large radii,
    gentle shadows, modern typography. Plus Jakarta Sans + DM Sans.
    ============================================================ */
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400..700&family=Plus+Jakarta+Sans:ital,wght@0,500..800;1,500..800&display=swap");
+:root {
+  --font-arabic: "Cairo", system-ui, sans-serif;
+}
+
+html[lang="ar"],
+html[dir="rtl"] {
+  font-family: var(--font-arabic), system-ui, sans-serif;
+}
+html[lang="ar"] h1,
+html[lang="ar"] h2,
+html[lang="ar"] h3,
+html[lang="ar"] h4,
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4 {
+  font-family: var(--font-arabic), system-ui, sans-serif;
+}
 
 :root {
   /* -- Color: linen kitchen -------------------------------------- */
@@ -56,6 +73,363 @@
   --gutter: clamp(20px, 5vw, 48px);
   --maxw: 1060px;
 }
+/* ============================================================
+   WEB SCANNER MODAL & INTERACTIVE DEMO STYLES
+   ============================================================ */
+.web-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(31, 34, 27, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modalFadeIn 0.25s ease-out;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.web-modal-content {
+  background: var(--cream);
+  border-radius: var(--r-xl);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(31, 34, 27, 0.25);
+  border: 1px solid rgba(55, 64, 54, 0.1);
+  padding: 24px;
+  position: relative;
+  animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes modalSlideUp {
+  from { transform: translateY(20px) scale(0.97); }
+  to { transform: translateY(0) scale(1); }
+}
+
+.web-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.web-modal-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.web-modal-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: var(--sage-mist);
+  display: grid;
+  place-items: center;
+}
+
+.web-modal-header h3 {
+  font-size: 1.25rem;
+  color: var(--ink-dark);
+  margin: 0;
+}
+
+.web-modal-header p {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin: 2px 0 0;
+}
+
+.web-modal-close {
+  background: #FFFFFF;
+  border: 1px solid var(--border-soft);
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-pill);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--ink);
+  transition: all 0.2s ease;
+}
+
+.web-modal-close:hover {
+  background: #EEE9DF;
+}
+
+.web-modal-presets {
+  margin-bottom: 16px;
+}
+
+.presets-label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+.presets-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preset-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-soft);
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  font-size: 0.8rem;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.preset-chip:hover {
+  border-color: var(--sage);
+  background: var(--sage-mist);
+}
+
+.preset-chip.active {
+  border-color: var(--sage-deep);
+  background: var(--sage-mist);
+  box-shadow: 0 2px 8px rgba(45, 90, 39, 0.15);
+}
+
+.chip-score-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.web-barcode-form {
+  margin-bottom: 20px;
+}
+
+.barcode-input-wrap {
+  display: flex;
+  gap: 8px;
+}
+
+.barcode-input {
+  flex: 1;
+  background: #FFFFFF;
+  border: 1px solid var(--border-soft);
+  border-radius: var(--r-pill);
+  padding: 10px 18px;
+  font-size: 0.88rem;
+  color: var(--ink);
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.barcode-input:focus {
+  border-color: var(--sage-deep);
+}
+
+.barcode-submit-btn {
+  background: var(--sage-deep);
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--r-pill);
+  padding: 10px 20px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.barcode-submit-btn:hover {
+  transform: translateY(-1px);
+}
+
+.diagnostic-card {
+  background: #FFFFFF;
+  border-radius: var(--r-lg);
+  padding: 20px;
+  border: 1px solid rgba(55, 64, 54, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.diagnostic-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.product-brand-kicker {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--sage-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.product-card-title {
+  font-size: 1.15rem;
+  color: var(--ink-dark);
+  margin: 2px 0 0;
+}
+
+.product-card-category {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+}
+
+.score-hero-badge {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.score-hero-value {
+  font-size: 1.4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-hero-scale {
+  font-size: 0.65rem;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+.diagnostic-tier-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 10px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-size: 0.88rem;
+}
+
+.confidence-text {
+  font-size: 0.78rem;
+  color: var(--ink-faint);
+}
+
+.terroir-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 14px;
+  font-size: 0.82rem;
+  color: var(--ink);
+}
+
+.icon-badge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--sage-mist);
+  display: grid;
+  place-items: center;
+}
+
+.diagnostic-nutrition-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-top: 14px;
+  padding: 12px;
+  background: var(--cream);
+  border-radius: var(--r-md);
+}
+
+.nutri-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.nutri-label {
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  margin-bottom: 2px;
+}
+
+.nutri-item strong {
+  font-size: 0.88rem;
+  color: var(--ink-dark);
+}
+
+.nutri-item strong.alert {
+  color: var(--score-bad);
+}
+
+.diagnostic-additives {
+  margin-top: 14px;
+}
+
+.additives-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--ink-dark);
+  margin-bottom: 6px;
+}
+
+.safe-text {
+  font-size: 0.8rem;
+  color: var(--sage-deep);
+  font-weight: 600;
+}
+
+.additives-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.additive-chip {
+  background: #FDECE7;
+  color: var(--score-bad);
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: var(--r-pill);
+}
+
+.web-modal-footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.web-modal-footer p {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 360px;
+}
+
 /* ============================================================
    DESIGN 08 Â· COMPONENTS â€” Soft Kitchen
    ============================================================ */

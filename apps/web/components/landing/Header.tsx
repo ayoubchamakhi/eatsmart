@@ -6,9 +6,10 @@ interface HeaderProps {
   isArabic: boolean;
   toggleLanguage: () => void;
   isScrolled: boolean;
+  onOpenScanner?: () => void;
 }
 
-export function Header({ isArabic, toggleLanguage, isScrolled }: HeaderProps) {
+export function Header({ isArabic, toggleLanguage, isScrolled, onOpenScanner }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -28,6 +29,23 @@ export function Header({ isArabic, toggleLanguage, isScrolled }: HeaderProps) {
           <a href="#independance">{isArabic ? "استقلاليتنا" : "Notre indépendance"}</a>
           <a href="#evaluer">{isArabic ? "فهم التقييم" : "Comprendre la note"}</a>
           <a href="#recommandations">{isArabic ? "البدائل الصحية" : "Alternatives"}</a>
+          {onOpenScanner && (
+            <button
+              type="button"
+              onClick={onOpenScanner}
+              style={{
+                background: "none",
+                border: "none",
+                color: "var(--sage-deep)",
+                fontWeight: 700,
+                cursor: "pointer",
+                padding: "8px 16px",
+                borderRadius: "var(--r-pill)",
+              }}
+            >
+              {isArabic ? "تجربة المسح" : "Tester le scanner"}
+            </button>
+          )}
         </nav>
 
         <div className="header-actions">
