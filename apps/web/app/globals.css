@@ -1613,3 +1613,7 @@ body {
   }
 }
 
+html[dir="rtl"] .breadcrumb-chevron {
+  transform: rotate(180deg);
+}
+

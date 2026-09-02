@@ -44,7 +44,7 @@ export function Breadcrumb({ items }: BreadcrumbProps) {
         const isLast = index === items.length - 1;
         return (
           <span key={index} style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
-            <ChevronRight size={13} color="#B3ADA3" />
+            <ChevronRight size={13} color="#B3ADA3" className="breadcrumb-chevron" />
             {item.href && !isLast ? (
               <Link
                 href={item.href}
