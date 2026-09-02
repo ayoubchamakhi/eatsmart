@@ -423,12 +423,132 @@ html[dir="rtl"] h4 {
   gap: 12px;
 }
 
-.web-modal-footer p {
-  font-size: 0.82rem;
-  color: var(--ink-soft);
-  margin: 0;
-  max-width: 360px;
+/* ============================================================
+   LANGUAGE DROPDOWN WITH REAL ROUNDED FLAGS
+   ============================================================ */
+.lang-dropdown-wrap {
+  position: relative;
+  display: inline-block;
 }
+
+.lang-dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-soft);
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.lang-dropdown-trigger:hover {
+  border-color: var(--sage);
+  background: var(--linen);
+}
+
+.flag-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.rounded-flag {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.lang-name-label {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.lang-chevron {
+  color: var(--ink-faint);
+  transition: transform 0.2s ease;
+}
+
+.chevron-rotated {
+  transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  min-width: 160px;
+  background: #FFFFFF;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border-soft);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 6px;
+  z-index: 200;
+  animation: dropdownFade 0.15s ease-out;
+}
+
+html[dir="rtl"] .lang-dropdown-menu {
+  right: auto;
+  left: 0;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lang-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border: none;
+  background: none;
+  border-radius: var(--r-sm);
+  cursor: pointer;
+  color: var(--ink);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.15s ease;
+}
+
+.lang-option:hover {
+  background: var(--sage-mist);
+  color: var(--sage-deep);
+}
+
+.lang-option.active {
+  background: var(--sage-mist);
+  color: var(--sage-deep);
+  font-weight: 700;
+}
+
+.lang-option-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-check {
+  color: var(--sage-deep);
+}
+
 
 /* ============================================================
    DESIGN 08 Â· COMPONENTS â€” Soft Kitchen

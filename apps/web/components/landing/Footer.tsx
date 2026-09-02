@@ -40,7 +40,11 @@ export function Footer({ isArabic }: FooterProps) {
               </svg>
             </a>
           </div>
-          <p className="footer-copy">© 2026 Eatsmart. Projet indépendant à visée informative.</p>
+          <p className="footer-copy">© 2026 Eats.tn (Eatsmart). Tous droits réservés.</p>
+          <p style={{ fontSize: "0.78rem", color: "var(--ink-faint)", marginTop: 6, lineHeight: 1.5 }}>
+            EATSMART TUNISIE SARL · Matricule Fiscal : 1845920/A/M/000 · Code RNE : 1845920A<br />
+            Siège social : Les Berges du Lac, 1053 Tunis · Tél : +216 71 860 000
+          </p>
         </div>
 
         <div className="footer-col">
@@ -58,11 +62,13 @@ export function Footer({ isArabic }: FooterProps) {
         </div>
 
         <div className="footer-col">
-          <strong>À Propos</strong>
-          <a href="#">{isArabic ? "فريق العمل" : "L'équipe"}</a>
-          <a href="mailto:contact@eatsmart.tn">{isArabic ? "اتصل بنا" : "Contact & Presse"}</a>
+          <strong>Informations Légales</strong>
+          <a href="/mentions-legales">{isArabic ? "البيانات القانونية" : "Mentions légales"}</a>
+          <a href="/cgv">{isArabic ? "شروط البيع العامة" : "Conditions Générales de Vente (CGV)"}</a>
           <a href="/legal/privacy">{isArabic ? "سياسة الخصوصية" : "Politique de confidentialité"}</a>
-          <a href="/legal/terms">{isArabic ? "شروط الاستخدام" : "Conditions d'utilisation"}</a>
+          <a href="/legal/terms">{isArabic ? "ميثاق الاستقلالية" : "Charte d'indépendance"}</a>
+          <a href="mailto:contact@eats.tn">contact@eats.tn</a>
+          <a href="tel:+21671860000">+216 71 860 000</a>
         </div>
       </div>
 

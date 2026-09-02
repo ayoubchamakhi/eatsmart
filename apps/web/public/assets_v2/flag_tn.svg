@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+  <defs>
+    <clipPath id="circle-tn">
+      <circle cx="12" cy="12" r="12" />
+    </clipPath>
+    <mask id="crescent-cut">
+      <circle cx="12" cy="12" r="4.6" fill="#FFFFFF" />
+      <circle cx="13.3" cy="12" r="3.7" fill="#000000" />
+    </mask>
+  </defs>
+  <g clip-path="url(#circle-tn)">
+    <!-- Red background -->
+    <rect x="0" y="0" width="24" height="24" fill="#E70013" />
+    
+    <!-- White central disk -->
+    <circle cx="12" cy="12" r="6.2" fill="#FFFFFF" />
+    
+    <!-- Red crescent using mask -->
+    <circle cx="12" cy="12" r="4.6" fill="#E70013" mask="url(#crescent-cut)" />
+    
+    <!-- Red 5-pointed star -->
+    <polygon
+      points="13.2,10.1 13.7,11.3 15.0,11.3 13.9,12.1 14.3,13.3 13.2,12.5 12.1,13.3 12.5,12.1 11.4,11.3 12.7,11.3"
+      fill="#E70013"
+    />
+    
+    <circle cx="12" cy="12" r="11.5" fill="none" stroke="rgba(0,0,0,0.12)" stroke-width="1" />
+  </g>
+</svg>
