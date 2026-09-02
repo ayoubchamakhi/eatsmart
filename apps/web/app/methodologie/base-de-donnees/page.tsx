@@ -2,209 +2,176 @@ import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
+import { Breadcrumb } from "@/components/subpage/Breadcrumb";
+import { SubpageHero } from "@/components/subpage/SubpageHero";
+import { DownloadCtaBanner } from "@/components/subpage/DownloadCtaBanner";
 import {
   Database,
   Globe2,
-  Users,
-  CheckCircle2,
-  Lock,
+  Camera,
   ShieldCheck,
   Sparkles,
-  Smartphone,
-  ChevronRight,
-  Camera,
   Layers,
+  Award,
+  Users,
 } from "lucide-react";
 
 export const metadata = {
-  title: "Base de Données : 100% Citoyenne, Ouverte et Indépendante | Eats.tn",
+  title: "Base de Données : Ouverte, Citoyenne & Indépendante | Eats.tn",
   description:
-    "Comment est construite la base de données alimentaire Eatsmart en Tunisie : Open Food Facts, contributions citoyennes, codes-barres 619 et totale indépendance.",
+    "Comment est construite la base alimentaire Eatsmart en Tunisie : Open Food Facts, codes 619, contributions en magasin et bonus 10% pour l'Agriculture Biologique.",
 };
 
 export default function BaseDeDonneesPage() {
   return (
-    <>
+    <div className="yuka-page-wrap">
       <Header />
 
-      <main style={{ background: "#FBF9F5", minHeight: "100vh", paddingBottom: 60 }}>
-        {/* Breadcrumb Navigation */}
-        <div style={{ maxWidth: 940, margin: "0 auto", padding: "24px 20px 8px" }}>
-          <nav
-            aria-label="Fil d'Ariane"
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-              fontSize: "0.84rem",
-              color: "#6E675C",
-            }}
-          >
-            <Link href="/" style={{ color: "#2D5A27", textDecoration: "none", fontWeight: 600 }}>
-              Accueil
-            </Link>
-            <ChevronRight size={14} color="#A8A297" />
-            <Link href="/methodologie" style={{ color: "#2D5A27", textDecoration: "none", fontWeight: 600 }}>
-              Méthodologie
-            </Link>
-            <ChevronRight size={14} color="#A8A297" />
-            <span style={{ color: "#1F221B", fontWeight: 700 }}>Base de données citoyenne</span>
-          </nav>
-        </div>
+      <main className="yuka-container">
+        {/* Breadcrumb */}
+        <Breadcrumb
+          items={[
+            { label: "Méthodologie", href: "/methodologie" },
+            { label: "Base de données citoyenne" },
+          ]}
+        />
 
         {/* Hero Section */}
-        <div style={{ maxWidth: 940, margin: "0 auto", padding: "16px 20px 32px" }}>
-          <div
-            style={{
-              background: "#FFFFFF",
-              borderRadius: 24,
-              padding: "36px 36px",
-              border: "1px solid rgba(61, 58, 52, 0.08)",
-              boxShadow: "0 10px 30px rgba(0, 0, 0, 0.03)",
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(290px, 1fr))",
-              gap: 32,
-              alignItems: "center",
-            }}
-          >
-            <div>
-              <div
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  gap: 6,
-                  backgroundColor: "#EBF3E8",
-                  color: "#2D5A27",
-                  padding: "6px 14px",
-                  borderRadius: 999,
-                  fontSize: "0.82rem",
-                  fontWeight: 700,
-                  marginBottom: 16,
-                }}
-              >
-                <Database size={16} /> Open Data · Bien commun citoyen
+        <SubpageHero
+          badgeIcon={<Database size={16} />}
+          badgeText="Open Data · Bien commun citoyen"
+          badgeVariant="sage"
+          title="Une base de données collaborative et libre"
+          description="Le catalogue Eatsmart appartient au public. Il est alimenté en toute transparence par les contributions des consommateurs tunisiens et connecté au projet mondial Open Food Facts."
+          imageSrc="/assets_v2/methodology_database.jpg"
+          imageAlt="Base de données collaborative ouverte et scans en magasin"
+        />
+
+        {/* 3 Pillars of Data Enrichment */}
+        <section style={{ marginBottom: 40 }}>
+          <div className="yuka-card">
+            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
+              <div className="yuka-icon-bubble yuka-bubble-sage">
+                <Layers size={24} />
               </div>
-              <h1
-                style={{
-                  fontSize: "clamp(2rem, 3.5vw, 2.7rem)",
-                  color: "#1F221B",
-                  fontWeight: 800,
-                  lineHeight: 1.15,
-                  margin: "0 0 16px",
-                  fontFamily: "var(--font-display)",
-                }}
-              >
-                Base de données citoyenne
-              </h1>
-              <p style={{ color: "#5C564B", fontSize: "1.02rem", lineHeight: 1.6, margin: 0 }}>
-                La base alimentaire Eatsmart est un bien commun public et partagé. Elle s'enrichit au quotidien grâce aux consommateurs qui scannent et photographient les étiquettes en supermarché partout en Tunisie.
-              </p>
+              <div>
+                <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
+                  Comment notre catalogue s'enrichit-il chaque jour ?
+                </h2>
+                <p style={{ margin: 0, fontSize: "0.9rem", color: "#6E675C" }}>
+                  Une synergie entre technologie de reconnaissance et intelligence collective
+                </p>
+              </div>
             </div>
 
             <div
               style={{
-                position: "relative",
-                width: "100%",
-                height: 240,
-                borderRadius: 18,
-                overflow: "hidden",
-                boxShadow: "0 6px 20px rgba(0, 0, 0, 0.05)",
+                display: "grid",
+                gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+                gap: 24,
               }}
             >
-              <Image
-                src="/assets_v2/methodology_database.jpg"
-                alt="Base de données collaborative ouverte et scans de produits alimentaires"
-                fill
-                style={{ objectFit: "cover" }}
-                priority
-              />
-            </div>
-          </div>
-        </div>
-
-        {/* Content Container */}
-        <div style={{ maxWidth: 940, margin: "0 auto", padding: "0 20px" }}>
-          {/* The 3 Pillars Card */}
-          <div
-            style={{
-              background: "#FFFFFF",
-              borderRadius: 20,
-              padding: "32px",
-              border: "1px solid rgba(61, 58, 52, 0.08)",
-              marginBottom: 24,
-              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.02)",
-            }}
-          >
-            <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: "0 0 20px", fontWeight: 800 }}>
-              D'où proviennent nos informations nutritionnelles ?
-            </h2>
-
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: 20 }}>
               {/* Pillar 1 */}
-              <div style={{ background: "#FBF9F5", padding: "24px", borderRadius: 16, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <div style={{ width: 42, height: 42, borderRadius: 12, background: "#EBF3E8", display: "flex", alignItems: "center", justifyContent: "center", color: "#2D5A27", marginBottom: 14 }}>
-                  <Globe2 size={22} />
+              <div
+                style={{
+                  background: "#FAF8F5",
+                  borderRadius: 22,
+                  padding: "28px 24px",
+                  border: "1px solid rgba(61, 58, 52, 0.06)",
+                }}
+              >
+                <div className="yuka-icon-bubble yuka-bubble-sage" style={{ marginBottom: 16 }}>
+                  <Globe2 size={24} />
                 </div>
-                <strong style={{ fontSize: "1.1rem", color: "#1F221B", display: "block", marginBottom: 8 }}>
+                <h3 style={{ fontSize: "1.15rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
                   1. Open Food Facts
-                </strong>
-                <p style={{ color: "#6E675C", fontSize: "0.92rem", lineHeight: 1.6, margin: 0 }}>
-                  Synchronisation continue avec le plus vaste catalogue alimentaire ouvert mondial, enrichi des références tunisiennes portant le préfixe GS1 619.
+                </h3>
+                <p style={{ color: "#5C564B", fontSize: "0.95rem", lineHeight: 1.65, margin: 0 }}>
+                  Connexion permanente avec la plus vaste encyclopédie alimentaire ouverte au monde. Les produits tunisiens (identifiables par le préfixe <strong>GS1 619</strong>) bénéficient d'un enrichissement continu de leurs fiches techniques.
                 </p>
               </div>
 
               {/* Pillar 2 */}
-              <div style={{ background: "#FBF9F5", padding: "24px", borderRadius: 16, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <div style={{ width: 42, height: 42, borderRadius: 12, background: "#EBF3E8", display: "flex", alignItems: "center", justifyContent: "center", color: "#2D5A27", marginBottom: 14 }}>
-                  <Camera size={22} />
+              <div
+                style={{
+                  background: "#FAF8F5",
+                  borderRadius: 22,
+                  padding: "28px 24px",
+                  border: "1px solid rgba(61, 58, 52, 0.06)",
+                }}
+              >
+                <div className="yuka-icon-bubble yuka-bubble-coral" style={{ marginBottom: 16 }}>
+                  <Camera size={24} />
                 </div>
-                <strong style={{ fontSize: "1.1rem", color: "#1F221B", display: "block", marginBottom: 8 }}>
-                  2. Contributions en magasin
-                </strong>
-                <p style={{ color: "#6E675C", fontSize: "0.92rem", lineHeight: 1.6, margin: 0 }}>
-                  Lorsqu'un produit scanné n'est pas encore répertorié, l'utilisateur prend en photo la face avant, le tableau nutritionnel et la liste des ingrédients en quelques secondes.
+                <h3 style={{ fontSize: "1.15rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
+                  2. Contributions en rayon
+                </h3>
+                <p style={{ color: "#5C564B", fontSize: "0.95rem", lineHeight: 1.65, margin: 0 }}>
+                  Lorsqu'un produit scanné n'est pas encore répertorié dans la base, l'utilisateur peut le photographier directement via l'application (face avant, liste des ingrédients, tableau nutritionnel) en moins de 30 secondes.
                 </p>
               </div>
 
               {/* Pillar 3 */}
-              <div style={{ background: "#FBF9F5", padding: "24px", borderRadius: 16, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <div style={{ width: 42, height: 42, borderRadius: 12, background: "#EBF3E8", display: "flex", alignItems: "center", justifyContent: "center", color: "#2D5A27", marginBottom: 14 }}>
-                  <ShieldCheck size={22} />
+              <div
+                style={{
+                  background: "#FAF8F5",
+                  borderRadius: 22,
+                  padding: "28px 24px",
+                  border: "1px solid rgba(61, 58, 52, 0.06)",
+                }}
+              >
+                <div className="yuka-icon-bubble yuka-bubble-amber" style={{ marginBottom: 16 }}>
+                  <ShieldCheck size={24} />
                 </div>
-                <strong style={{ fontSize: "1.1rem", color: "#1F221B", display: "block", marginBottom: 8 }}>
-                  3. Audit & Indépendance
-                </strong>
-                <p style={{ color: "#6E675C", fontSize: "0.92rem", lineHeight: 1.6, margin: 0 }}>
-                  Chaque contribution est vérifiée via OCR intelligent puis validée par notre équipe de modération citoyenne. Aucune marque ne peut modifier unilatéralement sa fiche produit.
+                <h3 style={{ fontSize: "1.15rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
+                  3. Audit & Modération
+                </h3>
+                <p style={{ color: "#5C564B", fontSize: "0.95rem", lineHeight: 1.65, margin: 0 }}>
+                  Les photos soumises sont traitées par notre moteur OCR de reconnaissance de texte puis soumises à une relecture humaine afin de garantir la stricte exactitude des ingrédients avant calcul du score définitif.
                 </p>
               </div>
             </div>
           </div>
+        </section>
 
-          {/* 10% Terroir and Bio Bonus */}
-          <div
-            style={{
-              background: "#FFFFFF",
-              borderRadius: 20,
-              padding: "32px",
-              border: "1px solid rgba(61, 58, 52, 0.08)",
-              boxShadow: "0 4px 20px rgba(0, 0, 0, 0.02)",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 14 }}>
-              <Sparkles size={22} color="#2D5A27" />
-              <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
-                Bonus 10% : Certification Bio et Valorisation du Terroir
-              </h2>
+        {/* 10% Bonus for Organic Agriculture */}
+        <section style={{ marginBottom: 40 }}>
+          <div className="yuka-card" style={{ border: "1.5px solid rgba(45, 90, 39, 0.2)" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", gap: 20 }}>
+              <div className="yuka-icon-bubble yuka-bubble-sage">
+                <Sparkles size={24} />
+              </div>
+              <div>
+                <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap", marginBottom: 8 }}>
+                  <h3 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
+                    Bonus de 10% : Dimension Biologique & Terroir Local
+                  </h3>
+                  <span
+                    style={{
+                      background: "#EBF3E8",
+                      color: "#2D5A27",
+                      padding: "4px 12px",
+                      borderRadius: 9999,
+                      fontSize: "0.8rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    +10 points bonus
+                  </span>
+                </div>
+                <p style={{ color: "#5C564B", fontSize: "1.02rem", lineHeight: 1.7, margin: 0 }}>
+                  Afin de soutenir les pratiques agricoles respectueuses de l'environnement et de la santé humaine, un bonus forfaitaire de <strong>10 points</strong> est accordé à tout aliment certifié par un label officiel d'<strong>Agriculture Biologique</strong> (reconnu en Tunisie ou à l'international). Ce bonus récompense l'absence d'engrais chimiques et de résidus de pesticides de synthèse, et valorise la richesse naturelle des récoltes locales.
+                </p>
+              </div>
             </div>
-            <p style={{ color: "#3D3A34", lineHeight: 1.7, fontSize: "0.98rem", margin: 0 }}>
-              Les 10% restants de la note récompensent les démarches vertueuses : les aliments bénéficiant d'un label d'<strong>Agriculture Biologique</strong> certifié (garantissant l'absence de résidus de pesticides de synthèse) reçoivent un bonus de 10 points. Les produits issus de filières courtes artisanales tunisiennes sont également mis en avant dans nos suggestions d'alternatives saines.
-            </p>
           </div>
-        </div>
+        </section>
+
+        {/* Download Banner */}
+        <DownloadCtaBanner />
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

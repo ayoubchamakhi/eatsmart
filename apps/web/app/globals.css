@@ -1536,3 +1536,80 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ============================================================
+   YUKA DESIGN SYSTEM UTILITIES FOR SUBPAGES
+   ============================================================ */
+.yuka-page-wrap {
+  background: #FAF8F5;
+  min-height: 100vh;
+}
+
+.yuka-container {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.yuka-card {
+  background: #FFFFFF;
+  border-radius: 28px;
+  padding: 36px 40px;
+  border: 1px solid rgba(61, 58, 52, 0.07);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.025);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.yuka-card-interactive:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, 0.06);
+}
+
+.yuka-icon-bubble {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.yuka-bubble-sage {
+  background: #EBF3E8;
+  color: #2D5A27;
+}
+
+.yuka-bubble-coral {
+  background: #FEF3EB;
+  color: #D9531E;
+}
+
+.yuka-bubble-amber {
+  background: #FEF8E7;
+  color: #C47F00;
+}
+
+.yuka-bubble-red {
+  background: #FDECE7;
+  color: #C73E1D;
+}
+
+.yuka-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 768px) {
+  .yuka-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+}
+
