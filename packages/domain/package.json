@@ -13,12 +13,14 @@
   },
   "scripts": {
     "build": "tsc",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "tsc && node --test dist/scoring.test.js"
   },
   "dependencies": {
     "@eatsmart/design-tokens": "workspace:*"
   },
   "devDependencies": {
+    "@types/node": "^22.13.5",
     "typescript": "^5.7.3"
   }
 }

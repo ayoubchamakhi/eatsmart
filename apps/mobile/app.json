@@ -25,6 +25,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Eatsmart utilise la caméra pour scanner les codes-barres de vos produits en rayon."
+        }
+      ]
+    ]
   }
 }

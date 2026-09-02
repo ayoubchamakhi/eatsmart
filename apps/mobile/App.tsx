@@ -12,6 +12,7 @@ import { ScannerScreen } from './src/screens/ScannerScreen';
 import { ProductDetailScreen } from './src/screens/ProductDetailScreen';
 import { AlternativesScreen } from './src/screens/AlternativesScreen';
 import { ProfileScreen } from './src/screens/ProfileScreen';
+import { addScanToHistory } from './src/services/storage';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabKey>('history');
@@ -23,6 +24,7 @@ export default function App() {
   };
 
   const handleScanProduct = (product: Product) => {
+    addScanToHistory(product);
     setSelectedProduct(product);
     setActiveTab('history');
   };

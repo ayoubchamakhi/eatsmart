@@ -1,10 +1,29 @@
-import React from 'react';
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native';
-import { ArrowLeft, Leaf, ShieldAlert, Sparkles, AlertCircle } from 'lucide-react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  Modal,
+} from 'react-native';
+import {
+  ArrowLeft,
+  Leaf,
+  ShieldAlert,
+  Sparkles,
+  Heart,
+  Info,
+  X,
+  AlertTriangle,
+} from 'lucide-react-native';
+import * as Haptics from 'expo-haptics';
 import { colors, radii } from '@eatsmart/design-tokens';
-import type { Product } from '@eatsmart/domain';
+import type { Product, Additive } from '@eatsmart/domain';
 import { getScoreColor } from '@eatsmart/domain';
 import { ScoreBadge } from '../components/ScoreBadge';
+import { NutriScoreBadge, NovaBadge } from '../components/NutriScoreBadge';
+import { isFavorite, toggleFavorite } from '../services/storage';
 
 interface ProductDetailScreenProps {
   product: Product;
@@ -19,6 +38,21 @@ export function ProductDetailScreen({
   onViewAlternatives,
   isArabic,
 }: ProductDetailScreenProps) {
+  const [favorite, setFavorite] = useState(false);
+  const [selectedAdditive, setSelectedAdditive] = useState<Additive | null>(null);
+
+  useEffect(() => {
+    isFavorite(product.id).then(setFavorite);
+  }, [product.id]);
+
+  const handleToggleFavorite = async () => {
+    try {
+      Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+    } catch {}
+    const next = await toggleFavorite(product.id);
+    setFavorite(next);
+  };
+
   const scoreColor = getScoreColor(product.score.tier);
 
   return (
@@ -27,18 +61,26 @@ export function ProductDetailScreen({
       contentContainerStyle={styles.content}
       showsVerticalScrollIndicator={false}
     >
-      {/* Top Bar */}
+      {/* Navigation & Actions */}
       <View style={styles.navBar}>
-        <TouchableOpacity style={styles.backButton} onPress={onBack}>
+        <TouchableOpacity style={styles.navBtn} onPress={onBack}>
           <ArrowLeft size={20} color={colors.inkDark} />
         </TouchableOpacity>
+
         <Text style={styles.navTitle} numberOfLines={1}>
           {product.brand}
         </Text>
-        <View style={{ width: 40 }} />
+
+        <TouchableOpacity style={styles.navBtn} onPress={handleToggleFavorite}>
+          <Heart
+            size={20}
+            color={favorite ? colors.scoreBad : colors.inkSoft}
+            fill={favorite ? colors.scoreBad : 'none'}
+          />
+        </TouchableOpacity>
       </View>
 
-      {/* Main Score Hero */}
+      {/* Main Score Hero Card */}
       <View style={styles.heroCard}>
         <View style={styles.heroTop}>
           <View style={styles.heroInfo}>
@@ -60,6 +102,19 @@ export function ProductDetailScreen({
               : `Indice de confiance: ${product.score.confidence}%`}
           </Text>
         </View>
+
+        {/* Nutri-Score & NOVA Dual Pills */}
+        <View style={styles.ratingsRow}>
+          <View style={styles.ratingCol}>
+            <Text style={styles.ratingSubhead}>Nutri-Score</Text>
+            <NutriScoreBadge grade={product.nutriScore} size="medium" />
+          </View>
+
+          <View style={styles.ratingCol}>
+            <Text style={styles.ratingSubhead}>Transformation</Text>
+            <NovaBadge group={product.novaGroup} isArabic={isArabic} />
+          </View>
+        </View>
       </View>
 
       {/* Origin & Terroir */}
@@ -76,18 +131,37 @@ export function ProductDetailScreen({
             <Text style={styles.terroirTagText}>
               {isArabic
                 ? '✓ منتوج محلي أصيل مساهم في الاقتصاد التونسي'
-                : '✓ Produit local tunisien valorisant les filières régionales'}
+                : '✓ Produit tunisien valorisant les filières agricoles locales'}
             </Text>
           </View>
         )}
       </View>
 
-      {/* Nutritional Breakdown */}
+      {/* Allergens Warning */}
+      {product.allergens && product.allergens.length > 0 && (
+        <View style={[styles.sectionCard, styles.allergenCard]}>
+          <View style={styles.sectionHeader}>
+            <AlertTriangle size={18} color={colors.warning || '#DFAE5C'} />
+            <Text style={styles.sectionTitle}>
+              {isArabic ? 'مسببات الحساسية' : 'Allergènes identifiés'}
+            </Text>
+          </View>
+          <View style={styles.allergensList}>
+            {product.allergens.map((all, i) => (
+              <View key={i} style={styles.allergenChip}>
+                <Text style={styles.allergenChipText}>{all}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      )}
+
+      {/* Nutritional Breakdown Table */}
       <View style={styles.sectionCard}>
         <View style={styles.sectionHeader}>
           <Sparkles size={18} color={colors.sageDeep} />
           <Text style={styles.sectionTitle}>
-            {isArabic ? 'القيم الغذائية (لكل 100غ)' : 'Valeurs nutritionnelles (pour 100g)'}
+            {isArabic ? 'القيم الغذائية (لكل 100غ)' : 'Repères nutritionnels (100g)'}
           </Text>
         </View>
 
@@ -99,14 +173,24 @@ export function ProductDetailScreen({
 
           <View style={styles.nutriCell}>
             <Text style={styles.nutriLabel}>{isArabic ? 'السكريات' : 'Sucres'}</Text>
-            <Text style={[styles.nutriValue, product.nutrition.sugars > 15 && styles.textAlert]}>
+            <Text
+              style={[
+                styles.nutriValue,
+                product.nutrition.sugars > 15 && styles.textAlert,
+              ]}
+            >
               {product.nutrition.sugars}g
             </Text>
           </View>
 
           <View style={styles.nutriCell}>
-            <Text style={styles.nutriLabel}>{isArabic ? 'دهون مشبعة' : 'Graisses sat.'}</Text>
-            <Text style={[styles.nutriValue, product.nutrition.saturatedFat > 5 && styles.textAlert]}>
+            <Text style={styles.nutriLabel}>{isArabic ? 'دهون مشبعة' : 'Gras sat.'}</Text>
+            <Text
+              style={[
+                styles.nutriValue,
+                product.nutrition.saturatedFat > 5 && styles.textAlert,
+              ]}
+            >
               {product.nutrition.saturatedFat}g
             </Text>
           </View>
@@ -118,56 +202,145 @@ export function ProductDetailScreen({
         </View>
       </View>
 
-      {/* Additives Section */}
+      {/* Additives Section with Tap to Inspect */}
       <View style={styles.sectionCard}>
         <View style={styles.sectionHeader}>
-          <ShieldAlert size={18} color={product.additives.length > 0 ? colors.scoreBad : colors.sageDeep} />
+          <ShieldAlert
+            size={18}
+            color={product.additives.length > 0 ? colors.scoreBad : colors.sageDeep}
+          />
           <Text style={styles.sectionTitle}>
-            {isArabic ? 'المواد الحافظة والملونات' : 'Additifs & Conservateurs'}
+            {isArabic ? 'المواد الحافظة والملونات' : 'Additifs alimentaires'}
           </Text>
         </View>
 
         {product.additives.length === 0 ? (
           <View style={styles.safeBox}>
             <Text style={styles.safeBoxText}>
-              {isArabic ? '✓ خالي من أي مادة مضافة كيميائية' : '✓ Aucun additif détecté dans la recette'}
+              {isArabic
+                ? '✓ خالي من أي مادة مضافة أو ملون كيميائي'
+                : '✓ Aucun additif détecté dans la recette'}
             </Text>
           </View>
         ) : (
           product.additives.map((add) => (
-            <View key={add.code} style={styles.additiveRow}>
+            <TouchableOpacity
+              key={add.code}
+              style={styles.additiveRow}
+              onPress={() => setSelectedAdditive(add)}
+              activeOpacity={0.7}
+            >
               <View style={styles.additiveBadge}>
                 <Text style={styles.additiveCode}>{add.code}</Text>
               </View>
+
               <View style={styles.additiveInfo}>
-                <Text style={styles.additiveName}>{isArabic ? add.nameAr : add.nameFr}</Text>
+                <Text style={styles.additiveName}>
+                  {isArabic ? add.nameAr : add.nameFr}
+                </Text>
                 <Text style={styles.additiveCategory}>{add.functionCategory}</Text>
               </View>
-              <View style={[styles.riskTag, add.risk === 'moderate' && styles.riskModerate]}>
+
+              <View
+                style={[
+                  styles.riskTag,
+                  add.risk === 'moderate' && styles.riskModerate,
+                ]}
+              >
                 <Text style={styles.riskText}>
                   {add.risk === 'moderate'
                     ? isArabic
                       ? 'متوسط'
-                      : 'Modéré'
+                      : 'Risque modéré'
                     : isArabic
                     ? 'آمن'
-                    : 'Toléré'}
+                    : 'Sans risque'}
                 </Text>
               </View>
-            </View>
+            </TouchableOpacity>
           ))
         )}
       </View>
 
-      {/* Action to View Healthy Alternatives */}
+      {/* Ingredients Summary */}
+      {product.ingredientsSummary && (
+        <View style={styles.sectionCard}>
+          <Text style={styles.ingredientsTitle}>
+            {isArabic ? 'قائمة المكونات الكاملة :' : 'Liste des ingrédients :'}
+          </Text>
+          <Text style={styles.ingredientsText}>{product.ingredientsSummary}</Text>
+        </View>
+      )}
+
+      {/* Better Alternative CTA */}
       {product.score.value < 70 && (
         <TouchableOpacity style={styles.alternativesCta} onPress={onViewAlternatives}>
           <Sparkles size={20} color="#FFFFFF" />
           <Text style={styles.alternativesCtaText}>
-            {isArabic ? 'اكتشف البدائل الصحية التونسية' : 'Découvrir des alternatives plus saines'}
+            {isArabic
+              ? 'اكتشف بدائل تونسية أكثر صحة'
+              : 'Découvrir des alternatives locales plus saines'}
           </Text>
         </TouchableOpacity>
       )}
+
+      {/* Additive Detail Modal */}
+      <Modal
+        visible={!!selectedAdditive}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setSelectedAdditive(null)}
+      >
+        <View style={styles.modalBackdrop}>
+          <View style={styles.modalBox}>
+            <View style={styles.modalHeader}>
+              <View style={styles.modalTitleWrap}>
+                <View style={styles.modalBadge}>
+                  <Text style={styles.modalBadgeCode}>{selectedAdditive?.code}</Text>
+                </View>
+                <div>
+                  <Text style={styles.modalAdditiveName}>
+                    {isArabic ? selectedAdditive?.nameAr : selectedAdditive?.nameFr}
+                  </Text>
+                  <Text style={styles.modalCategory}>
+                    {selectedAdditive?.functionCategory}
+                  </Text>
+                </div>
+              </View>
+              <TouchableOpacity
+                style={styles.modalCloseBtn}
+                onPress={() => setSelectedAdditive(null)}
+              >
+                <X size={18} color={colors.inkDark} />
+              </TouchableOpacity>
+            </View>
+
+            <View style={styles.modalBody}>
+              <Text style={styles.modalDesc}>
+                {isArabic
+                  ? selectedAdditive?.descriptionAr || 'معلومات علمية حول هذه المادة المضافة.'
+                  : selectedAdditive?.descriptionFr || 'Informations scientifiques sur cet additif.'}
+              </Text>
+
+              <View style={styles.efsaNote}>
+                <Info size={14} color={colors.sageDeep} />
+                <Text style={styles.efsaText}>
+                  Évaluation basée sur les avis de l'EFSA et les publications de santé publique.
+                </Text>
+              </View>
+            </View>
+
+            <TouchableOpacity
+              style={styles.modalDismissBtn}
+              onPress={() => setSelectedAdditive(null)}
+            >
+              <Text style={styles.modalDismissText}>
+                {isArabic ? 'إغلاق' : 'Compris'}
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </Modal>
     </ScrollView>
   );
 }
@@ -188,7 +361,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginBottom: 16,
   },
-  backButton: {
+  navBtn: {
     width: 40,
     height: 40,
     borderRadius: 20,
@@ -211,7 +384,7 @@ const styles = StyleSheet.create({
     shadowColor: '#000',
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.06,
-    shadowRadius: 12,
+    shadowRadius: 14,
     elevation: 3,
   },
   heroTop: {
@@ -257,6 +430,26 @@ const styles = StyleSheet.create({
     fontSize: 11,
     color: colors.inkFaint,
   },
+  ratingsRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 16,
+    paddingTop: 14,
+    borderTopWidth: 1,
+    borderTopColor: 'rgba(61, 58, 52, 0.06)',
+    gap: 12,
+  },
+  ratingCol: {
+    flex: 1,
+  },
+  ratingSubhead: {
+    fontSize: 10,
+    fontWeight: '700',
+    color: colors.inkFaint,
+    textTransform: 'uppercase',
+    marginBottom: 6,
+  },
   sectionCard: {
     backgroundColor: '#FFFFFF',
     borderRadius: radii.lg,
@@ -264,6 +457,10 @@ const styles = StyleSheet.create({
     marginBottom: 12,
     borderWidth: 1,
     borderColor: 'rgba(61, 58, 52, 0.06)',
+  },
+  allergenCard: {
+    backgroundColor: '#FFFDF5',
+    borderColor: 'rgba(222, 174, 92, 0.3)',
   },
   sectionHeader: {
     flexDirection: 'row',
@@ -275,6 +472,22 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '700',
     color: colors.inkDark,
+  },
+  allergensList: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 6,
+  },
+  allergenChip: {
+    backgroundColor: '#F7E7CD',
+    paddingHorizontal: 10,
+    paddingVertical: 4,
+    borderRadius: radii.pill,
+  },
+  allergenChipText: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: '#8A5D18',
   },
   bodyText: {
     fontSize: 13,
@@ -326,7 +539,7 @@ const styles = StyleSheet.create({
   additiveRow: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingVertical: 8,
+    paddingVertical: 10,
     borderBottomWidth: 1,
     borderBottomColor: 'rgba(61, 58, 52, 0.05)',
   },
@@ -347,12 +560,13 @@ const styles = StyleSheet.create({
   },
   additiveName: {
     fontSize: 13,
-    fontWeight: '600',
+    fontWeight: '700',
     color: colors.inkDark,
   },
   additiveCategory: {
     fontSize: 11,
     color: colors.inkFaint,
+    marginTop: 1,
   },
   riskTag: {
     paddingHorizontal: 8,
@@ -367,6 +581,17 @@ const styles = StyleSheet.create({
     fontSize: 10,
     fontWeight: '700',
     color: colors.inkDark,
+  },
+  ingredientsTitle: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: colors.inkDark,
+    marginBottom: 6,
+  },
+  ingredientsText: {
+    fontSize: 12,
+    color: colors.inkSoft,
+    lineHeight: 18,
   },
   alternativesCta: {
     flexDirection: 'row',
@@ -387,5 +612,88 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     fontSize: 14,
     fontWeight: '700',
+  },
+  modalBackdrop: {
+    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+  },
+  modalBox: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: radii.xl,
+    padding: 20,
+    width: '100%',
+    maxWidth: 400,
+  },
+  modalHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: 14,
+  },
+  modalTitleWrap: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    flex: 1,
+  },
+  modalBadge: {
+    backgroundColor: '#F3F2EE',
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    borderRadius: radii.sm,
+  },
+  modalBadgeCode: {
+    fontSize: 13,
+    fontWeight: '800',
+    color: colors.inkDark,
+  },
+  modalAdditiveName: {
+    fontSize: 14,
+    fontWeight: '800',
+    color: colors.inkDark,
+  },
+  modalCategory: {
+    fontSize: 11,
+    color: colors.inkFaint,
+  },
+  modalCloseBtn: {
+    padding: 4,
+  },
+  modalBody: {
+    marginBottom: 16,
+  },
+  modalDesc: {
+    fontSize: 13,
+    color: colors.inkSoft,
+    lineHeight: 19,
+    marginBottom: 12,
+  },
+  efsaNote: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    backgroundColor: colors.sageMist,
+    padding: 10,
+    borderRadius: radii.md,
+  },
+  efsaText: {
+    fontSize: 11,
+    color: colors.sageDeep,
+    flex: 1,
+    lineHeight: 15,
+  },
+  modalDismissBtn: {
+    backgroundColor: colors.sageDeep,
+    borderRadius: radii.pill,
+    paddingVertical: 10,
+    alignItems: 'center',
+  },
+  modalDismissText: {
+    color: '#FFFFFF',
+    fontWeight: '700',
+    fontSize: 13,
   },
 });

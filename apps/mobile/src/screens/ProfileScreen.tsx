@@ -1,7 +1,23 @@
-import React from 'react';
-import { StyleSheet, View, Text, ScrollView, TouchableOpacity, Linking } from 'react-native';
-import { ShieldCheck, Globe, HelpCircle, Heart, ExternalLink } from 'lucide-react-native';
+import React, { useState, useEffect } from 'react';
+import {
+  StyleSheet,
+  View,
+  Text,
+  ScrollView,
+  TouchableOpacity,
+  Alert,
+} from 'react-native';
+import {
+  ShieldCheck,
+  Globe,
+  HelpCircle,
+  Heart,
+  Trash2,
+  Barcode,
+  Sparkles,
+} from 'lucide-react-native';
 import { colors, radii } from '@eatsmart/design-tokens';
+import { getScanHistory, getFavorites, clearScanHistory } from '../services/storage';
 
 interface ProfileScreenProps {
   isArabic: boolean;
@@ -9,6 +25,19 @@ interface ProfileScreenProps {
 }
 
 export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps) {
+  const [scanCount, setScanCount] = useState(0);
+  const [favCount, setFavCount] = useState(0);
+
+  useEffect(() => {
+    getScanHistory().then((h) => setScanCount(h.length));
+    getFavorites().then((f) => setFavCount(f.length));
+  }, []);
+
+  const handleClearHistory = async () => {
+    await clearScanHistory();
+    setScanCount(0);
+  };
+
   return (
     <ScrollView
       style={styles.container}
@@ -21,8 +50,39 @@ export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps
         </View>
         <Text style={styles.profileTitle}>Eatsmart Tunisie</Text>
         <Text style={styles.profileSubtitle}>
-          {isArabic ? 'مشروع مستقل من أجل صحة التونسيين' : 'Application citoyenne indépendante'}
+          {isArabic ? 'مشروع مستقل من أجل صحة التونسيين' : 'Application citoyenne 100% indépendante'}
         </Text>
+      </View>
+
+      {/* User Stats Card */}
+      <View style={styles.statsCard}>
+        <View style={styles.statCell}>
+          <Barcode size={18} color={colors.sageDeep} />
+          <Text style={styles.statValue}>{scanCount}</Text>
+          <Text style={styles.statLabel}>
+            {isArabic ? 'منتوج ممسوح' : 'Scans'}
+          </Text>
+        </View>
+
+        <View style={styles.statDivider} />
+
+        <View style={styles.statCell}>
+          <Heart size={18} color={colors.scoreBad} fill={colors.scoreBad} />
+          <Text style={styles.statValue}>{favCount}</Text>
+          <Text style={styles.statLabel}>
+            {isArabic ? 'في المفضلة' : 'Favoris'}
+          </Text>
+        </View>
+
+        <View style={styles.statDivider} />
+
+        <View style={styles.statCell}>
+          <Sparkles size={18} color={colors.sageDeep} />
+          <Text style={styles.statValue}>100%</Text>
+          <Text style={styles.statLabel}>
+            {isArabic ? 'استقلالية' : 'Neutre'}
+          </Text>
+        </View>
       </View>
 
       {/* Language Preference */}
@@ -67,7 +127,7 @@ export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps
         <View style={styles.cardHeader}>
           <HelpCircle size={18} color={colors.sageDeep} />
           <Text style={styles.cardTitle}>
-            {isArabic ? 'طريقة حساب النوتة' : 'Méthode de calcul'}
+            {isArabic ? 'طريقة حساب النوتة' : 'Méthode de calcul (0 à 100)'}
           </Text>
         </View>
 
@@ -75,7 +135,7 @@ export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps
           <Text style={styles.methodBullet}>•</Text>
           <Text style={styles.methodText}>
             <Text style={{ fontWeight: '700' }}>60% </Text>
-            {isArabic ? 'الجودة الغذائية (Nutri-Score)' : 'Qualité nutritionnelle (Nutri-Score)'}
+            {isArabic ? 'الجودة الغذائية (Nutri-Score A إلى E)' : 'Qualité nutritionnelle (Nutri-Score officiel)'}
           </Text>
         </View>
 
@@ -83,7 +143,7 @@ export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps
           <Text style={styles.methodBullet}>•</Text>
           <Text style={styles.methodText}>
             <Text style={{ fontWeight: '700' }}>40% </Text>
-            {isArabic ? 'المواد المضافة والملونات الكيميائية' : 'Présence et risque des additifs'}
+            {isArabic ? 'المواد المضافة ودرجة خطورتها (EFSA)' : 'Présence et risque des additifs (avis EFSA)'}
           </Text>
         </View>
 
@@ -91,10 +151,18 @@ export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps
           <Text style={styles.methodBullet}>•</Text>
           <Text style={styles.methodText}>
             <Text style={{ fontWeight: '700' }}>+ </Text>
-            {isArabic ? 'تثمين المنتوجات التونسية والبيولوجية' : 'Valorisation des labels Bio et du terroir tunisien'}
+            {isArabic ? 'تثمين المنتوجات التونسية والبيولوجية' : 'Valorisation du terroir tunisien et des filières Bio'}
           </Text>
         </View>
       </View>
+
+      {/* History Reset */}
+      <TouchableOpacity style={styles.clearHistoryRow} onPress={handleClearHistory}>
+        <Trash2 size={16} color={colors.scoreBad} />
+        <Text style={styles.clearHistoryText}>
+          {isArabic ? 'مسح سجل المسح' : 'Effacer l\'historique des scans'}
+        </Text>
+      </TouchableOpacity>
 
       {/* Footer Info */}
       <View style={styles.footerNote}>
@@ -119,7 +187,7 @@ const styles = StyleSheet.create({
   },
   profileHeader: {
     alignItems: 'center',
-    marginBottom: 20,
+    marginBottom: 18,
   },
   avatar: {
     width: 64,
@@ -149,6 +217,37 @@ const styles = StyleSheet.create({
     fontSize: 12,
     color: colors.inkSoft,
     marginTop: 2,
+  },
+  statsCard: {
+    flexDirection: 'row',
+    backgroundColor: '#FFFFFF',
+    borderRadius: radii.lg,
+    padding: 14,
+    marginBottom: 14,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: 'rgba(55, 64, 54, 0.06)',
+  },
+  statCell: {
+    alignItems: 'center',
+    flex: 1,
+  },
+  statValue: {
+    fontSize: 18,
+    fontWeight: '800',
+    color: colors.inkDark,
+    marginTop: 4,
+  },
+  statLabel: {
+    fontSize: 11,
+    color: colors.inkFaint,
+    marginTop: 1,
+  },
+  statDivider: {
+    width: 1,
+    height: 30,
+    backgroundColor: 'rgba(61, 58, 52, 0.08)',
   },
   card: {
     backgroundColor: '#FFFFFF',
@@ -211,12 +310,25 @@ const styles = StyleSheet.create({
     color: colors.inkSoft,
     flex: 1,
   },
+  clearHistoryRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    paddingVertical: 12,
+    marginTop: 4,
+  },
+  clearHistoryText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: colors.scoreBad,
+  },
   footerNote: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
     gap: 6,
-    marginTop: 16,
+    marginTop: 10,
   },
   footerText: {
     fontSize: 11,

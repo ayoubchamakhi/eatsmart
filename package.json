@@ -7,6 +7,7 @@
     "dev:web": "pnpm --filter web dev",
     "dev:mobile": "pnpm --filter mobile start",
     "build": "turbo build",
+    "test": "turbo test",
     "lint": "turbo lint",
     "clean": "turbo clean"
   },

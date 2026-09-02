@@ -16,12 +16,17 @@ export interface ProductScore {
 
 export type AdditiveRisk = 'safe' | 'low' | 'moderate' | 'high';
 
+export type NutriScoreGrade = 'a' | 'b' | 'c' | 'd' | 'e';
+export type NovaGroup = 1 | 2 | 3 | 4;
+
 export interface Additive {
   code: string; // e.g. E250, E150d
   nameFr: string;
   nameAr: string;
   risk: AdditiveRisk;
   functionCategory: string; // 'Conservateur', 'Colorant', etc.
+  descriptionFr?: string;
+  descriptionAr?: string;
 }
 
 export interface NutritionFacts {
@@ -46,7 +51,10 @@ export interface Product {
   image?: string;
   score: ProductScore;
   nutrition: NutritionFacts;
+  nutriScore: NutriScoreGrade;
+  novaGroup: NovaGroup;
   additives: Additive[];
+  allergens?: string[];
   ingredientsSummary?: string;
 }
 
