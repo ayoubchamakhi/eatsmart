@@ -84,7 +84,7 @@ export default function App() {
             onBack={() => setSelectedProduct(null)}
             onViewAlternatives={() => {
               setSelectedProduct(null);
-              setActiveTab('alternatives');
+              setActiveTab('recs');
             }}
             isArabic={isArabic}
           />
@@ -95,10 +95,17 @@ export default function App() {
             onContribute={(b) => setContributingBarcode(b)}
             isArabic={isArabic}
           />
-        ) : activeTab === 'alternatives' ? (
+        ) : activeTab === 'recs' ? (
           <AlternativesScreen
             onSelectProduct={handleSelectProduct}
             isArabic={isArabic}
+          />
+        ) : activeTab === 'favorites' ? (
+          <HomeScreen
+            onSelectProduct={handleSelectProduct}
+            onScanPress={() => setActiveTab('scan')}
+            isArabic={isArabic}
+            favoritesOnly
           />
         ) : activeTab === 'profile' ? (
           <ProfileScreen
@@ -108,6 +115,7 @@ export default function App() {
         ) : (
           <HomeScreen
             onSelectProduct={handleSelectProduct}
+            onScanPress={() => setActiveTab('scan')}
             isArabic={isArabic}
           />
         )}

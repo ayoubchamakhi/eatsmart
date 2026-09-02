@@ -1,0 +1,2382 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Eatsmart iOS — Yuka Version Tunisienne (Liquid Glass)</title>
+  <meta name="description" content="Template Apple iOS Eatsmart : Recherche inspirée de Yuka, clarté maximale, contenu solide, Liquid Glass réservé aux contrôles flottants, icônes Lucide officielles, et produits tunisiens authentiques.">
+  <link rel="icon" href="/assets_v2/favicon.png">
+  <link rel="apple-touch-icon" href="/assets_v2/icon.png">
+  <!-- Lucide Icons CDN -->
+  <script src="/assets_v2/lucide.min.js"></script>
+  <script>if(!window.lucide){document.write('<script src="https://unpkg.com/lucide@latest"><\/script>');}</script>
+
+  <style>
+    /* ==========================================================================
+       APPLE HIG & LIQUID GLASS TOKENS — MAXIMUM CLARITY & YUKA SEARCH
+       ========================================================================== */
+    :root {
+      --ios-bg: #FFFFFF;
+      --ios-bg-subtle: #F9F9FA;
+      --ios-text: #000000;
+      --ios-text-muted: #8E8E93;
+      --ios-text-faint: #C7C7CC;
+      --ios-line: rgba(0, 0, 0, 0.06);
+
+      /* Selective Liquid Glass (Floating Controls Only) */
+      --glass-surface: rgba(255, 255, 255, 0.82);
+      --glass-border: rgba(255, 255, 255, 0.9);
+      --glass-blur: blur(28px) saturate(190%);
+
+      /* Yuka Score Colors */
+      --yuka-green-deep: #1E824C;  /* 75-100 Excellent */
+      --yuka-green: #2FB755;       /* 50-74 Bon */
+      --yuka-orange: #F39C12;      /* 26-49 Médiocre */
+      --yuka-red: #E74C3C;         /* 0-25 Mauvais */
+
+      --font-ios: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #E8E5DD;
+      font-family: var(--font-ios);
+      color: var(--ios-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Lucide Icon Styling */
+    .lucide {
+      width: 20px;
+      height: 20px;
+      stroke-width: 1.9;
+      stroke: currentColor;
+      fill: none;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    /* Desktop Preview Stage Bar */
+    .stage-bar {
+      width: 100%;
+      max-width: 410px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .stage-bar a, .stage-bar button {
+      color: #333;
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      padding: 7px 16px;
+      border-radius: 20px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-ios);
+      transition: background 0.15s ease;
+    }
+
+    .stage-bar button:hover, .stage-bar a:hover {
+      background: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       IPHONE HARDWARE CHASSIS (SPACIOUS 390 x 834)
+       ========================================================================== */
+    .iphone-frame {
+      width: 390px;
+      height: 834px;
+      background: #18181A;
+      border-radius: 52px;
+      padding: 10px;
+      box-shadow: 0 30px 75px -15px rgba(35, 30, 25, 0.45);
+      position: relative;
+    }
+
+    .iphone-screen {
+      width: 100%;
+      height: 100%;
+      background: var(--ios-bg);
+      border-radius: 42px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      user-select: none;
+    }
+
+    /* Dynamic Island (Liquid Glass) */
+    .dynamic-island {
+      position: absolute;
+      top: 11px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 33px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      transition: width 0.25s ease;
+    }
+
+    .dynamic-island:hover {
+      width: 155px;
+    }
+
+    /* iOS Status Bar with Clean Lucide Icons */
+    .ios-status-bar {
+      height: 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding: 0 26px 8px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #000;
+      flex: none;
+      z-index: 40;
+      background: var(--ios-bg);
+    }
+
+    .ios-status-icons {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #000;
+    }
+
+    .ios-status-icons .lucide {
+      width: 14px;
+      height: 14px;
+      stroke-width: 2.2;
+    }
+
+    /* ==========================================================================
+       YUKA-INSPIRED TOP APP BAR & COMPACT INTEGRATED SEARCH
+       ========================================================================== */
+    .ios-liquid-header {
+      padding: 4px 18px 10px;
+      background: var(--ios-bg);
+      border-bottom: 1px solid var(--ios-line);
+      flex: none;
+    }
+
+    .ios-nav-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 38px;
+      margin-bottom: 8px;
+    }
+
+    .ios-brand-mark {
+      height: 26px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .ios-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ios-icon-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(118, 118, 128, 0.12);
+      border: 0;
+      display: grid;
+      place-items: center;
+      color: #000;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+
+    .ios-icon-btn:hover {
+      background: rgba(118, 118, 128, 0.2);
+    }
+
+    .ios-icon-btn .lucide {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.1;
+    }
+
+    .ios-lang-btn {
+      background: rgba(118, 118, 128, 0.12);
+      border: 0;
+      border-radius: 14px;
+      padding: 4px 11px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #000;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ios-lang-btn .lucide {
+      width: 13px;
+      height: 13px;
+    }
+
+    /* Authentic Yuka Compact iOS Search Field (36px height, 10px radius) */
+    .ios-search-wrap {
+      width: 100%;
+    }
+
+    .ios-search-box {
+      display: flex;
+      align-items: center;
+      background: rgba(118, 118, 128, 0.12);
+      border-radius: 10px;
+      height: 36px;
+      padding: 0 8px 0 10px;
+      gap: 8px;
+      transition: background 0.15s ease;
+    }
+
+    .ios-search-box:focus-within {
+      background: rgba(118, 118, 128, 0.18);
+    }
+
+    .ios-search-icon {
+      width: 15px;
+      height: 15px;
+      color: #8E8E93;
+      flex: none;
+    }
+
+    .ios-search-input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      font-family: inherit;
+      font-size: 14px;
+      color: #000000;
+      outline: none;
+      min-width: 0;
+    }
+
+    .ios-search-input::placeholder {
+      color: #8E8E93;
+      font-weight: 400;
+    }
+
+    .ios-search-clear {
+      background: none;
+      border: 0;
+      color: #8E8E93;
+      cursor: pointer;
+      display: none;
+      place-items: center;
+      padding: 3px;
+      border-radius: 50%;
+    }
+
+    .ios-search-clear .lucide {
+      width: 14px;
+      height: 14px;
+    }
+
+    .ios-search-scan-btn {
+      background: none;
+      border: 0;
+      color: #333333;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      padding: 4px;
+      border-radius: 6px;
+      transition: color 0.15s ease;
+      flex: none;
+    }
+
+    .ios-search-scan-btn:hover {
+      color: #2FB755;
+    }
+
+    .ios-search-scan-btn .lucide {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.1;
+    }
+
+    /* ==========================================================================
+       MULTI-VIEW CONTAINER (SPACIOUS & BREATHABLE)
+       ========================================================================== */
+    .ios-views-viewport {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ios-view {
+      position: absolute;
+      inset: 0;
+      overflow-y: auto;
+      background: #FFFFFF;
+      display: none;
+      padding-bottom: 96px;
+      scrollbar-width: none;
+    }
+
+    .ios-view::-webkit-scrollbar { display: none; }
+    .ios-view.active { display: block; }
+
+    /* ==========================================================================
+       VIEW 1: HISTORIQUE (AIRY APPLE ROWS)
+       ========================================================================== */
+    .ios-date-divider {
+      padding: 14px 20px 8px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ios-text-muted);
+      background: #FAFAFA;
+      border-bottom: 1px solid var(--ios-line);
+    }
+
+    .ios-row {
+      display: flex;
+      align-items: center;
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--ios-line);
+      cursor: pointer;
+      background: #FFFFFF;
+      transition: background 0.15s ease;
+    }
+
+    .ios-row:active {
+      background: #F8F8F9;
+    }
+
+    .ios-row.hidden-by-search {
+      display: none;
+    }
+
+    .ios-packshot-thumb {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: #FFFFFF;
+      border: 1px solid #ECECEC;
+      display: grid;
+      place-items: center;
+      padding: 3px;
+      margin-right: 16px;
+      flex: none;
+    }
+
+    [dir="rtl"] .ios-packshot-thumb {
+      margin-right: 0;
+      margin-left: 16px;
+    }
+
+    .ios-packshot-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .ios-row-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ios-brand-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--ios-text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+
+    .ios-product-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ios-text);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+    }
+
+    .ios-status-line {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .ios-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex: none;
+    }
+
+    .status-excellent { color: var(--yuka-green-deep); }
+    .status-excellent .ios-status-dot { background: var(--yuka-green-deep); }
+
+    .status-bon { color: var(--yuka-green); }
+    .status-bon .ios-status-dot { background: var(--yuka-green); }
+
+    .status-mauvais { color: var(--yuka-red); }
+    .status-mauvais .ios-status-dot { background: var(--yuka-red); }
+
+    /* Yuka Score Disc */
+    .ios-score-disc {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      color: #FFFFFF;
+      font-size: 14.5px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      flex: none;
+      margin-left: 12px;
+    }
+
+    [dir="rtl"] .ios-score-disc {
+      margin-left: 0;
+      margin-right: 12px;
+    }
+
+    .ios-score-disc.bg-excellent { background: var(--yuka-green-deep); }
+    .ios-score-disc.bg-bon       { background: var(--yuka-green); }
+    .ios-score-disc.bg-mauvais   { background: var(--yuka-red); }
+
+    .ios-chevron {
+      color: var(--ios-text-faint);
+      margin-left: 8px;
+      display: flex;
+      align-items: center;
+    }
+
+    .ios-chevron .lucide {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.2;
+    }
+
+    [dir="rtl"] .ios-chevron {
+      margin-left: 0;
+      margin-right: 8px;
+      transform: scaleX(-1);
+    }
+
+    /* Empty Notice */
+    .ios-search-empty {
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--ios-text-muted);
+      display: none;
+    }
+
+    .ios-search-empty .lucide {
+      width: 44px;
+      height: 44px;
+      color: #C7C7CC;
+      margin-bottom: 12px;
+    }
+
+    /* ==========================================================================
+       VIEW 2: RECOMMANDATIONS (TOP SANTÉ)
+       ========================================================================== */
+    .ios-recs-banner {
+      padding: 18px 20px 14px;
+      background: #F6FAF7;
+      border-bottom: 1px solid #E1EFE5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ios-recs-banner h2 {
+      font-size: 17.5px;
+      font-weight: 800;
+      color: #1A592D;
+      letter-spacing: -0.02em;
+    }
+
+    .ios-recs-banner p {
+      font-size: 12px;
+      color: #4D7A5A;
+      margin-top: 3px;
+    }
+
+    .ios-recs-mascot {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+
+    .ios-segments-scroll {
+      display: flex;
+      gap: 8px;
+      padding: 12px 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--ios-line);
+    }
+
+    .ios-segments-scroll::-webkit-scrollbar { display: none; }
+
+    .ios-segment-pill {
+      flex: none;
+      background: rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      border-radius: 16px;
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .ios-segment-pill.active {
+      background: #000000;
+      color: #FFFFFF;
+      border-color: #000000;
+    }
+
+    /* Comparison Card */
+    .ios-glass-comp-card {
+      margin: 16px 20px;
+      background: #FFFFFF;
+      border: 1px solid #E2E0D8;
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.04);
+    }
+
+    .ios-comp-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #278A42;
+    }
+
+    .ios-comp-head .title-left {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ios-comp-head .lucide {
+      width: 15px;
+      height: 15px;
+      stroke-width: 2.2;
+    }
+
+    .ios-comp-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1.15fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .ios-bad-cell {
+      background: rgba(253, 244, 243, 0.85);
+      border: 1px solid #F8D7D4;
+      border-radius: 15px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+
+    .ios-bad-cell img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      margin: 0 auto 5px;
+    }
+
+    .ios-bad-cell strong {
+      display: block;
+      font-size: 11.5px;
+      color: #C0392B;
+    }
+
+    .ios-bad-cell span {
+      font-size: 10px;
+      color: #999;
+    }
+
+    .ios-arrow-box {
+      color: #2FB755;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ios-arrow-box .lucide {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.5;
+    }
+
+    .ios-good-cell {
+      background: rgba(243, 250, 245, 0.85);
+      border: 1px solid #D5EEDC;
+      border-radius: 15px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+
+    .ios-good-cell img {
+      width: 46px;
+      height: 46px;
+      object-fit: contain;
+      margin: 0 auto 5px;
+    }
+
+    .ios-good-cell strong {
+      display: block;
+      font-size: 11.5px;
+      color: #1E824C;
+    }
+
+    .ios-good-cell span {
+      font-size: 10px;
+      color: #278A42;
+      font-weight: 700;
+    }
+
+    /* ==========================================================================
+       VIEW 3: FAVORIS & VIEW 4: COMPTE
+       ========================================================================== */
+    .ios-fav-header {
+      padding: 14px 20px;
+      background: #FAFAFA;
+      border-bottom: 1px solid var(--ios-line);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ios-fav-counter {
+      background: var(--yuka-green);
+      color: #FFFFFF;
+      font-size: 11.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 14px;
+    }
+
+    .ios-glass-basket-banner {
+      margin: 16px 20px;
+      background: #FAFAFA;
+      border: 1px dashed rgba(0,0,0,0.15);
+      border-radius: 16px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      cursor: pointer;
+    }
+
+    .ios-glass-basket-banner .lucide {
+      width: 22px;
+      height: 22px;
+      color: var(--yuka-green);
+      flex: none;
+    }
+
+    .ios-glass-basket-banner span {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #333;
+    }
+
+    .ios-profile-banner {
+      padding: 22px 20px;
+      background: #FAFAFA;
+      border-bottom: 1px solid var(--ios-line);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .ios-profile-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: #EAF6ED;
+      border: 2px solid #2FB755;
+      display: grid;
+      place-items: center;
+      color: #2FB755;
+      flex: none;
+    }
+
+    .ios-profile-avatar .lucide {
+      width: 26px;
+      height: 26px;
+      stroke-width: 2;
+    }
+
+    .ios-profile-text h2 {
+      font-size: 16.5px;
+      font-weight: 800;
+      margin-bottom: 3px;
+    }
+
+    .ios-profile-text p {
+      font-size: 12px;
+      color: var(--ios-text-muted);
+    }
+
+    .ios-glass-stats-card {
+      margin: 16px 20px;
+      background: #FFFFFF;
+      border: 1px solid #ECECEC;
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.03);
+    }
+
+    .ios-glass-stats-card h3 {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ios-text-muted);
+      margin-bottom: 12px;
+    }
+
+    .ios-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .ios-stat-box {
+      background: rgba(248, 247, 244, 0.75);
+      border-radius: 12px;
+      padding: 10px 8px;
+      text-align: center;
+    }
+
+    .ios-stat-num {
+      font-size: 19px;
+      font-weight: 800;
+      color: #2FB755;
+    }
+
+    .ios-stat-label {
+      font-size: 10.5px;
+      color: var(--ios-text-muted);
+      margin-top: 2px;
+    }
+
+    .ios-pref-group {
+      padding: 0 20px 24px;
+    }
+
+    .ios-pref-heading {
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--ios-text-muted);
+      margin: 16px 0 10px;
+    }
+
+    .ios-pref-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--ios-line);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .ios-switch {
+      width: 44px;
+      height: 24px;
+      background: #2FB755;
+      border-radius: 12px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .ios-switch::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      right: 3px;
+      width: 18px;
+      height: 18px;
+      background: #FFFFFF;
+      border-radius: 50%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.25);
+      transition: all 0.2s ease;
+    }
+
+    .ios-switch.off {
+      background: #D8D6D0;
+    }
+
+    .ios-switch.off::after {
+      right: auto;
+      left: 3px;
+    }
+
+    .ios-trust-card {
+      background: #F8F8F8;
+      border-radius: 16px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-top: 22px;
+    }
+
+    .ios-trust-icon {
+      color: #2FB755;
+      flex: none;
+    }
+
+    .ios-trust-icon .lucide {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+
+    .ios-trust-copy strong {
+      display: block;
+      font-size: 13px;
+      color: var(--ios-text);
+      margin-bottom: 3px;
+    }
+
+    .ios-trust-copy p {
+      font-size: 12px;
+      color: var(--ios-text-muted);
+      line-height: 1.45;
+    }
+
+    /* ==========================================================================
+       SIGNATURE 5-CONTROL FLOATING LIQUID GLASS TAB BAR
+       ========================================================================== */
+    .ios-floating-glass-bar {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      height: 66px;
+      background: var(--glass-surface);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border);
+      border-radius: 34px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 8px;
+      box-shadow: 0 14px 34px -6px rgba(0, 0, 0, 0.16);
+      z-index: 30;
+    }
+
+    .ios-tab-link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      text-decoration: none;
+      color: #8E8E93;
+      font-size: 11px;
+      font-weight: 600;
+      width: 20%;
+      cursor: pointer;
+    }
+
+    .ios-tab-link .lucide {
+      width: 20px;
+      height: 20px;
+      stroke-width: 1.9;
+    }
+
+    .ios-tab-link.active {
+      color: #000000;
+    }
+
+    .ios-tab-link.active .lucide {
+      stroke: #000000;
+      stroke-width: 2.2;
+    }
+
+    /* Floating Liquid Scan Button */
+    .ios-glass-scan-pill {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #2FB755;
+      color: #FFFFFF;
+      border: 2px solid rgba(255, 255, 255, 0.95);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 6px 18px rgba(47, 183, 85, 0.45);
+      cursor: pointer;
+      margin-top: -20px;
+      transition: transform 0.15s ease;
+    }
+
+    .ios-glass-scan-pill:active {
+      transform: scale(0.92);
+    }
+
+    .ios-glass-scan-pill .lucide {
+      width: 24px;
+      height: 24px;
+      stroke: #FFFFFF;
+      stroke-width: 2.1;
+    }
+
+    .ios-home-pill {
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 130px;
+      height: 4px;
+      background: #000000;
+      border-radius: 2px;
+      opacity: 0.8;
+      z-index: 35;
+    }
+
+    /* ==========================================================================
+       PRODUCT DETAIL OVERLAY
+       ========================================================================== */
+    .ios-detail-sheet {
+      position: absolute;
+      inset: 0;
+      background: #FFFFFF;
+      z-index: 60;
+      display: flex;
+      flex-direction: column;
+      transform: translateY(100%);
+      transition: transform 0.32s cubic-bezier(0.25, 1, 0.3, 1);
+    }
+
+    .ios-detail-sheet.active {
+      transform: translateY(0);
+    }
+
+    .ios-detail-top-bar {
+      height: 54px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 18px;
+      border-bottom: 1px solid var(--ios-line);
+      flex: none;
+    }
+
+    .ios-back-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #F2F2F4;
+      border: 0;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: #000;
+    }
+
+    .ios-back-circle .lucide {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2.2;
+    }
+
+    .ios-detail-scroll {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 22px 50px;
+      scrollbar-width: none;
+    }
+
+    .ios-detail-scroll::-webkit-scrollbar { display: none; }
+
+    .ios-hero-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      padding: 4px 6px;
+    }
+
+    .ios-packshot-frame {
+      width: 135px;
+      height: 135px;
+      display: grid;
+      place-items: center;
+    }
+
+    .ios-packshot-frame img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .ios-gauge-container {
+      position: relative;
+      width: 130px;
+      height: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ios-gauge-svg {
+      position: absolute;
+      inset: 0;
+      transform: rotate(-90deg);
+    }
+
+    .gauge-circle-bg {
+      fill: none;
+      stroke: #EEEEEE;
+      stroke-width: 10;
+    }
+
+    .gauge-circle-stroke {
+      fill: none;
+      stroke: var(--yuka-green);
+      stroke-width: 10;
+      stroke-linecap: round;
+      stroke-dasharray: 345;
+      stroke-dashoffset: 70;
+      transition: stroke-dashoffset 0.5s ease;
+    }
+
+    .ios-gauge-score {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1;
+      color: var(--yuka-green);
+      margin-top: 4px;
+    }
+
+    .ios-gauge-out-of {
+      font-size: 13px;
+      color: var(--ios-text-muted);
+      font-weight: 600;
+      margin-top: 1px;
+    }
+
+    .ios-gauge-word {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--yuka-green);
+      margin-top: 2px;
+    }
+
+    .ios-product-headline h1 {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ios-text);
+      margin-bottom: 6px;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+    }
+
+    .ios-origin-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--ios-text-muted);
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .ios-tn-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: #C0392B;
+      font-weight: 700;
+      font-size: 12.5px;
+    }
+
+    .ios-section-header {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ios-text-muted);
+      margin: 22px 0 12px;
+    }
+
+    .ios-eval-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .ios-eval-card {
+      background: #FFFFFF;
+      border: 1px solid #ECEAE4;
+      border-radius: 18px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    }
+
+    .ios-card-ico {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: #EAF6ED;
+      display: grid;
+      place-items: center;
+      flex: none;
+      color: #2FB755;
+    }
+
+    .ios-card-ico .lucide {
+      width: 22px;
+      height: 22px;
+      stroke-width: 2;
+    }
+
+    .ios-card-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ios-card-label {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ios-text);
+      margin-bottom: 4px;
+    }
+
+    .ios-badge-row {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      color: var(--ios-text-muted);
+    }
+
+    .ios-nutri-a {
+      background: #2FB755;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 11.5px;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .ios-pill-good {
+      background: #EAF6ED;
+      color: #2FB755;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 8px;
+    }
+
+    .ios-pill-bad {
+      background: #FDEEEE;
+      color: #E74C3C;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 3px 10px;
+      border-radius: 8px;
+    }
+
+    .ios-card-pct {
+      font-size: 14.5px;
+      font-weight: 800;
+      color: var(--yuka-green);
+    }
+
+    .ios-alt-box {
+      background: #F5FAF6;
+      border: 1px solid #D5EBD9;
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 22px;
+    }
+
+    .ios-alt-header {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #278A42;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .ios-alt-header .lucide {
+      width: 16px;
+      height: 16px;
+      stroke-width: 2.2;
+    }
+
+    .ios-alt-card {
+      background: #FFFFFF;
+      border-radius: 16px;
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border: 1px solid #E2EFE5;
+    }
+
+    .ios-alt-thumb {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      flex: none;
+    }
+
+    .ios-alt-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .ios-alt-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ios-text);
+      margin-bottom: 3px;
+    }
+
+    .ios-alt-perks {
+      font-size: 12px;
+      color: #278A42;
+      font-weight: 600;
+    }
+
+    /* ==========================================================================
+       CAMERA SCANNER OVERLAY
+       ========================================================================== */
+    .ios-scanner-view {
+      position: absolute;
+      inset: 0;
+      background: #000000;
+      z-index: 70;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 44px 22px 40px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .ios-scanner-view.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .ios-scan-target {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 0 auto;
+    }
+
+    .ios-target-corner {
+      position: absolute;
+      width: 36px;
+      height: 36px;
+      border-color: #2FB755;
+      border-style: solid;
+      pointer-events: none;
+    }
+
+    .c-tl { top: 0; left: 0; border-width: 4px 0 0 4px; border-radius: 16px 0 0 0; }
+    .c-tr { top: 0; right: 0; border-width: 4px 4px 0 0; border-radius: 0 16px 0 0; }
+    .c-bl { bottom: 0; left: 0; border-width: 0 0 4px 4px; border-radius: 0 0 0 16px; }
+    .c-br { bottom: 0; right: 0; border-width: 0 4px 4px 0; border-radius: 0 0 16px 0; }
+
+    .ios-scan-line {
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      height: 2px;
+      background: #2FB755;
+      box-shadow: 0 0 12px 2px #2FB755;
+      animation: laserSweep 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes laserSweep {
+      0% { top: 20px; }
+      100% { top: 230px; }
+    }
+  
+    /* ==========================================================================
+       MOBILE-NATIVE FULLSCREEN OVERRIDES (When viewed directly on iPhone/Phone)
+       ========================================================================== */
+    @media (max-width: 600px) {
+      body {
+        padding: 0 !important;
+        background: var(--ios-bg) !important;
+        min-height: 100vh !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+      }
+      .stage-bar {
+        display: none !important;
+      }
+      .iphone-frame {
+        width: 100vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        max-width: 100% !important;
+        border-radius: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+      .iphone-screen {
+        border-radius: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+      }
+      .dynamic-island {
+        display: none !important;
+      }
+      .ios-status-bar {
+        display: none !important;
+      }
+      .ios-home-pill {
+        display: none !important;
+      }
+      .ios-liquid-header {
+        padding-top: max(env(safe-area-inset-top, 14px), 14px) !important;
+      }
+      .ios-floating-glass-bar {
+        bottom: max(env(safe-area-inset-bottom, 12px), 12px) !important;
+      }
+      .ios-views-viewport {
+        height: calc(100dvh - 90px) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Desktop Preview Switcher -->
+  <div class="stage-bar">
+    <a href="landing.html">← Accueil</a>
+    <button type="button" id="ios-toggle-lang">عربي</button>
+    <a href="android.html">Version Android →</a>
+  </div>
+
+  <!-- iPhone Chassis -->
+  <div class="iphone-frame">
+    <div class="iphone-screen" id="ios-screen" dir="ltr">
+
+      <!-- Dynamic Island (Liquid Glass) -->
+      <div class="dynamic-island" id="ios-island" title="Dynamic Island">
+        <span style="width:7px; height:7px; border-radius:50%; background:#2FB755;"></span>
+        <span id="island-text">Eatsmart</span>
+        <span style="font-size:10px; color:#8E8E93; font-weight:700;">619</span>
+      </div>
+
+      <!-- iOS Status Bar with Clean Lucide Icons -->
+      <div class="ios-status-bar">
+        <span id="ios-clock">09:41</span>
+        <div class="ios-status-icons">
+          <i data-lucide="signal"></i>
+          <i data-lucide="wifi"></i>
+          <i data-lucide="battery"></i>
+        </div>
+      </div>
+
+      <!-- Yuka-Inspired Header: Clean single row with Logo + Search action + Language, followed by snug 36px Search Field -->
+      <header class="ios-liquid-header">
+        <div class="ios-nav-top">
+          <img class="ios-brand-mark" src="/assets_v2/header_dark_logo.png" alt="Eatsmart logo">
+          <div class="ios-header-actions">
+            <button class="ios-icon-btn" id="ios-header-search-btn" title="Rechercher">
+              <i data-lucide="search"></i>
+            </button>
+            <button class="ios-lang-btn" id="header-lang-btn">
+              <i data-lucide="languages"></i>
+              <span id="ios-lang-text">ع</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Authentic Yuka Compact iOS Search Field (36px height, 10px radius) -->
+        <div class="ios-search-wrap" id="ios-search-container">
+          <div class="ios-search-box">
+            <i data-lucide="search" class="ios-search-icon"></i>
+            <input type="text" id="ios-search-input" class="ios-search-input" placeholder="Rechercher un produit..." autocomplete="off">
+            <button class="ios-search-clear" id="ios-search-clear" aria-label="Effacer">
+              <i data-lucide="x"></i>
+            </button>
+            <button class="ios-search-scan-btn" id="ios-search-scan-btn" title="Scanner code-barres">
+              <i data-lucide="scan-barcode"></i>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- ====================================================================
+           MULTI-VIEW CONTAINER (4 TABS)
+           ==================================================================== -->
+      <div class="ios-views-viewport">
+
+        <!-- VIEW 1: HISTORIQUE -->
+        <div class="ios-view active" id="ios-view-history">
+          <div class="ios-date-divider" id="ios-sec-today" data-i18n="section_today">Aujourd'hui</div>
+
+          <!-- SICAM Harissa (83 Bon) -->
+          <article class="ios-row" data-id="sicam-harissa" data-search="sicam harissa tunisienne piment bon 83">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_harissa_jar.png" alt="SICAM Harissa">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">SICAM</div>
+              <div class="ios-product-title" data-i18n="p1_name">Harissa Tunisienne</div>
+              <div class="ios-status-line status-bon">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_bon">Bon</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-bon">83</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <!-- Ruspina Olive Oil (94 Excellent) -->
+          <article class="ios-row" data-id="ruspina-oil" data-search="ruspina huile olive chetoui extra vierge excellent 94">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_olive_oil.jpg" alt="Huile d'Olive Ruspina">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">RUSPINA</div>
+              <div class="ios-product-title" data-i18n="p2_name">Huile d'Olive Chétoui Extra Vierge</div>
+              <div class="ios-status-line status-excellent">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_excellent">Excellent</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-excellent">94</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <!-- Délice Danone (74 Bon) -->
+          <article class="ios-row" data-id="delice-yogurt" data-search="delice danone yaourt nature brasse bon 74">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_delice_yogurt.jpg" alt="Yaourt Délice Danone">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">DÉLICE DANONE</div>
+              <div class="ios-product-title" data-i18n="p3_name">Yaourt Nature Brassé</div>
+              <div class="ios-status-line status-bon">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_bon">Bon</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-bon">74</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <div class="ios-date-divider" id="ios-sec-yesterday" data-i18n="section_yesterday">Hier</div>
+
+          <!-- Saïda Bimo Choco (18 Mauvais) -->
+          <article class="ios-row" data-id="bimo-choco" data-search="saida bimo choco biscuits mauvais 18">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_bimo_choco.jpg" alt="Saïda Bimo Choco">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">SAÏDA</div>
+              <div class="ios-product-title" data-i18n="p4_name">Bimo Choco (x10)</div>
+              <div class="ios-status-line status-mauvais">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_mauvais">Mauvais</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-mauvais">18</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <!-- Boga Cidre (16 Mauvais) -->
+          <article class="ios-row" data-id="boga-cidre" data-search="sfbt boga cidre soda gazeuse mauvais 16">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_boga_cidre.jpg" alt="Boga Cidre">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">SFBT</div>
+              <div class="ios-product-title" data-i18n="p5_name">Boga Cidre (1 L)</div>
+              <div class="ios-status-line status-mauvais">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_mauvais">Mauvais</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-mauvais">16</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <!-- Search empty notice -->
+          <div class="ios-search-empty" id="ios-empty-notice">
+            <i data-lucide="search"></i>
+            <p data-i18n="search_no_results">Aucun produit ne correspond à votre recherche</p>
+          </div>
+        </div>
+
+        <!-- VIEW 2: RECOMMANDATIONS (TOP SANTÉ) -->
+        <div class="ios-view" id="ios-view-recs">
+          <div class="ios-recs-banner">
+            <div>
+              <h2 data-i18n="recs_banner_title">Top Santé · Tunisie</h2>
+              <p data-i18n="recs_banner_sub">Alternatives certifiées et locales</p>
+            </div>
+            <img class="ios-recs-mascot" src="/assets_v2/mascot_basket_signature.png" alt="Mascotte Eatsmart">
+          </div>
+
+          <!-- Segments -->
+          <div class="ios-segments-scroll">
+            <button class="ios-segment-pill active" data-i18n="chip_all">Tous</button>
+            <button class="ios-segment-pill" data-i18n="chip_oils">Huiles d'olive</button>
+            <button class="ios-segment-pill" data-i18n="chip_biscuits">Biscuits sains</button>
+            <button class="ios-segment-pill" data-i18n="chip_dairy">Laitiers</button>
+            <button class="ios-segment-pill" data-i18n="chip_grocery">Épicerie</button>
+          </div>
+
+          <!-- Liquid Glass Comparison Card -->
+          <div class="ios-glass-comp-card">
+            <div class="ios-comp-head">
+              <div class="title-left">
+                <i data-lucide="sparkles"></i>
+                <span data-i18n="comp_header">Alternative recommandée</span>
+              </div>
+              <span style="color:#278A42; font-weight:800;">+66 pts</span>
+            </div>
+            <div class="ios-comp-grid">
+              <div class="ios-bad-cell">
+                <img src="/assets_v2/product_bimo_choco.jpg" alt="Bimo Choco">
+                <strong>Bimo Choco</strong>
+                <span>18/100 · Mauvais</span>
+              </div>
+              <div class="ios-arrow-box">
+                <i data-lucide="arrow-right"></i>
+              </div>
+              <div class="ios-good-cell">
+                <img src="/assets_v2/product_warda_sables.jpg" alt="Warda Sablés">
+                <strong>Warda Sablés</strong>
+                <span>84/100 · Sans additif</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="ios-date-divider" data-i18n="recs_list_title">Meilleurs choix du rayon tunisien</div>
+
+          <article class="ios-row" data-id="ruspina-oil">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_olive_oil.jpg" alt="Ruspina">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">RUSPINA · TERROIR TUNISIEN</div>
+              <div class="ios-product-title" data-i18n="p2_name">Huile d'Olive Chétoui Extra Vierge</div>
+              <div class="ios-status-line status-excellent">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_excellent">Excellent</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-excellent">94</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <article class="ios-row" data-id="warda-sables">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_warda_sables.jpg" alt="Warda Sablés">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">WARDA · BISCUITERIE</div>
+              <div class="ios-product-title">Sablés Olive & Romarin</div>
+              <div class="ios-status-line status-excellent">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_excellent">Excellent</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-excellent">84</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <article class="ios-row" data-id="sicam-harissa">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_harissa_jar.png" alt="SICAM">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">SICAM · CAP BON</div>
+              <div class="ios-product-title" data-i18n="p1_name">Harissa Tunisienne</div>
+              <div class="ios-status-line status-bon">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_bon">Bon</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-bon">83</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+        </div>
+
+        <!-- VIEW 3: FAVORIS -->
+        <div class="ios-view" id="ios-view-favs">
+          <div class="ios-fav-header">
+            <span style="font-size:14.5px; font-weight:800;" data-i18n="favs_title">Mes Produits Sauvegardés</span>
+            <span class="ios-fav-counter">4 produits</span>
+          </div>
+
+          <div class="ios-glass-basket-banner">
+            <i data-lucide="shopping-bag"></i>
+            <span data-i18n="fav_create_list">Créer une liste de courses saine</span>
+          </div>
+
+          <div class="ios-date-divider" data-i18n="fav_pantry">Dans mon panier</div>
+
+          <article class="ios-row" data-id="ruspina-oil">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_olive_oil.jpg" alt="Ruspina">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">RUSPINA</div>
+              <div class="ios-product-title" data-i18n="p2_name">Huile d'Olive Chétoui Extra Vierge</div>
+              <div class="ios-status-line status-excellent">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_excellent">Excellent</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-excellent">94</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <article class="ios-row" data-id="sicam-harissa">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_harissa_jar.png" alt="SICAM">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">SICAM</div>
+              <div class="ios-product-title" data-i18n="p1_name">Harissa Tunisienne</div>
+              <div class="ios-status-line status-bon">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_bon">Bon</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-bon">83</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+
+          <article class="ios-row" data-id="delice-yogurt">
+            <div class="ios-packshot-thumb">
+              <img src="/assets_v2/product_delice_yogurt.jpg" alt="Délice">
+            </div>
+            <div class="ios-row-body">
+              <div class="ios-brand-label">DÉLICE DANONE</div>
+              <div class="ios-product-title" data-i18n="p3_name">Yaourt Nature Brassé</div>
+              <div class="ios-status-line status-bon">
+                <span class="ios-status-dot"></span>
+                <span data-i18n="status_bon">Bon</span>
+              </div>
+            </div>
+            <div class="ios-score-disc bg-bon">74</div>
+            <span class="ios-chevron"><i data-lucide="chevron-right"></i></span>
+          </article>
+        </div>
+
+        <!-- VIEW 4: COMPTE -->
+        <div class="ios-view" id="ios-view-account">
+          <div class="ios-profile-banner">
+            <div class="ios-profile-avatar">
+              <i data-lucide="user"></i>
+            </div>
+            <div class="ios-profile-text">
+              <h2>Ayoub Chamakhi</h2>
+              <p data-i18n="user_tier">Membre Eatsmart Tunisie • 32 scans</p>
+            </div>
+          </div>
+
+          <div class="ios-glass-stats-card">
+            <h3 data-i18n="stats_header">Synthèse du mois</h3>
+            <div class="ios-stats-grid">
+              <div class="ios-stat-box">
+                <div class="ios-stat-num">32</div>
+                <div class="ios-stat-label" data-i18n="stat_scans">Scans</div>
+              </div>
+              <div class="ios-stat-box">
+                <div class="ios-stat-num">78</div>
+                <div class="ios-stat-label" data-i18n="stat_avg">Moyenne</div>
+              </div>
+              <div class="ios-stat-box">
+                <div class="ios-stat-num">87%</div>
+                <div class="ios-stat-label" data-i18n="stat_local">Terroir 619</div>
+              </div>
+            </div>
+
+            <div style="height:8px; border-radius:4px; display:flex; overflow:hidden; margin: 16px 0 8px;">
+              <div style="width:65%; background:var(--yuka-green-deep);"></div>
+              <div style="width:22%; background:var(--yuka-orange);"></div>
+              <div style="width:13%; background:var(--yuka-red);"></div>
+            </div>
+            <div style="display:flex; justify-content:space-between; font-size:11.5px; color:#8E8E93;">
+              <span>65% Excellents</span>
+              <span>22% Moyens</span>
+              <span>13% Mauvais</span>
+            </div>
+          </div>
+
+          <div class="ios-pref-group">
+            <div class="ios-pref-heading" data-i18n="diet_prefs">Préférences alimentaires</div>
+            <div class="ios-pref-row">
+              <span data-i18n="pref_additives">Alerte additifs à risque élevé</span>
+              <div class="ios-switch" data-ios-switch></div>
+            </div>
+            <div class="ios-pref-row">
+              <span data-i18n="pref_local">Privilégier le terroir tunisien (619)</span>
+              <div class="ios-switch" data-ios-switch></div>
+            </div>
+            <div class="ios-pref-row">
+              <span data-i18n="pref_salt">Régime sans sel ajouté</span>
+              <div class="ios-switch off" data-ios-switch></div>
+            </div>
+
+            <div class="ios-trust-card">
+              <div class="ios-trust-icon">
+                <i data-lucide="shield-check"></i>
+              </div>
+              <div class="ios-trust-copy">
+                <strong data-i18n="trust_title">Eatsmart est 100% indépendant</strong>
+                <p data-i18n="trust_desc">Sans influence des marques, sans publicité, financé par des choix sains.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Floating Liquid Glass Tab Bar (4 Tabs + Elevated Center Scan Button) -->
+      <nav class="ios-floating-glass-bar">
+        <a class="ios-tab-link active" data-ios-target="ios-view-history">
+          <i data-lucide="history"></i>
+          <span data-i18n="tab_history">Historique</span>
+        </a>
+
+        <a class="ios-tab-link" data-ios-target="ios-view-recs">
+          <i data-lucide="sparkles"></i>
+          <span data-i18n="tab_recs">Top</span>
+        </a>
+
+        <!-- Centered Floating Scan Pill -->
+        <button class="ios-glass-scan-pill" id="ios-scan-trigger" aria-label="Scanner">
+          <i data-lucide="camera"></i>
+        </button>
+
+        <a class="ios-tab-link" data-ios-target="ios-view-favs">
+          <i data-lucide="bookmark"></i>
+          <span data-i18n="tab_favs">Favoris</span>
+        </a>
+
+        <a class="ios-tab-link" data-ios-target="ios-view-account">
+          <i data-lucide="user"></i>
+          <span data-i18n="tab_account">Compte</span>
+        </a>
+      </nav>
+
+      <!-- Apple Home Indicator -->
+      <div class="ios-home-pill" aria-hidden="true"></div>
+
+      <!-- ====================================================================
+           PRODUCT DETAIL OVERLAY (YUKA EVALUATION SHEET)
+           ==================================================================== -->
+      <div class="ios-detail-sheet" id="ios-detail-sheet">
+        <div class="ios-detail-top-bar">
+          <button class="ios-back-circle" id="ios-close-detail" aria-label="Retour">
+            <i data-lucide="chevron-left"></i>
+          </button>
+          <span style="font-weight:700; font-size:14px;" data-i18n="eval_title">Fiche Produit</span>
+          <button class="ios-back-circle" aria-label="Partager">
+            <i data-lucide="more-horizontal"></i>
+          </button>
+        </div>
+
+        <div class="ios-detail-scroll">
+          <!-- Hero Packshot & Yuka Arc Gauge -->
+          <div class="ios-hero-grid">
+            <div class="ios-packshot-frame">
+              <img id="ios-sheet-img" src="/assets_v2/product_harissa_jar.png" alt="Produit">
+            </div>
+
+            <div class="ios-gauge-container">
+              <svg class="ios-gauge-svg" viewBox="0 0 120 120" width="120" height="120">
+                <circle class="gauge-circle-bg" cx="60" cy="60" r="55"></circle>
+                <circle class="gauge-circle-stroke" id="ios-gauge-arc" cx="60" cy="60" r="55"></circle>
+              </svg>
+              <div class="ios-gauge-score" id="ios-gauge-num">83</div>
+              <div class="gauge-over" style="font-size:13px; color:#8E8E93; font-weight:600;">/100</div>
+              <div class="ios-gauge-word" id="ios-gauge-lbl">Bon</div>
+            </div>
+          </div>
+
+          <div class="ios-product-headline">
+            <h1 id="ios-sheet-title">SICAM Harissa</h1>
+            <div class="ios-origin-pill">
+              <span class="ios-tn-badge">
+                <i data-lucide="map-pin" style="width:14px; height:14px;"></i>
+                <span id="ios-sheet-origin">Produit tunisien</span>
+              </span>
+              <span>•</span>
+              <span id="ios-sheet-weight">150 g</span>
+            </div>
+          </div>
+
+          <div class="ios-section-header" data-i18n="eval_breakdown_heading">Détail de l'évaluation</div>
+
+          <!-- 3 Evaluation Cards (60% Nutrition, 30% Additifs, 10% Terroir) -->
+          <div class="ios-eval-stack">
+            <div class="ios-eval-card">
+              <div class="ios-card-ico" style="background:#EAF6ED; color:#2FB755;">
+                <i data-lucide="heart-pulse"></i>
+              </div>
+              <div class="ios-card-text">
+                <div class="ios-card-label" data-i18n="eval_nutri">1. Qualité nutritionnelle</div>
+                <div class="ios-badge-row">
+                  <span id="ios-nutri-badge" class="ios-nutri-a">Nutri-Score A</span>
+                  <span id="ios-nutri-desc" style="font-size:12px;">Très bonne composition</span>
+                </div>
+              </div>
+              <div class="ios-card-pct">60% ⌵</div>
+            </div>
+
+            <div class="ios-eval-card">
+              <div class="ios-card-ico" style="background:#FEF9E7; color:#F39C12;">
+                <i data-lucide="flask-conical"></i>
+              </div>
+              <div class="ios-card-text">
+                <div class="ios-card-label" data-i18n="eval_additives">2. Additifs</div>
+                <div class="ios-badge-row">
+                  <span id="ios-additive-badge" class="ios-pill-good">0 additif · Sans risque</span>
+                </div>
+              </div>
+              <div class="ios-card-pct">30% ⌵</div>
+            </div>
+
+            <div class="ios-eval-card">
+              <div class="ios-card-ico" style="background:#EAF6ED; color:#2FB755;">
+                <i data-lucide="map-pin"></i>
+              </div>
+              <div class="ios-card-text">
+                <div class="ios-card-label" data-i18n="eval_terroir">3. Terroir & Origine</div>
+                <div class="ios-badge-row">
+                  <span id="ios-terroir-badge" class="ios-pill-good">100% Piment Tunisien Certifié</span>
+                </div>
+              </div>
+              <div class="ios-card-pct">10% ⌵</div>
+            </div>
+          </div>
+
+          <!-- Alternative Box -->
+          <div class="ios-alt-box" id="ios-alt-section">
+            <div class="ios-alt-header">
+              <i data-lucide="sparkles"></i>
+              <span data-i18n="alt_rec_heading">Alternative plus saine recommandée</span>
+            </div>
+            <div class="ios-alt-card">
+              <img class="ios-alt-thumb" id="ios-alt-img" src="/assets_v2/product_warda_sables.jpg" alt="Alternative">
+              <div class="ios-alt-body">
+                <div class="ios-alt-name" id="ios-alt-name">Warda Sablés Olive & Romarin</div>
+                <div class="ios-alt-perks" id="ios-alt-perks">Sans additif · Huile d'olive vierge</div>
+              </div>
+              <div class="ios-score-disc bg-excellent" id="ios-alt-score">84</div>
+            </div>
+          </div>
+
+          <div class="ios-trust-card">
+            <div class="ios-trust-icon">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <div class="ios-trust-copy">
+              <strong data-i18n="trust_title">Eatsmart est 100% indépendant</strong>
+              <p data-i18n="trust_desc">Sans influence des marques, sans publicité, financé par des choix sains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Camera Scanner Overlay -->
+      <div class="ios-scanner-view" id="ios-scanner-view">
+        <div style="display:flex; justify-content:space-between; align-items:center; color:#fff; font-weight:700;">
+          <span data-i18n="scanner_header">Scanner un code-barres</span>
+          <button style="width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,0.2); border:0; color:#fff; cursor:pointer; display:grid; place-items:center;" id="ios-close-scan">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+
+        <div class="ios-scan-target">
+          <div class="ios-target-corner c-tl"></div>
+          <div class="ios-target-corner c-tr"></div>
+          <div class="ios-target-corner c-bl"></div>
+          <div class="ios-target-corner c-br"></div>
+          <div class="ios-scan-line"></div>
+        </div>
+
+        <div style="text-align:center; color:rgba(255,255,255,0.75); font-size:13.5px;" data-i18n="scanner_instruction">
+          Placez le code-barres tunisien (619...) au centre
+        </div>
+
+        <div style="display:flex; justify-content:space-around; align-items:center;">
+          <button style="width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.2); border:0; color:#fff; display:grid; place-items:center;">
+            <i data-lucide="zap"></i>
+          </button>
+          <button style="width:66px; height:66px; border-radius:50%; border:4px solid #fff; background:transparent; padding:3px; cursor:pointer;" id="ios-shutter-btn">
+            <div style="width:50px; height:50px; border-radius:50%; background:#fff;"></div>
+          </button>
+          <button style="width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,0.2); border:0; color:#fff; display:grid; place-items:center;">
+            <i data-lucide="image"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const PRODUCTS = {
+      'sicam-harissa': {
+        title: "SICAM Harissa",
+        origin: "Produit tunisien",
+        weight: "150 g",
+        score: 83,
+        scoreLabel: "Bon",
+        scoreColor: "#2FB755",
+        img: "/assets_v2/product_harissa_jar.png",
+        nutriBadge: "Nutri-Score A",
+        nutriDesc: "Riche en piment frais",
+        nutriClass: "ios-nutri-a",
+        additiveText: "0 additif · Sans risque",
+        additiveClass: "ios-pill-good",
+        terroirText: "100% Piment Tunisien Certifié",
+        hasAlt: false
+      },
+      'ruspina-oil': {
+        title: "Huile d'Olive Chétoui Extra Vierge",
+        origin: "Produit tunisien",
+        weight: "500 ml",
+        score: 94,
+        scoreLabel: "Excellent",
+        scoreColor: "#1E824C",
+        img: "/assets_v2/product_olive_oil.jpg",
+        nutriBadge: "Nutri-Score A",
+        nutriDesc: "Excellente source de polyphénols",
+        nutriClass: "ios-nutri-a",
+        additiveText: "0 additif · 100% Pur jus",
+        additiveClass: "ios-pill-good",
+        terroirText: "Huile monovariétale Chétoui",
+        hasAlt: false
+      },
+      'delice-yogurt': {
+        title: "Yaourt Nature Brassé",
+        origin: "Produit tunisien",
+        weight: "4 pots",
+        score: 74,
+        scoreLabel: "Bon",
+        scoreColor: "#2FB755",
+        img: "/assets_v2/product_delice_yogurt.jpg",
+        nutriBadge: "Nutri-Score B",
+        nutriDesc: "Sans sucre ajouté",
+        nutriClass: "ios-nutri-a",
+        additiveText: "Ferments lactiques naturels",
+        additiveClass: "ios-pill-good",
+        terroirText: "Lait frais de Tunisie",
+        hasAlt: false
+      },
+      'bimo-choco': {
+        title: "Bimo Choco (x10)",
+        origin: "Produit tunisien",
+        weight: "400 g",
+        score: 18,
+        scoreLabel: "Mauvais",
+        scoreColor: "#E74C3C",
+        img: "/assets_v2/product_bimo_choco.jpg",
+        nutriBadge: "Nutri-Score E",
+        nutriDesc: "Trop sucré (38g/100g)",
+        nutriClass: "ios-pill-bad",
+        additiveText: "5 additifs à risque (E321, E476)",
+        additiveClass: "ios-pill-bad",
+        terroirText: "Produit ultra-transformé",
+        hasAlt: true,
+        altImg: "/assets_v2/product_warda_sables.jpg",
+        altTitle: "Warda Sablés Olive & Romarin",
+        altPerks: "Sans additif · Huile d'olive vierge",
+        altScore: 84
+      },
+      'boga-cidre': {
+        title: "Boga Cidre (1 L)",
+        origin: "Produit tunisien",
+        weight: "1 Litre",
+        score: 16,
+        scoreLabel: "Mauvais",
+        scoreColor: "#E74C3C",
+        img: "/assets_v2/product_boga_cidre.jpg",
+        nutriBadge: "Nutri-Score E",
+        nutriDesc: "11g de sucre / 100ml",
+        nutriClass: "ios-pill-bad",
+        additiveText: "3 additifs (dont E150d, E338)",
+        additiveClass: "ios-pill-bad",
+        terroirText: "Boisson gazeuse sucrée",
+        hasAlt: true,
+        altImg: "/assets_v2/product_olive_oil.jpg",
+        altTitle: "Safia Eau Minérale Gazeuse Citron",
+        altPerks: "0 calorie · Sans additif · Source locale",
+        altScore: 92
+      },
+      'warda-sables': {
+        title: "Warda Sablés Olive & Romarin",
+        origin: "Produit tunisien",
+        weight: "150 g",
+        score: 84,
+        scoreLabel: "Excellent",
+        scoreColor: "#1E824C",
+        img: "/assets_v2/product_warda_sables.jpg",
+        nutriBadge: "Nutri-Score A",
+        nutriDesc: "Farine complète et huile d'olive",
+        nutriClass: "ios-nutri-a",
+        additiveText: "Sans aucun additif",
+        additiveClass: "ios-pill-good",
+        terroirText: "Artisanat et savoir-faire tunisien",
+        hasAlt: false
+      }
+    };
+
+    const I18N = {
+      fr: {
+        app_title: "Historique",
+        search_placeholder: "Rechercher un produit...",
+        search_no_results: "Aucun produit ne correspond à votre recherche",
+        section_today: "Aujourd'hui",
+        section_yesterday: "Hier",
+        status_excellent: "Excellent",
+        status_bon: "Bon",
+        status_mauvais: "Mauvais",
+        tab_history: "Historique",
+        tab_recs: "Top",
+        tab_favs: "Favoris",
+        tab_account: "Compte",
+        eval_title: "Fiche Produit",
+        eval_breakdown_heading: "Détail de l'évaluation",
+        eval_nutri: "1. Qualité nutritionnelle",
+        eval_additives: "2. Additifs",
+        eval_terroir: "3. Terroir & Origine",
+        alt_rec_heading: "Alternative plus saine recommandée",
+        trust_title: "Eatsmart est 100% indépendant",
+        trust_desc: "Sans influence des marques, sans publicité, financé par des choix sains.",
+        scanner_header: "Scanner un code-barres",
+        scanner_instruction: "Placez le code-barres tunisien (619...) au centre",
+        recs_banner_title: "Top Santé · Tunisie",
+        recs_banner_sub: "Alternatives certifiées et locales",
+        chip_all: "Tous",
+        chip_oils: "Huiles d'olive",
+        chip_biscuits: "Biscuits sains",
+        chip_dairy: "Laitiers",
+        chip_grocery: "Épicerie",
+        comp_header: "Alternative recommandée",
+        recs_list_title: "Meilleurs choix du rayon tunisien",
+        favs_title: "Mes Produits Sauvegardés",
+        fav_create_list: "Créer une liste de courses saine",
+        fav_pantry: "Dans mon panier",
+        user_tier: "Membre Eatsmart Tunisie • 32 scans",
+        stats_header: "Synthèse du mois",
+        stat_scans: "Scans",
+        stat_avg: "Moyenne",
+        stat_local: "Terroir 619",
+        diet_prefs: "Préférences alimentaires",
+        pref_additives: "Alerte additifs à risque élevé",
+        pref_local: "Privilégier le terroir tunisien (619)",
+        pref_salt: "Régime sans sel ajouté",
+        p1_name: "Harissa Tunisienne",
+        p2_name: "Huile d'Olive Chétoui Extra Vierge",
+        p3_name: "Yaourt Nature Brassé",
+        p4_name: "Bimo Choco (x10)",
+        p5_name: "Boga Cidre (1 L)"
+      },
+      ar: {
+        app_title: "السجل",
+        search_placeholder: "ابحث عن منتج...",
+        search_no_results: "لا توجد منتجات مطابقة لبحثك",
+        section_today: "اليوم",
+        section_yesterday: "أمس",
+        status_excellent: "ممتاز",
+        status_bon: "جيد",
+        status_mauvais: "سيء",
+        tab_history: "السجل",
+        tab_recs: "الأفضل",
+        tab_favs: "المفضلة",
+        tab_account: "حسابي",
+        eval_title: "تفاصيل المنتج",
+        eval_breakdown_heading: "تفاصيل التقييم",
+        eval_nutri: "1. القيمة الغذائية",
+        eval_additives: "2. المضافات الغذائية",
+        eval_terroir: "3. المصدر والإنتاج المحلي",
+        alt_rec_heading: "بديل صحي ومفضل مقترح",
+        trust_title: "إيت سمارت مستقل 100%",
+        trust_desc: "بدون إعلانات أو تأثير من الشركات، نعتمد على معايير علمية وصحية محايدة.",
+        scanner_header: "مسح الرمز الشريطي",
+        scanner_instruction: "ضع الرمز الشريطي التونسي (619...) في المنتصف",
+        recs_banner_title: "الأفضل صحياً · تونس",
+        recs_banner_sub: "بدائل مختارة وموثوقة محلياً",
+        chip_all: "الكل",
+        chip_oils: "زيوت الزيتون",
+        chip_biscuits: "بسكويت صحي",
+        chip_dairy: "الألبان",
+        chip_grocery: "مواد غذائية",
+        comp_header: "بديل صحي مقترح",
+        recs_list_title: "أفضل المنتجات في الأسواق التونسية",
+        favs_title: "منتجاتي المحفوظة",
+        fav_create_list: "إنشاء قائمة تسوق صحية",
+        fav_pantry: "في سلتي",
+        user_tier: "عضو إيت سمارت تونس • 32 مسحاً",
+        stats_header: "ملخص الشهر",
+        stat_scans: "المسوحات",
+        stat_avg: "المعدل",
+        stat_local: "محلي 619",
+        diet_prefs: "التفضيلات الغذائية",
+        pref_additives: "تنبيه المضافات عالية الخطورة",
+        pref_local: "تفضيل المنتجات التونسية (619)",
+        pref_salt: "نظام غذائي قليل الملح",
+        p1_name: "هريسة تونسية أصلية",
+        p2_name: "زيت زيتون بكر ممتاز شتوي",
+        p3_name: "ياغورت طبيعي مخفوق",
+        p4_name: "بيمو شوكو (10 قطع)",
+        p5_name: "بوڨا سيدر (1 لتر)"
+      }
+    };
+
+    let currentLang = 'fr';
+    const screenEl = document.getElementById('ios-screen');
+    const sheetEl = document.getElementById('ios-detail-sheet');
+    const scanView = document.getElementById('ios-scanner-view');
+    const iosSearchInput = document.getElementById('ios-search-input');
+    const iosSearchClear = document.getElementById('ios-search-clear');
+    const iosEmptyNotice = document.getElementById('ios-empty-notice');
+
+    function refreshIcons() {
+      if (window.lucide) window.lucide.createIcons();
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const isAr = lang === 'ar';
+      screenEl.setAttribute('dir', isAr ? 'rtl' : 'ltr');
+      document.getElementById('ios-toggle-lang').textContent = isAr ? 'Français' : 'عربي';
+      document.getElementById('ios-lang-text').textContent = isAr ? 'FR' : 'ع';
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
+        const k = el.getAttribute('data-i18n');
+        if (I18N[lang] && I18N[lang][k]) el.textContent = I18N[lang][k];
+      });
+      iosSearchInput.placeholder = I18N[lang].search_placeholder;
+      refreshIcons();
+    }
+
+    document.getElementById('ios-toggle-lang').addEventListener('click', () => setLanguage(currentLang === 'fr' ? 'ar' : 'fr'));
+    document.getElementById('header-lang-btn').addEventListener('click', () => setLanguage(currentLang === 'fr' ? 'ar' : 'fr'));
+
+    // Header Search Button focuses search
+    document.getElementById('ios-header-search-btn').addEventListener('click', () => {
+      const histTab = document.querySelector('.ios-tab-link[data-ios-target="ios-view-history"]');
+      if (histTab) histTab.click();
+      iosSearchInput.focus();
+    });
+
+    // Live Search Filtering
+    function filterIosProducts() {
+      const q = iosSearchInput.value.trim().toLowerCase();
+      iosSearchClear.style.display = q.length > 0 ? 'grid' : 'none';
+
+      let matchCount = 0;
+      const rows = document.querySelectorAll('#ios-view-history .ios-row');
+      rows.forEach((r) => {
+        const text = (r.getAttribute('data-search') || '') + ' ' + r.textContent.toLowerCase();
+        if (!q || text.includes(q)) {
+          r.classList.remove('hidden-by-search');
+          matchCount++;
+        } else {
+          r.classList.add('hidden-by-search');
+        }
+      });
+
+      const todaySec = document.getElementById('ios-sec-today');
+      const yestSec = document.getElementById('ios-sec-yesterday');
+
+      if (q.length > 0) {
+        if (todaySec) todaySec.style.display = 'none';
+        if (yestSec) yestSec.style.display = 'none';
+        iosEmptyNotice.style.display = matchCount === 0 ? 'block' : 'none';
+      } else {
+        if (todaySec) todaySec.style.display = 'block';
+        if (yestSec) yestSec.style.display = 'block';
+        iosEmptyNotice.style.display = 'none';
+      }
+    }
+
+    iosSearchInput.addEventListener('input', filterIosProducts);
+    iosSearchClear.addEventListener('click', () => {
+      iosSearchInput.value = '';
+      filterIosProducts();
+      iosSearchInput.focus();
+    });
+
+    // Tab Navigation Logic
+    document.querySelectorAll('.ios-tab-link').forEach((tab) => {
+      tab.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = tab.getAttribute('data-ios-target');
+        if (!targetId) return;
+
+        document.querySelectorAll('.ios-tab-link').forEach((t) => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        document.querySelectorAll('.ios-view').forEach((v) => v.classList.remove('active'));
+        const targetView = document.getElementById(targetId);
+        if (targetView) targetView.classList.add('active');
+
+        // Show/hide search on exploration tabs
+        const searchWrap = document.getElementById('ios-search-container');
+        if (targetId === 'ios-view-history' || targetId === 'ios-view-recs') {
+          searchWrap.style.display = 'block';
+        } else {
+          searchWrap.style.display = 'none';
+        }
+
+        refreshIcons();
+      });
+    });
+
+    // Switches in Profile
+    document.querySelectorAll('[data-ios-switch]').forEach((sw) => {
+      sw.addEventListener('click', () => sw.classList.toggle('off'));
+    });
+
+    function openDetail(id) {
+      const p = PRODUCTS[id] || PRODUCTS['sicam-harissa'];
+      
+      document.getElementById('ios-sheet-img').src = p.img;
+      document.getElementById('ios-sheet-title').textContent = p.title;
+      document.getElementById('ios-sheet-origin').textContent = p.origin;
+      document.getElementById('ios-sheet-weight').textContent = p.weight;
+
+      document.getElementById('ios-gauge-num').textContent = p.score;
+      document.getElementById('ios-gauge-num').style.color = p.scoreColor;
+      document.getElementById('ios-gauge-lbl').textContent = p.scoreLabel;
+      document.getElementById('ios-gauge-lbl').style.color = p.scoreColor;
+
+      const arc = document.getElementById('ios-gauge-arc');
+      arc.style.stroke = p.scoreColor;
+      const offset = 345 * (1 - p.score / 100);
+      arc.style.strokeDashoffset = offset;
+
+      document.getElementById('ios-nutri-badge').textContent = p.nutriBadge;
+      document.getElementById('ios-nutri-desc').textContent = p.nutriDesc;
+      document.getElementById('ios-additive-badge').textContent = p.additiveText;
+      document.getElementById('ios-terroir-badge').textContent = p.terroirText;
+
+      const altSec = document.getElementById('ios-alt-section');
+      if (p.hasAlt) {
+        altSec.style.display = 'block';
+        document.getElementById('ios-alt-img').src = p.altImg;
+        document.getElementById('ios-alt-name').textContent = p.altTitle;
+        document.getElementById('ios-alt-perks').textContent = p.altPerks;
+        document.getElementById('ios-alt-score').textContent = p.altScore;
+      } else {
+        altSec.style.display = 'none';
+      }
+
+      sheetEl.classList.add('active');
+      refreshIcons();
+    }
+
+    function closeDetail() {
+      sheetEl.classList.remove('active');
+    }
+
+    document.querySelectorAll('.ios-row').forEach((row) => {
+      row.addEventListener('click', () => openDetail(row.getAttribute('data-id')));
+    });
+
+    document.getElementById('ios-close-detail').addEventListener('click', closeDetail);
+
+    function openScanner() { scanView.classList.add('active'); refreshIcons(); }
+    function closeScanner() { scanView.classList.remove('active'); }
+
+    document.getElementById('ios-scan-trigger').addEventListener('click', openScanner);
+    document.getElementById('ios-search-scan-btn').addEventListener('click', openScanner);
+    document.getElementById('ios-close-scan').addEventListener('click', closeScanner);
+
+    document.getElementById('ios-shutter-btn').addEventListener('click', () => {
+      closeScanner();
+      setTimeout(() => openDetail('sicam-harissa'), 250);
+    });
+
+    function updateClock() {
+      const d = new Date();
+      const h = String(d.getHours()).padStart(2, '0');
+      const m = String(d.getMinutes()).padStart(2, '0');
+      const el = document.getElementById('ios-clock');
+      if (el) el.textContent = `${h}:${m}`;
+    }
+    updateClock();
+    setInterval(updateClock, 30000);
+
+    window.addEventListener('DOMContentLoaded', refreshIcons);
+    setTimeout(refreshIcons, 100);
+  </script>
+</body>
+</html>

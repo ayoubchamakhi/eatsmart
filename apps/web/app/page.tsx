@@ -14,6 +14,14 @@ export default function LandingPage() {
   const [isArabic, setIsArabic] = useState(false);
 
   useEffect(() => {
+    if (typeof window !== "undefined") {
+      const savedLang = localStorage.getItem("eatsmart_lang");
+      if (savedLang === "ar" || document.documentElement.lang === "ar") {
+        setIsArabic(true);
+        document.documentElement.lang = "ar";
+        document.documentElement.dir = "rtl";
+      }
+    }
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 12);
     };
@@ -21,11 +29,13 @@ export default function LandingPage() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const toggleLanguage = () => {
-    const nextArabic = !isArabic;
+  const setLanguage = (nextArabic: boolean) => {
     setIsArabic(nextArabic);
-    document.documentElement.lang = nextArabic ? "ar" : "fr";
-    document.documentElement.dir = nextArabic ? "rtl" : "ltr";
+    if (typeof document !== "undefined") {
+      document.documentElement.lang = nextArabic ? "ar" : "fr";
+      document.documentElement.dir = nextArabic ? "rtl" : "ltr";
+      localStorage.setItem("eatsmart_lang", nextArabic ? "ar" : "fr");
+    }
   };
 
   return (
@@ -36,7 +46,7 @@ export default function LandingPage() {
 
       <Header
         isArabic={isArabic}
-        toggleLanguage={toggleLanguage}
+        onSelectLanguage={setLanguage}
         isScrolled={isScrolled}
       />
 

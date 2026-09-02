@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eatsmart Expo Go - QR Code iPhone Direct</title>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Cairo:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #2FB755;
+      --dark: #1F2937;
+      --bg: #F7F5EE;
+    }
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--dark);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 90vh;
+    }
+    .card {
+      background: #FFFFFF;
+      border-radius: 28px;
+      padding: 36px 32px;
+      max-width: 440px;
+      width: 100%;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+      text-align: center;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #EAF7ED;
+      color: var(--green);
+      font-weight: 700;
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      letter-spacing: -0.5px;
+    }
+    p {
+      color: #6B7280;
+      font-size: 14px;
+      line-height: 1.5;
+      margin: 0 0 24px 0;
+    }
+    .qr-frame {
+      background: #FFFFFF;
+      border: 2px solid #EEEEEE;
+      border-radius: 20px;
+      padding: 16px;
+      display: inline-block;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .qr-frame img {
+      width: 270px;
+      height: 270px;
+      display: block;
+      border-radius: 12px;
+    }
+    .url-box {
+      background: #F9FAFB;
+      border: 1px dashed #D1D5DB;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-family: monospace;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1F2937;
+      word-break: break-all;
+      margin-bottom: 20px;
+    }
+    .instructions {
+      text-align: left;
+      background: #F9FAFB;
+      border-radius: 16px;
+      padding: 16px;
+      font-size: 13px;
+    }
+    .instructions ol {
+      margin: 0;
+      padding-left: 20px;
+      color: #4B5563;
+      line-height: 1.8;
+    }
+    .instructions li strong {
+      color: var(--dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="badge">
+      <span>●</span> Expo SDK 54 · Connexion Directe
+    </div>
+    <h1>Chargement Direct sur iPhone</h1>
+    <p>Le tunnel a été désactivé pour éviter les lenteurs. Le projet se charge maintenant <strong>instantanément</strong> via votre réseau Wi-Fi local.</p>
+
+    <div class="qr-frame">
+      <img src="/qr_local.png" alt="QR Code Expo Go Direct">
+    </div>
+
+    <div class="url-box">exp://192.168.1.27:8081</div>
+
+    <div class="instructions">
+      <ol>
+        <li>Assurez-vous que votre iPhone est connecté au même Wi-Fi.</li>
+        <li>Ouvrez l'application <strong>Appareil photo</strong> ou <strong>Expo Go</strong>.</li>
+        <li>Scannez le QR code ci-dessus : le projet va se charger immédiatement sans bloquer !</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

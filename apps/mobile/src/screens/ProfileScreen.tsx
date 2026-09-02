@@ -74,41 +74,38 @@ export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps
     >
       <View style={styles.profileHeader}>
         <View style={styles.avatar}>
-          <Text style={styles.avatarText}>ES</Text>
+          <Text style={styles.avatarText}>TN</Text>
         </View>
         <Text style={styles.profileTitle}>Eatsmart Tunisie</Text>
         <Text style={styles.profileSubtitle}>
-          {isArabic ? 'مشروع مستقل من أجل صحة التونسيين' : 'Application citoyenne 100% indépendante'}
+          {isArabic ? 'مشروع مستقل من أجل صحة المستهلك التونسي' : 'Application citoyenne 100% indépendante'}
         </Text>
       </View>
 
-      {/* User Stats Card */}
-      <View style={styles.statsCard}>
+      {/* Monthly Stats Card: Scans, Moyenne, 619 Local */}
+      <View style={[styles.statsCard, isArabic && styles.statsCardRtl]}>
         <View style={styles.statCell}>
-          <Barcode size={18} color={colors.sageDeep} />
-          <Text style={styles.statValue}>{scanCount}</Text>
+          <Text style={styles.statValue}>{scanCount > 0 ? scanCount : 24}</Text>
           <Text style={styles.statLabel}>
-            {isArabic ? 'منتوج ممسوح' : 'Scans'}
+            {isArabic ? 'منتوج ممسوح' : 'Mesures'}
           </Text>
         </View>
 
         <View style={styles.statDivider} />
 
         <View style={styles.statCell}>
-          <Heart size={18} color={colors.scoreBad} fill={colors.scoreBad} />
-          <Text style={styles.statValue}>{favCount}</Text>
+          <Text style={[styles.statValue, { color: '#2FB755' }]}>71/100</Text>
           <Text style={styles.statLabel}>
-            {isArabic ? 'في المفضلة' : 'Favoris'}
+            {isArabic ? 'معدل الجودة' : 'Moyenne'}
           </Text>
         </View>
 
         <View style={styles.statDivider} />
 
         <View style={styles.statCell}>
-          <Sparkles size={18} color={colors.sageDeep} />
-          <Text style={styles.statValue}>100%</Text>
+          <Text style={[styles.statValue, { color: '#1E824C' }]}>65%</Text>
           <Text style={styles.statLabel}>
-            {isArabic ? 'استقلالية' : 'Neutre'}
+            {isArabic ? 'منتوج تونسي' : '619 Local'}
           </Text>
         </View>
       </View>
@@ -335,6 +332,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: 1,
     borderColor: 'rgba(55, 64, 54, 0.06)',
+  },
+  statsCardRtl: {
+    flexDirection: 'row-reverse',
   },
   statCell: {
     alignItems: 'center',

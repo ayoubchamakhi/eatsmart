@@ -6,12 +6,14 @@ import { LanguageDropdown } from "./LanguageDropdown";
 
 interface HeaderProps {
   isArabic?: boolean;
+  onSelectLanguage?: (isArabic: boolean) => void;
   toggleLanguage?: () => void;
   isScrolled?: boolean;
 }
 
 export function Header({
   isArabic: propIsArabic,
+  onSelectLanguage: propOnSelectLanguage,
   toggleLanguage: propToggleLanguage,
   isScrolled: propIsScrolled,
 }: HeaderProps) {
@@ -36,16 +38,17 @@ export function Header({
   const isArabic = propIsArabic !== undefined ? propIsArabic : internalArabic;
   const isScrolled = propIsScrolled !== undefined ? propIsScrolled : internalScrolled;
 
-  const handleToggle = () => {
-    if (propToggleLanguage) {
+  const handleSelectLanguage = (nextAr: boolean) => {
+    if (propOnSelectLanguage) {
+      propOnSelectLanguage(nextAr);
+    } else if (propToggleLanguage) {
       propToggleLanguage();
     } else {
-      const nextArabic = !internalArabic;
-      setInternalArabic(nextArabic);
+      setInternalArabic(nextAr);
       if (typeof document !== "undefined") {
-        document.documentElement.lang = nextArabic ? "ar" : "fr";
-        document.documentElement.dir = nextArabic ? "rtl" : "ltr";
-        localStorage.setItem("eatsmart_lang", nextArabic ? "ar" : "fr");
+        document.documentElement.lang = nextAr ? "ar" : "fr";
+        document.documentElement.dir = nextAr ? "rtl" : "ltr";
+        localStorage.setItem("eatsmart_lang", nextAr ? "ar" : "fr");
       }
     }
   };
@@ -73,9 +76,7 @@ export function Header({
         <div className="header-actions">
           <LanguageDropdown
             isArabic={isArabic}
-            onSelectLanguage={(nextAr) => {
-              if (nextAr !== isArabic) handleToggle();
-            }}
+            onSelectLanguage={handleSelectLanguage}
           />
           <a className="btn btn--sage btn--small" href="/#download">
             {isArabic ? "تحميل التطبيق" : "Télécharger l'app"}

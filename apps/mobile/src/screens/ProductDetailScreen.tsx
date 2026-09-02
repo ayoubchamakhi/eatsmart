@@ -6,6 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
   Modal,
+  Image,
 } from 'react-native';
 import {
   ArrowLeft,
@@ -21,8 +22,9 @@ import * as Haptics from 'expo-haptics';
 import { colors, radii } from '@eatsmart/design-tokens';
 import type { Product, Additive } from '@eatsmart/domain';
 import { getScoreColor } from '@eatsmart/domain';
-import { ScoreBadge } from '../components/ScoreBadge';
 import { NutriScoreBadge, NovaBadge } from '../components/NutriScoreBadge';
+import { RadialGauge } from '../components/RadialGauge';
+import { resolveProductImage } from '../utils/imageResolver';
 import { isFavorite, toggleFavorite, getHealthProfile, checkHealthAlerts } from '../services/storage';
 
 interface ProductDetailScreenProps {
@@ -107,41 +109,89 @@ export function ProductDetailScreen({
         </View>
       )}
 
-      {/* Main Score Hero Card */}
-      <View style={styles.heroCard}>
-        <View style={styles.heroTop}>
-          <View style={styles.heroInfo}>
-            <Text style={styles.brand}>{product.brand}</Text>
-            <Text style={styles.name}>{product.name}</Text>
-            <Text style={styles.category}>{product.category}</Text>
-          </View>
-
-          <ScoreBadge score={product.score} size="large" />
+      {/* Signature Yuka Hero: Packshot (Left) + Radial Score Gauge (Right) */}
+      <View style={[styles.heroRow, isArabic && styles.heroRowRtl]}>
+        <View style={styles.packshotFrame}>
+          <Image
+            source={resolveProductImage(product.image)}
+            style={styles.packshotImg}
+            resizeMode="contain"
+          />
         </View>
 
-        <View style={styles.scoreBanner}>
-          <Text style={[styles.scoreLabel, { color: scoreColor }]}>
-            {isArabic ? product.score.label.ar : product.score.label.fr}
+        <RadialGauge
+          score={Math.round(product.score.value)}
+          label={isArabic ? product.score.label.ar : product.score.label.fr}
+          color={scoreColor}
+          size={128}
+        />
+      </View>
+
+      {/* Product Headline & Origin */}
+      <View style={[styles.titleSection, isArabic && styles.titleSectionRtl]}>
+        <Text style={[styles.brandText, isArabic && styles.textRtl]}>{product.brand}</Text>
+        <Text style={[styles.nameText, isArabic && styles.textRtl]}>{product.name}</Text>
+        <View style={[styles.originRow, isArabic && styles.originRowRtl]}>
+          <Text style={styles.originFlag}>🇹🇳</Text>
+          <Text style={styles.originText}>
+            {isArabic ? 'منتوج تونسي أصيل (619)' : 'Produit tunisien certifié (619)'}
           </Text>
-          <Text style={styles.confidenceText}>
-            {isArabic
-              ? `دقة البيانات: ${product.score.confidence}%`
-              : `Indice de confiance: ${product.score.confidence}%`}
+        </View>
+      </View>
+
+      {/* 3-Tier Scientific Criteria Section */}
+      <Text style={[styles.criteriaHeader, isArabic && styles.textRtl]}>
+        {isArabic ? 'معايير التقييم العلمي' : "CRITÈRES D'ÉVALUATION SCIENTIFIQUE"}
+      </Text>
+
+      {/* Card 1: Qualité nutritionnelle (60%) */}
+      <View style={[styles.criteriaCard, isArabic && styles.criteriaCardRtl]}>
+        <View style={styles.criteriaIconWrap}>
+          <NutriScoreBadge grade={product.nutriScore} size="medium" />
+        </View>
+        <View style={[styles.criteriaBody, isArabic && styles.criteriaBodyRtl]}>
+          <Text style={[styles.criteriaTitle, isArabic && styles.textRtl]}>
+            {isArabic ? 'الجودة الغذائية' : 'Qualité nutritionnelle'}
+          </Text>
+          <Text style={[styles.criteriaDesc, isArabic && styles.textRtl]}>
+            Nutri-Score {product.nutriScore.toUpperCase()} • {product.nutrition.energyKcal} kcal / 100g
           </Text>
         </View>
+        <Text style={styles.criteriaWeight}>60%</Text>
+      </View>
 
-        {/* Nutri-Score & NOVA Dual Pills */}
-        <View style={styles.ratingsRow}>
-          <View style={styles.ratingCol}>
-            <Text style={styles.ratingSubhead}>Nutri-Score</Text>
-            <NutriScoreBadge grade={product.nutriScore} size="medium" />
-          </View>
-
-          <View style={styles.ratingCol}>
-            <Text style={styles.ratingSubhead}>Transformation</Text>
-            <NovaBadge group={product.novaGroup} isArabic={isArabic} />
-          </View>
+      {/* Card 2: Additifs alimentaires (30%) */}
+      <View style={[styles.criteriaCard, isArabic && styles.criteriaCardRtl]}>
+        <View style={[styles.criteriaIconWrap, { backgroundColor: product.additives.length > 0 ? '#FDECE7' : '#EAF6ED' }]}>
+          <ShieldAlert size={20} color={product.additives.length > 0 ? '#E74C3C' : '#2FB755'} />
         </View>
+        <View style={[styles.criteriaBody, isArabic && styles.criteriaBodyRtl]}>
+          <Text style={[styles.criteriaTitle, isArabic && styles.textRtl]}>
+            {isArabic ? 'المواد المضافة' : 'Additifs alimentaires'}
+          </Text>
+          <Text style={[styles.criteriaDesc, isArabic && styles.textRtl]}>
+            {product.additives.length === 0
+              ? isArabic ? 'خالٍ من المضافات' : 'Aucun additif détecté'
+              : `${product.additives.length} ${isArabic ? 'مضافات تم رصدها' : 'additif(s) détecté(s)'}`}
+          </Text>
+        </View>
+        <Text style={styles.criteriaWeight}>30%</Text>
+      </View>
+
+      {/* Card 3: Terroir & Circuit court (10%) */}
+      <View style={[styles.criteriaCard, isArabic && styles.criteriaCardRtl]}>
+        <View style={[styles.criteriaIconWrap, { backgroundColor: '#EAF6ED' }]}>
+          <Leaf size={20} color="#1E824C" />
+        </View>
+        <View style={[styles.criteriaBody, isArabic && styles.criteriaBodyRtl]}>
+          <Text style={[styles.criteriaTitle, isArabic && styles.textRtl]}>
+            {isArabic ? 'الإنتاج المحلي والتراب' : 'Terroir & Circuit court'}
+          </Text>
+          <Text style={[styles.criteriaDesc, isArabic && styles.textRtl]}>
+            {isArabic ? 'مساهم في الاقتصاد التونسي' : 'Filière locale tunisienne'}
+          </Text>
+        </View>
+        <Text style={styles.criteriaWeight}>10%</Text>
       </View>
 
       {/* Origin & Terroir */}
@@ -325,14 +375,14 @@ export function ProductDetailScreen({
                 <View style={styles.modalBadge}>
                   <Text style={styles.modalBadgeCode}>{selectedAdditive?.code}</Text>
                 </View>
-                <div>
+                <View style={{ flex: 1 }}>
                   <Text style={styles.modalAdditiveName}>
                     {isArabic ? selectedAdditive?.nameAr : selectedAdditive?.nameFr}
                   </Text>
                   <Text style={styles.modalCategory}>
                     {selectedAdditive?.functionCategory}
                   </Text>
-                </div>
+                </View>
               </View>
               <TouchableOpacity
                 style={styles.modalCloseBtn}
@@ -428,6 +478,135 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     marginLeft: 4,
     lineHeight: 18,
+  },
+  heroRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+    paddingVertical: 14,
+    marginBottom: 16,
+  },
+  heroRowRtl: {
+    flexDirection: 'row-reverse',
+  },
+  packshotFrame: {
+    width: 128,
+    height: 128,
+    borderRadius: 20,
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#ECECEC',
+    padding: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.05,
+    shadowRadius: 10,
+    elevation: 3,
+  },
+  packshotImg: {
+    width: '100%',
+    height: '100%',
+  },
+  titleSection: {
+    marginBottom: 18,
+    paddingHorizontal: 4,
+  },
+  titleSectionRtl: {
+    alignItems: 'flex-end',
+  },
+  brandText: {
+    fontSize: 12,
+    fontWeight: '800',
+    color: '#8E8E93',
+    textTransform: 'uppercase',
+    letterSpacing: 0.8,
+  },
+  nameText: {
+    fontSize: 21,
+    fontWeight: '800',
+    color: '#000000',
+    marginTop: 3,
+    marginBottom: 6,
+    letterSpacing: -0.3,
+  },
+  originRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+  },
+  originRowRtl: {
+    flexDirection: 'row-reverse',
+  },
+  originFlag: {
+    fontSize: 14,
+  },
+  originText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#8E8E93',
+  },
+  criteriaHeader: {
+    fontSize: 11,
+    fontWeight: '800',
+    textTransform: 'uppercase',
+    letterSpacing: 0.8,
+    color: '#8E8E93',
+    marginBottom: 10,
+    marginTop: 4,
+    paddingHorizontal: 4,
+  },
+  criteriaCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    padding: 14,
+    marginBottom: 10,
+    borderWidth: 1,
+    borderColor: '#ECEAE4',
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.03,
+    shadowRadius: 6,
+    elevation: 2,
+    gap: 14,
+  },
+  criteriaCardRtl: {
+    flexDirection: 'row-reverse',
+  },
+  criteriaIconWrap: {
+    width: 42,
+    height: 42,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  criteriaBody: {
+    flex: 1,
+    minWidth: 0,
+  },
+  criteriaBodyRtl: {
+    alignItems: 'flex-end',
+  },
+  criteriaTitle: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: '#000000',
+    marginBottom: 3,
+  },
+  criteriaDesc: {
+    fontSize: 12,
+    color: '#8E8E93',
+  },
+  criteriaWeight: {
+    fontSize: 13.5,
+    fontWeight: '800',
+    color: '#2FB755',
+  },
+  textRtl: {
+    textAlign: 'right',
   },
   heroCard: {
     backgroundColor: '#FFFFFF',

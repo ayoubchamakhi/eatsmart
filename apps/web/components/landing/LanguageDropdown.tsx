@@ -42,15 +42,15 @@ export function LanguageDropdown({ isArabic, onSelectLanguage }: LanguageDropdow
           <Image
             src={isArabic ? "/assets_v2/flag_tn.svg" : "/assets_v2/flag_fr.svg"}
             alt=""
-            width={15}
-            height={15}
+            width={20}
+            height={20}
             className="rounded-flag"
             priority
           />
         </span>
         <span className="lang-name-label">{isArabic ? "عربي" : "FR"}</span>
         <ChevronDown
-          size={12}
+          size={14}
           className={`lang-chevron ${isOpen ? "chevron-rotated" : ""}`}
         />
       </button>
@@ -65,13 +65,15 @@ export function LanguageDropdown({ isArabic, onSelectLanguage }: LanguageDropdow
             role="menuitem"
           >
             <div className="lang-option-content">
-              <Image
-                src="/assets_v2/flag_fr.svg"
-                alt="Drapeau France"
-                width={20}
-                height={20}
-                className="rounded-flag"
-              />
+              <span className="flag-icon-wrap">
+                <Image
+                  src="/assets_v2/flag_fr.svg"
+                  alt="Drapeau France"
+                  width={20}
+                  height={20}
+                  className="rounded-flag"
+                />
+              </span>
               <span className="lang-option-text">Français</span>
             </div>
             {!isArabic && <Check size={14} className="lang-check" />}
@@ -85,13 +87,15 @@ export function LanguageDropdown({ isArabic, onSelectLanguage }: LanguageDropdow
             role="menuitem"
           >
             <div className="lang-option-content">
-              <Image
-                src="/assets_v2/flag_tn.svg"
-                alt="Drapeau Tunisie"
-                width={20}
-                height={20}
-                className="rounded-flag"
-              />
+              <span className="flag-icon-wrap">
+                <Image
+                  src="/assets_v2/flag_tn.svg"
+                  alt="Drapeau Tunisie"
+                  width={20}
+                  height={20}
+                  className="rounded-flag"
+                />
+              </span>
               <span className="lang-option-text">عربي (تونس)</span>
             </div>
             {isArabic && <Check size={14} className="lang-check" />}
