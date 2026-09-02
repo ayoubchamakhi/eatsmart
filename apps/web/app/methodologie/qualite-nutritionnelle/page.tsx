@@ -1,34 +1,115 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Breadcrumb } from "@/components/subpage/Breadcrumb";
-import { SubpageHero } from "@/components/subpage/SubpageHero";
+import { YukaFlankClouds } from "@/components/subpage/YukaFlankClouds";
 import { DownloadCtaBanner } from "@/components/subpage/DownloadCtaBanner";
 import {
   Award,
   CheckCircle2,
   AlertTriangle,
-  Salad,
-  Apple,
   Scale,
-  Gauge,
   Sparkles,
+  Info,
+  Salad,
+  ChevronRight,
 } from "lucide-react";
 
-export const metadata = {
-  title: "Qualité Nutritionnelle : Comment est calculée la note ? | Eats.tn",
-  description:
-    "Découvrez comment Eatsmart évalue la qualité nutritionnelle des aliments en Tunisie : formule du Nutri-Score officiel, équilibre des macronutriments et valorisation du terroir.",
-};
-
 export default function QualiteNutritionnellePage() {
+  const [selectedGrade, setSelectedGrade] = useState<"A" | "B" | "C" | "D" | "E">("A");
+
+  const gradeDetails = {
+    A: {
+      color: "#2D5A27",
+      bg: "#EDF7ED",
+      border: "#2D5A27",
+      title: "Excellente qualité nutritionnelle",
+      scoreRange: "75 à 100 / 100",
+      description:
+        "Aliments bruts ou très peu transformés, d'une grande densité nutritionnelle. Riches en fibres naturelles, vitamines et polyphénols, ils constituent la base d'une alimentation protectrice.",
+      examples: [
+        "Huile d'olive vierge extra de Tunisie",
+        "Légumineuses (Lentilles, Pois chiches)",
+        "Dattes Deglet Nour non confites",
+        "Légumes frais et salades méditerranéennes",
+      ],
+    },
+    B: {
+      color: "#60992D",
+      bg: "#F4F9EE",
+      border: "#60992D",
+      title: "Bonne qualité nutritionnelle",
+      scoreRange: "50 à 74 / 100",
+      description:
+        "Aliments favorables à l'équilibre quotidien avec un apport modéré en énergie et un bon profil protéique.",
+      examples: [
+        "Pain complet aux céréales locales",
+        "Yaourt nature entier sans sucre",
+        "Poisson bleu grillé (Sardines)",
+        "Flocons d'avoine complets",
+      ],
+    },
+    C: {
+      color: "#D98C00",
+      bg: "#FFFDF0",
+      border: "#D98C00",
+      title: "Qualité nutritionnelle moyenne",
+      scoreRange: "35 à 49 / 100",
+      description:
+        "Aliments dont la consommation doit être équilibrée par des portions raisonnables en raison d'une teneur notable en lipides ou glucides simples.",
+      examples: [
+        "Fromage frais tunisien (Sicilien)",
+        "Thon à l'huile végétale",
+        "Couscous de blé dur semoule",
+        "Jus de fruits sans sucres ajoutés",
+      ],
+    },
+    D: {
+      color: "#D9531E",
+      bg: "#FFF4EB",
+      border: "#D9531E",
+      title: "Qualité nutritionnelle médiocre",
+      scoreRange: "20 à 34 / 100",
+      description:
+        "Produits riches en graisses saturées ou en sel. Leur consommation régulière doit être modérée.",
+      examples: [
+        "Biscuits sucrés industriels",
+        "Fromages fondus à tartiner",
+        "Chips salées et apéritifs frits",
+        "Plats préparés riches en sel",
+      ],
+    },
+    E: {
+      color: "#C73E1D",
+      bg: "#FDECE7",
+      border: "#C73E1D",
+      title: "Très mauvaise qualité nutritionnelle",
+      scoreRange: "0 à 19 / 100",
+      description:
+        "Aliments ultra-transformés cumulant forte densité calorique, excès massif de sucres simples et graisses saturées.",
+      examples: [
+        "Sodas et boissons énergisantes",
+        "Pâtes à tartiner au cacao et huile de palme",
+        "Bonbons et confiseries colorées",
+        "Sauces industrielles très grasses",
+      ],
+    },
+  };
+
+  const active = gradeDetails[selectedGrade];
+
   return (
-    <div className="yuka-page-wrap">
+    <div className="yuka-page-wrap position-relative" style={{ overflowX: "hidden" }}>
       <Header />
 
-      <main className="yuka-container">
-        {/* Breadcrumbs */}
+      {/* Background clouds flanking sides */}
+      <YukaFlankClouds variant="nutrition" />
+
+      <main className="yuka-container position-relative" style={{ zIndex: 1, paddingBottom: 64 }}>
         <Breadcrumb
           items={[
             { label: "Méthodologie", href: "/methodologie" },
@@ -37,219 +118,236 @@ export default function QualiteNutritionnellePage() {
         />
 
         {/* Hero Section */}
-        <SubpageHero
-          badgeIcon={<Award size={16} />}
-          badgeText="60% de la note globale Eatsmart"
-          badgeVariant="sage"
-          title="La qualité nutritionnelle des aliments"
-          description="La qualité nutritionnelle constitue la part prépondérante de notre évaluation (60 points sur 100). Elle s'appuie sur la méthode validée du Nutri-Score pour encourager les aliments protecteurs pour la santé."
-          imageSrc="/assets_v2/methodology_nutrition.jpg"
-          imageAlt="Qualité nutritionnelle et équilibre alimentaire"
-        />
+        <section style={{ padding: "20px 0 50px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 48,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  backgroundColor: "#EBF3E8",
+                  color: "#2D5A27",
+                  padding: "7px 18px",
+                  borderRadius: 9999,
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  marginBottom: 20,
+                }}
+              >
+                <Award size={16} />
+                <span>60% de la note globale Eatsmart</span>
+              </div>
 
-        {/* Nutri-Score A to E Visual Reference Grid */}
-        <section style={{ marginBottom: 40 }}>
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 20 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <Gauge size={24} />
-              </div>
-              <div>
-                <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
-                  L'échelle officielle Nutri-Score de référence (A à E)
-                </h2>
-                <p style={{ margin: 0, fontSize: "0.9rem", color: "#6E675C" }}>
-                  Conversion mathématique continue de la formule scientifique vers notre note de 0 à 100
-                </p>
-              </div>
+              <h1
+                style={{
+                  fontSize: "clamp(2.4rem, 4.8vw, 3.2rem)",
+                  color: "#1F221B",
+                  fontWeight: 800,
+                  lineHeight: 1.14,
+                  margin: "0 0 20px",
+                  fontFamily: "var(--font-display)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                La qualité nutritionnelle <br />
+                <span style={{ color: "#2D5A27" }}>des aliments</span>
+              </h1>
+
+              <p
+                style={{
+                  color: "#5C564B",
+                  fontSize: "1.12rem",
+                  lineHeight: 1.7,
+                  margin: 0,
+                  maxWidth: 540,
+                }}
+              >
+                La composition nutritionnelle représente plus de la moitié du score final. Elle repose sur la formule scientifique du Nutri-Score pour distinguer les nutriments protecteurs de ceux à limiter.
+              </p>
             </div>
-
-            <p style={{ color: "#5C564B", fontSize: "1.02rem", lineHeight: 1.7, marginBottom: 28 }}>
-              Le Nutri-Score attribue des points négatifs (de 0 à 40) aux composants dont la consommation excessive est néfaste, et des points positifs (de 0 à 15) aux nutriments protecteurs. Eatsmart convertit ce score en une note intuitive sur 100 :
-            </p>
 
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(170px, 1fr))",
-                gap: 16,
+                position: "relative",
+                height: 320,
+                borderRadius: 28,
+                overflow: "hidden",
+                boxShadow: "0 18px 45px rgba(31, 34, 27, 0.08)",
+                border: "1px solid rgba(61, 58, 52, 0.06)",
               }}
             >
-              {/* Grade A */}
-              <div
+              <Image
+                src="/assets_v2/methodology_nutrition.jpg"
+                alt="Récolte saine méditerranéenne et huile d'olive"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* INTERACTIVE NUTRI-SCORE GRADE EXPLORER */}
+        <section style={{ marginBottom: 50 }}>
+          <div className="yuka-card" style={{ border: "1.5px solid rgba(45, 90, 39, 0.15)" }}>
+            <div style={{ textAlign: "center", maxWidth: 600, margin: "0 auto 32px" }}>
+              <h2
                 style={{
-                  background: "#EDF7ED",
-                  border: "1.5px solid #2D5A27",
-                  borderRadius: 20,
-                  padding: "20px 16px",
-                  textAlign: "center",
+                  fontSize: "1.7rem",
+                  color: "#1F221B",
+                  fontWeight: 800,
+                  margin: "0 0 10px",
+                  fontFamily: "var(--font-display)",
                 }}
               >
-                <span
+                Explorez les 5 classes du Nutri-Score
+              </h2>
+              <p style={{ color: "#5C564B", fontSize: "0.98rem", margin: 0 }}>
+                Cliquez sur une lettre pour visualiser sa conversion en points et ses caractéristiques concrètes :
+              </p>
+            </div>
+
+            {/* Nutri-Score Letter Buttons */}
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                gap: 14,
+                flexWrap: "wrap",
+                marginBottom: 36,
+              }}
+            >
+              {(["A", "B", "C", "D", "E"] as const).map((grade) => {
+                const isSelected = selectedGrade === grade;
+                const colors = {
+                  A: "#2D5A27",
+                  B: "#60992D",
+                  C: "#D98C00",
+                  D: "#D9531E",
+                  E: "#C73E1D",
+                }[grade];
+
+                return (
+                  <button
+                    key={grade}
+                    onClick={() => setSelectedGrade(grade)}
+                    style={{
+                      width: 64,
+                      height: 64,
+                      borderRadius: "50%",
+                      fontSize: "1.8rem",
+                      fontWeight: 900,
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      border: isSelected ? `3px solid ${colors}` : "2px solid rgba(61, 58, 52, 0.15)",
+                      background: isSelected ? colors : "#FFFFFF",
+                      color: isSelected ? "#FFFFFF" : colors,
+                      transform: isSelected ? "scale(1.15)" : "scale(1)",
+                      boxShadow: isSelected ? `0 8px 24px ${colors}40` : "none",
+                      transition: "all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1)",
+                    }}
+                  >
+                    {grade}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Interactive Selected Grade Panel */}
+            <div
+              style={{
+                background: active.bg,
+                border: `1.5px solid ${active.border}`,
+                borderRadius: 24,
+                padding: "32px",
+                transition: "all 0.3s ease",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                  flexWrap: "wrap",
+                  gap: 16,
+                  marginBottom: 16,
+                }}
+              >
+                <div>
+                  <span
+                    style={{
+                      fontSize: "0.85rem",
+                      color: active.color,
+                      fontWeight: 800,
+                      textTransform: "uppercase",
+                      letterSpacing: "0.04em",
+                    }}
+                  >
+                    Classe Nutri-Score {selectedGrade}
+                  </span>
+                  <h3 style={{ margin: "4px 0 0", fontSize: "1.45rem", color: active.color, fontWeight: 800 }}>
+                    {active.title}
+                  </h3>
+                </div>
+                <div
                   style={{
-                    display: "inline-block",
-                    background: "#2D5A27",
-                    color: "#FFFFFF",
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    lineHeight: "44px",
-                    fontSize: "1.6rem",
-                    fontWeight: 900,
-                    marginBottom: 10,
+                    background: "#FFFFFF",
+                    padding: "8px 20px",
+                    borderRadius: 9999,
+                    border: `1px solid ${active.border}`,
+                    color: active.color,
+                    fontWeight: 800,
+                    fontSize: "1.1rem",
+                    boxShadow: "0 4px 12px rgba(0,0,0,0.04)",
                   }}
                 >
-                  A
-                </span>
-                <strong style={{ display: "block", color: "#2D5A27", fontSize: "1rem", marginBottom: 4 }}>
-                  Excellent
-                </strong>
-                <span style={{ color: "#4A6E44", fontSize: "0.85rem", fontWeight: 600 }}>
-                  Note : 75 à 100
-                </span>
+                  Score : {active.scoreRange}
+                </div>
               </div>
 
-              {/* Grade B */}
-              <div
-                style={{
-                  background: "#F4F9EE",
-                  border: "1.5px solid #60992D",
-                  borderRadius: 20,
-                  padding: "20px 16px",
-                  textAlign: "center",
-                }}
-              >
-                <span
-                  style={{
-                    display: "inline-block",
-                    background: "#60992D",
-                    color: "#FFFFFF",
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    lineHeight: "44px",
-                    fontSize: "1.6rem",
-                    fontWeight: 900,
-                    marginBottom: 10,
-                  }}
-                >
-                  B
-                </span>
-                <strong style={{ display: "block", color: "#60992D", fontSize: "1rem", marginBottom: 4 }}>
-                  Bon
-                </strong>
-                <span style={{ color: "#547E28", fontSize: "0.85rem", fontWeight: 600 }}>
-                  Note : 50 à 74
-                </span>
-              </div>
+              <p style={{ color: "#3D3A34", fontSize: "1.02rem", lineHeight: 1.7, marginBottom: 24 }}>
+                {active.description}
+              </p>
 
-              {/* Grade C */}
-              <div
-                style={{
-                  background: "#FFFDF0",
-                  border: "1.5px solid #E5A800",
-                  borderRadius: 20,
-                  padding: "20px 16px",
-                  textAlign: "center",
-                }}
-              >
-                <span
-                  style={{
-                    display: "inline-block",
-                    background: "#E5A800",
-                    color: "#FFFFFF",
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    lineHeight: "44px",
-                    fontSize: "1.6rem",
-                    fontWeight: 900,
-                    marginBottom: 10,
-                  }}
-                >
-                  C
-                </span>
-                <strong style={{ display: "block", color: "#B38300", fontSize: "1rem", marginBottom: 4 }}>
-                  Médiocre
+              <div>
+                <strong style={{ color: "#1F221B", fontSize: "0.95rem", display: "block", marginBottom: 12 }}>
+                  Exemples typiques de produits en Tunisie :
                 </strong>
-                <span style={{ color: "#8C6600", fontSize: "0.85rem", fontWeight: 600 }}>
-                  Note : 35 à 49
-                </span>
-              </div>
-
-              {/* Grade D */}
-              <div
-                style={{
-                  background: "#FFF4EB",
-                  border: "1.5px solid #D9531E",
-                  borderRadius: 20,
-                  padding: "20px 16px",
-                  textAlign: "center",
-                }}
-              >
-                <span
-                  style={{
-                    display: "inline-block",
-                    background: "#D9531E",
-                    color: "#FFFFFF",
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    lineHeight: "44px",
-                    fontSize: "1.6rem",
-                    fontWeight: 900,
-                    marginBottom: 10,
-                  }}
-                >
-                  D
-                </span>
-                <strong style={{ display: "block", color: "#D9531E", fontSize: "1rem", marginBottom: 4 }}>
-                  Mauvais
-                </strong>
-                <span style={{ color: "#A83C11", fontSize: "0.85rem", fontWeight: 600 }}>
-                  Note : 20 à 34
-                </span>
-              </div>
-
-              {/* Grade E */}
-              <div
-                style={{
-                  background: "#FDECE7",
-                  border: "1.5px solid #C73E1D",
-                  borderRadius: 20,
-                  padding: "20px 16px",
-                  textAlign: "center",
-                }}
-              >
-                <span
-                  style={{
-                    display: "inline-block",
-                    background: "#C73E1D",
-                    color: "#FFFFFF",
-                    width: 44,
-                    height: 44,
-                    borderRadius: "50%",
-                    lineHeight: "44px",
-                    fontSize: "1.6rem",
-                    fontWeight: 900,
-                    marginBottom: 10,
-                  }}
-                >
-                  E
-                </span>
-                <strong style={{ display: "block", color: "#C73E1D", fontSize: "1rem", marginBottom: 4 }}>
-                  Très mauvais
-                </strong>
-                <span style={{ color: "#992911", fontSize: "0.85rem", fontWeight: 600 }}>
-                  Note : 0 à 19
-                </span>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 10 }}>
+                  {active.examples.map((ex, i) => (
+                    <span
+                      key={i}
+                      style={{
+                        background: "#FFFFFF",
+                        border: "1px solid rgba(61, 58, 52, 0.1)",
+                        padding: "6px 14px",
+                        borderRadius: 9999,
+                        fontSize: "0.88rem",
+                        color: "#2C2A26",
+                        fontWeight: 600,
+                      }}
+                    >
+                      {ex}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Two-column Positive vs Negative Comparison */}
-        <section style={{ marginBottom: 40 }}>
+        {/* TWO-COLUMN BALANCE: POSITIVE VS NEGATIVE */}
+        <section style={{ marginBottom: 50 }}>
           <div
             style={{
               display: "grid",
@@ -257,12 +355,11 @@ export default function QualiteNutritionnellePage() {
               gap: 28,
             }}
           >
-            {/* Nutriments Protecteurs */}
+            {/* Protective Nutrients Card */}
             <div
               className="yuka-card"
               style={{
-                background: "#FFFFFF",
-                border: "1.5px solid rgba(45, 90, 39, 0.18)",
+                border: "1.5px solid rgba(45, 90, 39, 0.2)",
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
@@ -271,50 +368,39 @@ export default function QualiteNutritionnellePage() {
                 </div>
                 <div>
                   <h3 style={{ fontSize: "1.25rem", color: "#2D5A27", margin: 0, fontWeight: 800 }}>
-                    Nutriments protecteurs (+)
+                    Composants protecteurs (+)
                   </h3>
-                  <span style={{ color: "#6E675C", fontSize: "0.85rem" }}>Composants qui augmentent la note</span>
+                  <span style={{ color: "#6E675C", fontSize: "0.85rem" }}>Améliorent la note jusqu'à +15 points</span>
                 </div>
               </div>
 
-              <p style={{ color: "#5C564B", fontSize: "0.95rem", lineHeight: 1.6, marginBottom: 20 }}>
-                Ces éléments sont bénéfiques pour la prévention des maladies cardiovasculaires, le diabète et le microbiote :
-              </p>
-
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
-                  <span style={{ color: "#2D5A27", fontWeight: 800, fontSize: "1.1rem" }}>•</span>
+                <li style={{ display: "flex", gap: 10, fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
+                  <span style={{ color: "#2D5A27", fontWeight: 800, fontSize: "1.2rem" }}>•</span>
                   <div>
-                    <strong>Fibres alimentaires :</strong> favorisent la satiété, régulent la glycémie et améliorent le transit.
+                    <strong>Fibres alimentaires :</strong> ralentissent l'absorption des glucides et nourrissent le microbiote intestinal.
                   </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
-                  <span style={{ color: "#2D5A27", fontWeight: 800, fontSize: "1.1rem" }}>•</span>
+                <li style={{ display: "flex", gap: 10, fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
+                  <span style={{ color: "#2D5A27", fontWeight: 800, fontSize: "1.2rem" }}>•</span>
                   <div>
-                    <strong>Protéines végétales & animales :</strong> indispensables au maintien de la masse musculaire.
+                    <strong>Fruits, légumes & légumineuses :</strong> apportent polyphénols, potassium et micronutriments essentiels.
                   </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
-                  <span style={{ color: "#2D5A27", fontWeight: 800, fontSize: "1.1rem" }}>•</span>
+                <li style={{ display: "flex", gap: 10, fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
+                  <span style={{ color: "#2D5A27", fontWeight: 800, fontSize: "1.2rem" }}>•</span>
                   <div>
-                    <strong>Fruits, légumes, légumineuses & fruits à coque :</strong> sources d'antioxydants et polyphénols.
-                  </div>
-                </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
-                  <span style={{ color: "#2D5A27", fontWeight: 800, fontSize: "1.1rem" }}>•</span>
-                  <div>
-                    <strong>Huiles riches en acides gras insaturés :</strong> comme l'huile d'olive tunisienne.
+                    <strong>Protéines végétales & marines :</strong> préservent la masse musculaire sans surcharger en graisses saturées.
                   </div>
                 </li>
               </ul>
             </div>
 
-            {/* Éléments à limiter */}
+            {/* Elements to Limit Card */}
             <div
               className="yuka-card"
               style={{
-                background: "#FFFFFF",
-                border: "1.5px solid rgba(199, 62, 29, 0.18)",
+                border: "1.5px solid rgba(199, 62, 29, 0.2)",
               }}
             >
               <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 18 }}>
@@ -325,37 +411,27 @@ export default function QualiteNutritionnellePage() {
                   <h3 style={{ fontSize: "1.25rem", color: "#C73E1D", margin: 0, fontWeight: 800 }}>
                     Éléments à modérer (-)
                   </h3>
-                  <span style={{ color: "#6E675C", fontSize: "0.85rem" }}>Composants qui pénalisent la note</span>
+                  <span style={{ color: "#6E675C", fontSize: "0.85rem" }}>Pénalisent la note jusqu'à -40 points</span>
                 </div>
               </div>
 
-              <p style={{ color: "#5C564B", fontSize: "0.95rem", lineHeight: 1.6, marginBottom: 20 }}>
-                Ces éléments sont directement associés aux pathologies chroniques lorsqu'ils sont consommés en excès :
-              </p>
-
               <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 14 }}>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: "0.95rem", color: "#6A2210", lineHeight: 1.6 }}>
-                  <span style={{ color: "#C73E1D", fontWeight: 800, fontSize: "1.1rem" }}>•</span>
+                <li style={{ display: "flex", gap: 10, fontSize: "0.95rem", color: "#6A2210", lineHeight: 1.6 }}>
+                  <span style={{ color: "#C73E1D", fontWeight: 800, fontSize: "1.2rem" }}>•</span>
                   <div>
-                    <strong>Sucres simples & ajoutés :</strong> provoquent des pics d'insuline et favorisent la surcharge hépatique.
+                    <strong>Sucres simples et rapides :</strong> provoquent une réponse insulinique brutale et favorisent la stéatose hépatique.
                   </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: "0.95rem", color: "#6A2210", lineHeight: 1.6 }}>
-                  <span style={{ color: "#C73E1D", fontWeight: 800, fontSize: "1.1rem" }}>•</span>
+                <li style={{ display: "flex", gap: 10, fontSize: "0.95rem", color: "#6A2210", lineHeight: 1.6 }}>
+                  <span style={{ color: "#C73E1D", fontWeight: 800, fontSize: "1.2rem" }}>•</span>
                   <div>
-                    <strong>Acides gras saturés :</strong> favorisent le cholestérol LDL et l'athérosclérose.
+                    <strong>Acides gras saturés :</strong> augmentent le cholestérol LDL athérogène et le risque cardiovasculaire.
                   </div>
                 </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: "0.95rem", color: "#6A2210", lineHeight: 1.6 }}>
-                  <span style={{ color: "#C73E1D", fontWeight: 800, fontSize: "1.1rem" }}>•</span>
+                <li style={{ display: "flex", gap: 10, fontSize: "0.95rem", color: "#6A2210", lineHeight: 1.6 }}>
+                  <span style={{ color: "#C73E1D", fontWeight: 800, fontSize: "1.2rem" }}>•</span>
                   <div>
-                    <strong>Sel (Sodium) :</strong> facteur majeur d'hypertension artérielle et de rétention hydrosodée.
-                  </div>
-                </li>
-                <li style={{ display: "flex", alignItems: "flex-start", gap: 10, fontSize: "0.95rem", color: "#6A2210", lineHeight: 1.6 }}>
-                  <span style={{ color: "#C73E1D", fontWeight: 800, fontSize: "1.1rem" }}>•</span>
-                  <div>
-                    <strong>Forte densité calorique (kJ/100g) :</strong> excès énergétique par rapport au volume ingéré.
+                    <strong>Sel (Sodium) :</strong> facteur prépondérant d'hypertension artérielle dans le bassin méditerranéen.
                   </div>
                 </li>
               </ul>
@@ -363,26 +439,7 @@ export default function QualiteNutritionnellePage() {
           </div>
         </section>
 
-        {/* Tunisian Terroir Specificity Card */}
-        <section style={{ marginBottom: 40 }}>
-          <div className="yuka-card" style={{ background: "#F5F8F3" }}>
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <Salad size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.35rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  Prise en compte des spécificités du terroir tunisien
-                </h3>
-                <p style={{ color: "#4A5243", fontSize: "1.02rem", lineHeight: 1.7, margin: 0 }}>
-                  Le modèle d'Eatsmart veille à valoriser équitablement les trésors nutritionnels de la Tunisie : l'<strong>Huile d'Olive Vierge Extra</strong> (reconnue mondialement pour son profil d'acides gras protecteurs), les <strong>Dattes Deglet Nour</strong> (riches en potassium et fibres solubles) et la <strong>Harissa traditionnelle pure piment</strong> (sans amidon ni conservateur chimique) reçoivent une notation valorisante face aux sauces industrielles ultra-transformées.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Download Banner */}
+        {/* Pre-footer Download CTA */}
         <DownloadCtaBanner />
       </main>
 

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Breadcrumb } from "@/components/subpage/Breadcrumb";
-import { SubpageHero } from "@/components/subpage/SubpageHero";
+import { YukaFlankClouds } from "@/components/subpage/YukaFlankClouds";
 import { DownloadCtaBanner } from "@/components/subpage/DownloadCtaBanner";
 import {
   ShieldCheck,
@@ -12,25 +12,24 @@ import {
   Mail,
   MapPin,
   Server,
-  FileText,
   Scale,
-  Sparkles,
-  ExternalLink,
+  FileCheck2,
 } from "lucide-react";
 
 export const metadata = {
   title: "Mentions Légales & Immatriculation RNE | Eats.tn (Eatsmart)",
-  description:
-    "Mentions légales officielles de la plateforme eats.tn : statut d'Auto-entrepreneur, identifiant fiscal et RNE 1995597F, coordonnées et hébergement en Tunisie.",
+  description: "Mentions légales officielles et identifiant fiscal RNE 1995597F en République Tunisienne.",
 };
 
 export default function MentionsLegalesPage() {
   return (
-    <div className="yuka-page-wrap">
+    <div className="yuka-page-wrap position-relative" style={{ overflowX: "hidden" }}>
       <Header />
 
-      <main className="yuka-container">
-        {/* Breadcrumbs */}
+      {/* Flanking Mediterranean clouds and olive leaves */}
+      <YukaFlankClouds variant="legal" />
+
+      <main className="yuka-container position-relative" style={{ zIndex: 1, paddingBottom: 80 }}>
         <Breadcrumb
           items={[
             { label: "Informations Légales" },
@@ -38,160 +37,164 @@ export default function MentionsLegalesPage() {
           ]}
         />
 
-        {/* Hero Section */}
-        <SubpageHero
-          badgeIcon={<ShieldCheck size={16} />}
-          badgeText="Conformité Légale & Registre National"
-          badgeVariant="sage"
-          title="Mentions Légales"
-          description="Conformément aux dispositions de la Loi n° 2000-83 du 9 août 2000 relative aux échanges et au commerce électroniques et à la réglementation tunisienne en vigueur."
-          imageSrc="/assets_v2/legal_mentions_seal.jpg"
-          imageAlt="Certificat légal et sceau d'immatriculation officielle Eats.tn"
-        />
+        {/* HERO */}
+        <section style={{ padding: "30px 0 60px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 48,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  backgroundColor: "#EBF3E8",
+                  color: "#2D5A27",
+                  padding: "7px 18px",
+                  borderRadius: 9999,
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  marginBottom: 24,
+                }}
+              >
+                <ShieldCheck size={16} />
+                <span>Registre National des Entreprises (RNE)</span>
+              </div>
 
-        {/* Executive Identity Dashboard Card */}
-        <section style={{ marginBottom: 40 }}>
-          <div className="yuka-card" style={{ border: "1.5px solid rgba(45, 90, 39, 0.18)" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <Building2 size={24} />
-              </div>
-              <div>
-                <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
-                  Synthèse d'immatriculation légale
-                </h2>
-                <p style={{ margin: 0, fontSize: "0.9rem", color: "#6E675C" }}>
-                  Données certifiées conformes au Registre National des Entreprises (RNE) de Tunisie
-                </p>
-              </div>
+              <h1
+                style={{
+                  fontSize: "clamp(2.5rem, 5.2vw, 3.5rem)",
+                  color: "#1F221B",
+                  fontWeight: 800,
+                  lineHeight: 1.12,
+                  margin: "0 0 24px",
+                  fontFamily: "var(--font-display)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Mentions légales & <br />
+                <span className="highlight-green">immatriculation officielle</span>
+              </h1>
+
+              <p
+                style={{
+                  color: "#5C564B",
+                  fontSize: "1.18rem",
+                  lineHeight: 1.7,
+                  margin: 0,
+                  maxWidth: 540,
+                }}
+              >
+                Conformément à la Loi n° 2000-83 du 9 août 2000 sur le commerce électronique en Tunisie, voici l'ensemble des informations réglementaires d'identification de l'éditeur d'Eatsmart.
+              </p>
             </div>
 
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                gap: 16,
+                position: "relative",
+                height: 320,
+                borderRadius: 32,
+                overflow: "hidden",
+                boxShadow: "0 20px 50px rgba(31, 34, 27, 0.08)",
+                border: "1px solid rgba(61, 58, 52, 0.06)",
               }}
             >
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Nom commercial & Marque
-                </span>
-                <strong style={{ color: "#1F221B", fontSize: "1.15rem" }}>Eats.tn (Eatsmart)</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Forme juridique
-                </span>
-                <strong style={{ color: "#2D5A27", fontSize: "1.15rem" }}>Auto-entrepreneur</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  RNE / Identifiant Fiscal
-                </span>
-                <strong style={{ color: "#1F221B", fontSize: "1.15rem", fontFamily: "monospace" }}>1995597F</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Adresse du Siège
-                </span>
-                <strong style={{ color: "#1F221B", fontSize: "0.98rem" }}>Rue el Hamra, Raoued, 2083 Ariana, Tunisie</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Téléphone direct
-                </span>
-                <a href="tel:+21655349948" style={{ color: "#2D5A27", fontWeight: 700, fontSize: "1.1rem", textDecoration: "none" }}>
-                  +216 55 349 948
-                </a>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Courrier électronique
-                </span>
-                <a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700, fontSize: "1.1rem", textDecoration: "none" }}>
-                  contact@eats.tn
-                </a>
-              </div>
+              <Image
+                src="/assets_v2/legal_mentions_seal.jpg"
+                alt="Sceau officiel et certificat légal RNE"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
             </div>
           </div>
         </section>
 
-        {/* Detailed Chapter Cards */}
-        <section style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 40 }}>
-          {/* Chapter 1 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <Building2 size={24} />
+        {/* OFFICIAL RNE CERTIFICATE BANNER */}
+        <section
+          style={{
+            background: "#FFFFFF",
+            borderRadius: 36,
+            padding: "48px 40px",
+            border: "2px solid rgba(45, 90, 39, 0.25)",
+            boxShadow: "0 18px 45px rgba(0, 0, 0, 0.04)",
+            marginBottom: 60,
+            position: "relative",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", flexWrap: "wrap", gap: 16, marginBottom: 32, borderBottom: "1px dashed rgba(61, 58, 52, 0.15)", paddingBottom: 24 }}>
+            <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+              <div style={{ width: 50, height: 50, borderRadius: "50%", background: "#EBF3E8", display: "flex", alignItems: "center", justifyContent: "center" }}>
+                <FileCheck2 size={26} color="#2D5A27" />
               </div>
               <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  1. Éditeur du site et de l'application
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Le site web accessible à l'adresse <strong>https://eats.tn</strong> et l'application mobile <strong>Eatsmart</strong> sont édités et exploités par l'entreprise individuelle sous le statut d'<strong>Auto-entrepreneur</strong> en Tunisie, inscrite au Registre National des Entreprises sous le numéro <strong>1995597F</strong>.
-                </p>
+                <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
+                  Certificat d'Identification Officiel
+                </h2>
+                <span style={{ fontSize: "0.85rem", color: "#6E675C" }}>République Tunisienne · Registre National des Entreprises</span>
               </div>
             </div>
+            <span style={{ background: "#2D5A27", color: "#FFFFFF", padding: "6px 16px", borderRadius: 9999, fontWeight: 800, fontSize: "0.88rem" }}>
+              Identifiant Fiscal : 1995597F
+            </span>
           </div>
 
-          {/* Chapter 2 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-coral">
-                <Phone size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  2. Service d'assistance et contact consommateur
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Pour toute demande de renseignement, signalement d'erreur de saisie sur un produit ou proposition de partenariat citoyen :<br />
-                  • <strong>Email direct :</strong> <a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700 }}>contact@eats.tn</a><br />
-                  • <strong>Assistance téléphonique :</strong> <a href="tel:+21655349948" style={{ color: "#2D5A27", fontWeight: 700 }}>+216 55 349 948</a> (du lundi au vendredi de 9h à 18h)<br />
-                  • <strong>Adresse postale :</strong> Rue el Hamra, Raoued, 2083 Ariana, Tunisie
-                </p>
-              </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 24,
+            }}
+          >
+            <div>
+              <span style={{ fontSize: "0.78rem", color: "#8A8378", textTransform: "uppercase", fontWeight: 800, letterSpacing: "0.04em", display: "block", marginBottom: 4 }}>
+                Dénomination & Marque
+              </span>
+              <strong style={{ fontSize: "1.2rem", color: "#1F221B" }}>Eats.tn (Eatsmart)</strong>
             </div>
-          </div>
 
-          {/* Chapter 3 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-amber">
-                <Server size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  3. Hébergement des services et sécurité des données
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  La plateforme et les API d'Eats.tn sont hébergées sur une infrastructure Cloud dédiée haute disponibilité soumise aux standards internationaux les plus rigoureux de sécurité physique et logique (ISO/IEC 27001, SOC 2 Type II), avec sauvegardes automatiques quotidiennes et chiffrement SSL/TLS des échanges.
-                </p>
-              </div>
+            <div>
+              <span style={{ fontSize: "0.78rem", color: "#8A8378", textTransform: "uppercase", fontWeight: 800, letterSpacing: "0.04em", display: "block", marginBottom: 4 }}>
+                Statut Juridique Légal
+              </span>
+              <strong style={{ fontSize: "1.2rem", color: "#2D5A27" }}>Auto-entrepreneur</strong>
             </div>
-          </div>
 
-          {/* Chapter 4 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <Scale size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  4. Protection des Données Personnelles (INPDP) & Compétence Juridictionnelle
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Conformément aux dispositions de la <strong>Loi organique n° 2004-63</strong> du 27 juillet 2004 portant sur la protection des données à caractère personnel, vous disposez d'un droit permanent d'accès, de rectification et d'effacement de vos données personnelles sur simple demande par email à <strong>contact@eats.tn</strong>. Les présentes mentions sont soumises à la législation de la République Tunisienne. Tout litige relève de la compétence exclusive des tribunaux du ressort du siège de l'éditeur.
-                </p>
-              </div>
+            <div>
+              <span style={{ fontSize: "0.78rem", color: "#8A8378", textTransform: "uppercase", fontWeight: 800, letterSpacing: "0.04em", display: "block", marginBottom: 4 }}>
+                Adresse du Siège
+              </span>
+              <strong style={{ fontSize: "1rem", color: "#1F221B" }}>Rue el Hamra, Raoued, 2083 Ariana</strong>
+            </div>
+
+            <div>
+              <span style={{ fontSize: "0.78rem", color: "#8A8378", textTransform: "uppercase", fontWeight: 800, letterSpacing: "0.04em", display: "block", marginBottom: 4 }}>
+                Ligne Directe
+              </span>
+              <a href="tel:+21655349948" style={{ fontSize: "1.1rem", color: "#2D5A27", fontWeight: 800, textDecoration: "none" }}>
+                +216 55 349 948
+              </a>
+            </div>
+
+            <div>
+              <span style={{ fontSize: "0.78rem", color: "#8A8378", textTransform: "uppercase", fontWeight: 800, letterSpacing: "0.04em", display: "block", marginBottom: 4 }}>
+                Email Officiel
+              </span>
+              <a href="mailto:contact@eats.tn" style={{ fontSize: "1.1rem", color: "#2D5A27", fontWeight: 800, textDecoration: "none" }}>
+                contact@eats.tn
+              </a>
+            </div>
+
+            <div>
+              <span style={{ fontSize: "0.78rem", color: "#8A8378", textTransform: "uppercase", fontWeight: 800, letterSpacing: "0.04em", display: "block", marginBottom: 4 }}>
+                Tribunal Compétent
+              </span>
+              <strong style={{ fontSize: "1rem", color: "#1F221B" }}>Tribunal de Première Instance de l'Ariana</strong>
             </div>
           </div>
         </section>

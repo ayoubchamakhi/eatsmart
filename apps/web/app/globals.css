@@ -1617,3 +1617,62 @@ html[dir="rtl"] .breadcrumb-chevron {
   transform: rotate(180deg);
 }
 
+/* ============================================================
+   YUKA-STYLE HIGHLIGHTED TEXT & ARTISANAL DETAILS
+   ============================================================ */
+.highlight-green {
+  background: linear-gradient(180deg, transparent 62%, #D7EAD2 62%);
+  padding: 0 4px;
+  border-radius: 4px;
+  display: inline;
+}
+
+.highlight-orange {
+  background: linear-gradient(180deg, transparent 62%, #FDE4D6 62%);
+  padding: 0 4px;
+  border-radius: 4px;
+  display: inline;
+}
+
+.highlight-amber {
+  background: linear-gradient(180deg, transparent 62%, #FDF0D0 62%);
+  padding: 0 4px;
+  border-radius: 4px;
+  display: inline;
+}
+
+.highlight-red {
+  background: linear-gradient(180deg, transparent 62%, #FBDCD4 62%);
+  padding: 0 4px;
+  border-radius: 4px;
+  display: inline;
+}
+
+.yuka-giant-num {
+  font-size: clamp(3.2rem, 7vw, 5.2rem);
+  font-weight: 900;
+  line-height: 0.95;
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+  display: inline-block;
+}
+
+.yuka-num-green {
+  color: #2D5A27;
+}
+
+.yuka-num-orange {
+  color: #D9531E;
+}
+
+.yuka-num-amber {
+  color: #C47F00;
+}
+
+.yuka-fluid-band {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 72px 0;
+}
+
+

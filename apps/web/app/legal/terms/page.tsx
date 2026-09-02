@@ -3,31 +3,32 @@ import Image from "next/image";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Breadcrumb } from "@/components/subpage/Breadcrumb";
-import { SubpageHero } from "@/components/subpage/SubpageHero";
+import { YukaFlankClouds } from "@/components/subpage/YukaFlankClouds";
 import { DownloadCtaBanner } from "@/components/subpage/DownloadCtaBanner";
 import {
   ShieldCheck,
-  Sparkles,
-  Scale,
-  Award,
-  HeartHandshake,
   CheckCircle2,
+  XCircle,
+  Award,
+  Sparkles,
+  PieChart,
   Lock,
 } from "lucide-react";
 
 export const metadata = {
-  title: "Charte d'Indépendance & Conditions d'Utilisation | Eats.tn (Eatsmart)",
-  description:
-    "Découvrez notre charte d'indépendance intégrale : 100% sans publicité, zéro rémunération des marques, algorithme public et alternatives saines pour la Tunisie.",
+  title: "Charte d'Indépendance & Éthique | Eats.tn (Eatsmart)",
+  description: "0 DT perçu des marques, 0 publicité et algorithme 100% public en Tunisie.",
 };
 
 export default function IndependenceCharterPage() {
   return (
-    <div className="yuka-page-wrap">
+    <div className="yuka-page-wrap position-relative" style={{ overflowX: "hidden" }}>
       <Header />
 
-      <main className="yuka-container">
-        {/* Breadcrumb */}
+      {/* Flanking Mediterranean clouds and olive foliage */}
+      <YukaFlankClouds variant="terms" />
+
+      <main className="yuka-container position-relative" style={{ zIndex: 1, paddingBottom: 80 }}>
         <Breadcrumb
           items={[
             { label: "Informations Légales" },
@@ -35,141 +36,286 @@ export default function IndependenceCharterPage() {
           ]}
         />
 
-        {/* Hero Section */}
-        <SubpageHero
-          badgeIcon={<Award size={16} />}
-          badgeText="Éthique Citoyenne & Neutralité Absolue"
-          badgeVariant="sage"
-          title="Charte d'Indépendance et d'Éthique"
-          description="Pour mériter la confiance quotidienne des consommateurs en Tunisie, Eatsmart a fait le choix irrévocable d'une indépendance financière et éditoriale absolue vis-à-vis de l'industrie agroalimentaire."
-          imageSrc="/assets_v2/legal_terms_independence.jpg"
-          imageAlt="Balance d'équité impartiale et indépendance alimentaire 100% citoyenne"
-        />
+        {/* HERO: Open Manifesto Style */}
+        <section style={{ padding: "30px 0 60px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 48,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  backgroundColor: "#EBF3E8",
+                  color: "#2D5A27",
+                  padding: "7px 18px",
+                  borderRadius: 9999,
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  marginBottom: 24,
+                }}
+              >
+                <Award size={16} />
+                <span>Manifeste Citoyen & Éthique</span>
+              </div>
 
-        {/* 3 Pillars of Independence Dashboard Card */}
-        <section style={{ marginBottom: 40 }}>
-          <div className="yuka-card" style={{ border: "1.5px solid rgba(45, 90, 39, 0.18)" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <ShieldCheck size={24} />
-              </div>
-              <div>
-                <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
-                  Les 3 piliers inviolables d'Eatsmart
-                </h2>
-                <p style={{ margin: 0, fontSize: "0.9rem", color: "#6E675C" }}>
-                  Pourquoi vous pouvez avoir une confiance aveugle dans nos évaluations
-                </p>
-              </div>
+              <h1
+                style={{
+                  fontSize: "clamp(2.5rem, 5.2vw, 3.5rem)",
+                  color: "#1F221B",
+                  fontWeight: 800,
+                  lineHeight: 1.12,
+                  margin: "0 0 24px",
+                  fontFamily: "var(--font-display)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Notre serment <br />
+                <span className="highlight-green">d'indépendance absolue</span>
+              </h1>
+
+              <p
+                style={{
+                  color: "#5C564B",
+                  fontSize: "1.18rem",
+                  lineHeight: 1.7,
+                  margin: "0 0 32px",
+                  maxWidth: 540,
+                }}
+              >
+                Pour mériter la confiance quotidienne des consommateurs en Tunisie, Eatsmart a fait le choix irrévocable d'une indépendance financière totale : <span className="highlight-orange">0 Dinar des marques</span> et <span className="highlight-green">0 publicité commerciale</span>.
+              </p>
             </div>
 
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                gap: 16,
+                position: "relative",
+                height: 320,
+                borderRadius: 32,
+                overflow: "hidden",
+                boxShadow: "0 20px 50px rgba(31, 34, 27, 0.08)",
+                border: "1px solid rgba(61, 58, 52, 0.06)",
               }}
             >
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Pilier 1
-                </span>
-                <strong style={{ color: "#2D5A27", fontSize: "1.15rem" }}>0 Dinar des marques</strong>
-                <p style={{ color: "#6E675C", fontSize: "0.85rem", margin: "6px 0 0", lineHeight: 1.5 }}>
-                  Aucun industriel ne peut payer pour changer sa note ou masquer un additif.
-                </p>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Pilier 2
-                </span>
-                <strong style={{ color: "#1F221B", fontSize: "1.15rem" }}>0 Publicité commerciale</strong>
-                <p style={{ color: "#6E675C", fontSize: "0.85rem", margin: "6px 0 0", lineHeight: 1.5 }}>
-                  Pas de bannières, pas de marques sponsorisées, pas d'influence mercantile.
-                </p>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Pilier 3
-                </span>
-                <strong style={{ color: "#2D5A27", fontSize: "1.15rem" }}>100% Algorithme public</strong>
-                <p style={{ color: "#6E675C", fontSize: "0.85rem", margin: "6px 0 0", lineHeight: 1.5 }}>
-                  Formule transparente basée sur le Nutri-Score et les avis toxicologiques EFSA.
-                </p>
-              </div>
+              <Image
+                src="/assets_v2/legal_terms_independence.jpg"
+                alt="Balance de justice et indépendance citoyenne"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
             </div>
           </div>
         </section>
 
-        {/* Detailed Chapters */}
-        <section style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 40 }}>
-          {/* Chapter 1 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <ShieldCheck size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  1. Zéro rémunération de la part des industriels
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Aucun fabricant de produits alimentaires, distributeur ou lobby professionnel ne peut verser d'argent à Eatsmart pour faire modifier la note d'un produit, masquer un additif à risque ou figurer parmi les recommandations d'alternatives saines. Toutes les analyses sont automatisées et strictement impartiales.
-                </p>
-              </div>
-            </div>
+        {/* FINANCIAL TRANSPARENCY WHEEL / BREAKDOWN */}
+        <section
+          style={{
+            background: "#FFFFFF",
+            borderRadius: 36,
+            padding: "48px 40px",
+            border: "1px solid rgba(61, 58, 52, 0.08)",
+            boxShadow: "0 16px 45px rgba(0, 0, 0, 0.03)",
+            marginBottom: 60,
+          }}
+        >
+          <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 40px" }}>
+            <span
+              style={{
+                color: "#2D5A27",
+                fontSize: "0.85rem",
+                fontWeight: 800,
+                textTransform: "uppercase",
+                letterSpacing: "0.05em",
+                display: "block",
+                marginBottom: 8,
+              }}
+            >
+              Transparence Financière Totale
+            </span>
+            <h2
+              style={{
+                fontSize: "clamp(1.9rem, 3.5vw, 2.4rem)",
+                color: "#1F221B",
+                fontWeight: 800,
+                margin: 0,
+                fontFamily: "var(--font-display)",
+              }}
+            >
+              D'où proviennent <span className="highlight-green">nos financements ?</span>
+            </h2>
           </div>
 
-          {/* Chapter 2 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-coral">
-                <Sparkles size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  2. Algorithme public, universel et transparent
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  La méthode de calcul d'Eatsmart est <strong>100% publique et accessible à tous</strong>. Elle repose sur des bases scientifiques officielles (Nutri-Score officiel et rapports toxicologiques de l'EFSA). La formule est appliquée de manière rigoureusement identique à l'ensemble des références du marché, sans exception ni passe-droit.
-                </p>
-              </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+              gap: 24,
+            }}
+          >
+            {/* Revenue Stream 1 */}
+            <div
+              style={{
+                background: "#FAF8F5",
+                borderRadius: 24,
+                padding: "28px 24px",
+                border: "1.5px solid rgba(45, 90, 39, 0.2)",
+              }}
+            >
+              <span style={{ fontSize: "2.8rem", fontWeight: 900, color: "#2D5A27", display: "block", lineHeight: 1, marginBottom: 8, fontFamily: "var(--font-display)" }}>
+                80%
+              </span>
+              <h3 style={{ fontSize: "1.15rem", color: "#1F221B", fontWeight: 800, margin: "0 0 8px" }}>
+                Abonnements Membres
+              </h3>
+              <p style={{ color: "#5C564B", fontSize: "0.92rem", lineHeight: 1.6, margin: 0 }}>
+                Cotisations solidaires des utilisateurs choisissant de soutenir le projet pour débloquer le mode hors-ligne et la recherche avancée.
+              </p>
+            </div>
+
+            {/* Revenue Stream 2 */}
+            <div
+              style={{
+                background: "#FAF8F5",
+                borderRadius: 24,
+                padding: "28px 24px",
+                border: "1.5px solid rgba(196, 127, 0, 0.2)",
+              }}
+            >
+              <span style={{ fontSize: "2.8rem", fontWeight: 900, color: "#C47F00", display: "block", lineHeight: 1, marginBottom: 8, fontFamily: "var(--font-display)" }}>
+                20%
+              </span>
+              <h3 style={{ fontSize: "1.15rem", color: "#1F221B", fontWeight: 800, margin: "0 0 8px" }}>
+                Guides & Éditions
+              </h3>
+              <p style={{ color: "#5C564B", fontSize: "0.92rem", lineHeight: 1.6, margin: 0 }}>
+                Vente de guides pédagogiques imprimés et de calendriers saisonniers des récoltes locales en Tunisie.
+              </p>
+            </div>
+
+            {/* Revenue Stream 3: Zero brands */}
+            <div
+              style={{
+                background: "#FAF8F5",
+                borderRadius: 24,
+                padding: "28px 24px",
+                border: "1.5px solid rgba(199, 62, 29, 0.2)",
+              }}
+            >
+              <span style={{ fontSize: "2.8rem", fontWeight: 900, color: "#C73E1D", display: "block", lineHeight: 1, marginBottom: 8, fontFamily: "var(--font-display)" }}>
+                0%
+              </span>
+              <h3 style={{ fontSize: "1.15rem", color: "#C73E1D", fontWeight: 800, margin: "0 0 8px" }}>
+                Marques alimentaires
+              </h3>
+              <p style={{ color: "#5C564B", fontSize: "0.92rem", lineHeight: 1.6, margin: 0 }}>
+                Aucune rémunération, aucun partenariat sponsorisé et aucun placement de produit n'est accepté. Jamais.
+              </p>
+            </div>
+
+            {/* Revenue Stream 4: Zero ads */}
+            <div
+              style={{
+                background: "#FAF8F5",
+                borderRadius: 24,
+                padding: "28px 24px",
+                border: "1.5px solid rgba(199, 62, 29, 0.2)",
+              }}
+            >
+              <span style={{ fontSize: "2.8rem", fontWeight: 900, color: "#C73E1D", display: "block", lineHeight: 1, marginBottom: 8, fontFamily: "var(--font-display)" }}>
+                0%
+              </span>
+              <h3 style={{ fontSize: "1.15rem", color: "#C73E1D", fontWeight: 800, margin: "0 0 8px" }}>
+                Publicités & Bannières
+              </h3>
+              <p style={{ color: "#5C564B", fontSize: "0.92rem", lineHeight: 1.6, margin: 0 }}>
+                Pas de régies publicitaires (Google Ads, Facebook SDK), pas de bannières intrusives, pas de cookies de ciblage.
+              </p>
             </div>
           </div>
+        </section>
 
-          {/* Chapter 3 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-amber">
-                <HeartHandshake size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  3. Recommandations d'alternatives objectives et locales
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Lorsqu'un produit obtient une note médiocre, l'application suggère des alternatives de la même catégorie présentant un meilleur profil nutritionnel et moins d'additifs. Aucune marque ne peut payer pour figurer dans ces recommandations : la sélection est purement algorithmique, avec une mise en valeur des productions artisanales et des filières du terroir tunisien.
-                </p>
-              </div>
+        {/* SIDE-BY-SIDE CONTRAST: CE QUE NOUS REFUSONS VS NOS ENGAGEMENTS */}
+        <section style={{ marginBottom: 60 }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 32,
+            }}
+          >
+            {/* Red Column: Ce que font les applis commerciales */}
+            <div
+              style={{
+                background: "#FDF4F2",
+                borderRadius: 32,
+                padding: "36px 32px",
+                border: "1.5px solid rgba(199, 62, 29, 0.2)",
+              }}
+            >
+              <h3 style={{ fontSize: "1.3rem", color: "#C73E1D", fontWeight: 800, margin: "0 0 20px" }}>
+                Ce que nous refusons catégoriquement :
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 16 }}>
+                <li style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: "0.95rem", color: "#6A1400", lineHeight: 1.6 }}>
+                  <XCircle size={20} color="#C73E1D" style={{ flexShrink: 0, marginTop: 2 }} />
+                  <div>
+                    <strong>Vendre vos données de consommation :</strong> aucune grande surface ne recevra jamais la liste de vos scans.
+                  </div>
+                </li>
+                <li style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: "0.95rem", color: "#6A1400", lineHeight: 1.6 }}>
+                  <XCircle size={20} color="#C73E1D" style={{ flexShrink: 0, marginTop: 2 }} />
+                  <div>
+                    <strong>Proposer des classements payants :</strong> les industriels ne peuvent pas acheter leur place en tête de rayon.
+                  </div>
+                </li>
+                <li style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: "0.95rem", color: "#6A1400", lineHeight: 1.6 }}>
+                  <XCircle size={20} color="#C73E1D" style={{ flexShrink: 0, marginTop: 2 }} />
+                  <div>
+                    <strong>Édulcorer les risques sanitaires :</strong> si un additif est dangereux, il est sanctionné sans complaisance.
+                  </div>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          {/* Chapter 4 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <Scale size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  4. Information citoyenne et non prescription médicale
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Les scores et diagnostics d'Eatsmart constituent un guide pédagogique d'aide à la décision du quotidien lors de vos courses. Ils ne remplacent en aucun cas un suivi médical individualisé ou les recommandations d'un médecin nutritionniste diplômé.
-                </p>
-              </div>
+            {/* Green Column: Notre serment d'honneur */}
+            <div
+              style={{
+                background: "#F3F8F1",
+                borderRadius: 32,
+                padding: "36px 32px",
+                border: "1.5px solid rgba(45, 90, 39, 0.2)",
+              }}
+            >
+              <h3 style={{ fontSize: "1.3rem", color: "#2D5A27", fontWeight: 800, margin: "0 0 20px" }}>
+                Notre serment envers les Tunisiens :
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 16 }}>
+                <li style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={20} color="#2D5A27" style={{ flexShrink: 0, marginTop: 2 }} />
+                  <div>
+                    <strong>Algorithme 100% public :</strong> chaque citoyen peut vérifier comment sa note a été calculée.
+                  </div>
+                </li>
+                <li style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={20} color="#2D5A27" style={{ flexShrink: 0, marginTop: 2 }} />
+                  <div>
+                    <strong>Recommandations neutres et locales :</strong> valorisation exclusive des alternatives saines du terroir.
+                  </div>
+                </li>
+                <li style={{ display: "flex", gap: 12, alignItems: "flex-start", fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
+                  <CheckCircle2 size={20} color="#2D5A27" style={{ flexShrink: 0, marginTop: 2 }} />
+                  <div>
+                    <strong>Contrôle citoyen permanent :</strong> corrections et signalements d'erreurs traités en toute franchise.
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </section>

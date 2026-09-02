@@ -3,33 +3,34 @@ import Image from "next/image";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Breadcrumb } from "@/components/subpage/Breadcrumb";
-import { SubpageHero } from "@/components/subpage/SubpageHero";
+import { YukaFlankClouds } from "@/components/subpage/YukaFlankClouds";
 import { DownloadCtaBanner } from "@/components/subpage/DownloadCtaBanner";
 import {
   Lock,
   ShieldCheck,
+  CheckCircle2,
+  XCircle,
   EyeOff,
-  Smartphone,
   Database,
   Mail,
-  UserCheck,
-  FileCheck2,
-  Sparkles,
+  Trash2,
+  Download,
 } from "lucide-react";
 
 export const metadata = {
   title: "Politique de Confidentialité | Eats.tn (Eatsmart)",
-  description:
-    "Engagement d'indépendance, zéro publicité et protection intégrale de vos données personnelles sous l'autorité de l'INPDP en Tunisie.",
+  description: "Zéro publicité, zéro revente de données et conformité stricte INPDP Loi 2004-63.",
 };
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="yuka-page-wrap">
+    <div className="yuka-page-wrap position-relative" style={{ overflowX: "hidden" }}>
       <Header />
 
-      <main className="yuka-container">
-        {/* Breadcrumb */}
+      {/* Flanking Mediterranean clouds and olive foliage */}
+      <YukaFlankClouds variant="legal" />
+
+      <main className="yuka-container position-relative" style={{ zIndex: 1, paddingBottom: 80 }}>
         <Breadcrumb
           items={[
             { label: "Informations Légales" },
@@ -37,139 +38,209 @@ export default function PrivacyPolicyPage() {
           ]}
         />
 
-        {/* Hero Section */}
-        <SubpageHero
-          badgeIcon={<Lock size={16} />}
-          badgeText="Protection de la vie privée & INPDP"
-          badgeVariant="sage"
-          title="Politique de Confidentialité"
-          description="Vos données et vos habitudes d'achat ne regardent que vous. Eatsmart s'engage à ne jamais commercialiser vos informations personnelles et à ne diffuser aucune publicité ciblée."
-          imageSrc="/assets_v2/legal_privacy_shield.jpg"
-          imageAlt="Bouclier de protection des données personnelles et coffre-fort numérique"
-        />
+        {/* HERO */}
+        <section style={{ padding: "30px 0 60px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 48,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  backgroundColor: "#EBF3E8",
+                  color: "#2D5A27",
+                  padding: "7px 18px",
+                  borderRadius: 9999,
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  marginBottom: 24,
+                }}
+              >
+                <Lock size={16} />
+                <span>Protection INPDP · Loi 2004-63</span>
+              </div>
 
-        {/* The 4 Ethical Commitments Card */}
-        <section style={{ marginBottom: 40 }}>
-          <div className="yuka-card" style={{ border: "1.5px solid rgba(45, 90, 39, 0.18)" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <ShieldCheck size={24} />
-              </div>
-              <div>
-                <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
-                  Nos 4 engagements de confidentialité fondamentaux
-                </h2>
-                <p style={{ margin: 0, fontSize: "0.9rem", color: "#6E675C" }}>
-                  Garanties éthiques strictes conformes au cadre légal de la République Tunisienne
-                </p>
-              </div>
+              <h1
+                style={{
+                  fontSize: "clamp(2.5rem, 5.2vw, 3.5rem)",
+                  color: "#1F221B",
+                  fontWeight: 800,
+                  lineHeight: 1.12,
+                  margin: "0 0 24px",
+                  fontFamily: "var(--font-display)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Vos données ne sont <br />
+                <span className="highlight-green">pas à vendre</span>
+              </h1>
+
+              <p
+                style={{
+                  color: "#5C564B",
+                  fontSize: "1.18rem",
+                  lineHeight: 1.7,
+                  margin: "0 0 32px",
+                  maxWidth: 540,
+                }}
+              >
+                Vos habitudes d'achat et vos choix alimentaires relèvent de votre vie privée intime. Eatsmart applique un principe de minimisation radicale : <span className="highlight-orange">aucun tracker publicitaire</span> et <span className="highlight-green">aucune revente à des tiers</span>.
+              </p>
             </div>
 
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-                gap: 16,
+                position: "relative",
+                height: 320,
+                borderRadius: 32,
+                overflow: "hidden",
+                boxShadow: "0 20px 50px rgba(31, 34, 27, 0.08)",
+                border: "1px solid rgba(61, 58, 52, 0.06)",
               }}
             >
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Zéro Publicité
-                </span>
-                <strong style={{ color: "#2D5A27", fontSize: "1.05rem" }}>Aucun tracker commercial tiers</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Zéro Revente
-                </span>
-                <strong style={{ color: "#1F221B", fontSize: "1.05rem" }}>Aucun partage avec les industriels</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Autorité INPDP
-                </span>
-                <strong style={{ color: "#1F221B", fontSize: "1.05rem" }}>Loi organique n° 2004-63</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Contrôle Utilisateur
-                </span>
-                <strong style={{ color: "#2D5A27", fontSize: "1.05rem" }}>Suppression et export en 1 clic</strong>
-              </div>
+              <Image
+                src="/assets_v2/legal_privacy_shield.jpg"
+                alt="Coffre-fort numérique et protection des données"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
             </div>
           </div>
         </section>
 
-        {/* Detailed Privacy Chapters */}
-        <section style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 40 }}>
-          {/* Chapter 1 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <EyeOff size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  1. Principe de minimisation des données
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Eatsmart n'exige aucune inscription obligatoire : vous pouvez scanner librement des aliments en restant totalement anonyme. En cas de création de compte facultative (pour sauvegarder vos favoris et vos alertes personnalisées), seules votre adresse email et un mot de passe chiffré sont stockés. Aucune coordonnée bancaire, géolocalisation continue ou donnée biométrique n'est enregistrée.
-                </p>
-              </div>
-            </div>
+        {/* CONTRAST DASHBOARD: CE QUE NOUS SAVONS VS CE QUE NOUS NE SAURONS JAMAIS */}
+        <section
+          style={{
+            background: "#FFFFFF",
+            borderRadius: 36,
+            padding: "48px 40px",
+            border: "1px solid rgba(61, 58, 52, 0.08)",
+            boxShadow: "0 16px 45px rgba(0, 0, 0, 0.03)",
+            marginBottom: 60,
+          }}
+        >
+          <div style={{ textAlign: "center", maxWidth: 640, margin: "0 auto 36px" }}>
+            <h2
+              style={{
+                fontSize: "clamp(1.9rem, 3.5vw, 2.4rem)",
+                color: "#1F221B",
+                fontWeight: 800,
+                margin: "0 0 10px",
+                fontFamily: "var(--font-display)",
+              }}
+            >
+              Transparence sur <span className="highlight-green">nos collectes</span>
+            </h2>
+            <p style={{ color: "#5C564B", fontSize: "1.05rem", margin: 0 }}>
+              Nous ne stockons que le strict minimum nécessaire au bon fonctionnement du scan.
+            </p>
           </div>
 
-          {/* Chapter 2 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-coral">
-                <Smartphone size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  2. Finalité exclusive de l'analyse alimentaire
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Les données traitées servent exclusivement à vous fournir le diagnostic nutritionnel du produit scanné, à vous alerter sur la présence d'additifs indésirables et à vous recommander des alternatives saines. Vos données ne sont jamais cédées, louées ou partagées avec des régies publicitaires, distributeurs ou courtiers en données.
-                </p>
-              </div>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gap: 32,
+            }}
+          >
+            {/* Green Side: Ce que nous savons */}
+            <div style={{ background: "#F4F8F1", borderRadius: 24, padding: "28px 24px" }}>
+              <h3 style={{ fontSize: "1.2rem", color: "#2D5A27", fontWeight: 800, margin: "0 0 18px", display: "flex", alignItems: "center", gap: 10 }}>
+                <CheckCircle2 size={22} color="#2D5A27" /> Ce que nous stockons :
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 14, fontSize: "0.95rem", color: "#2E4828", lineHeight: 1.6 }}>
+                <li>• <strong>Votre email :</strong> uniquement si vous créez un compte (non obligatoire).</li>
+                <li>• <strong>Vos favoris & alertes :</strong> enregistrés pour personnaliser vos diagnostics d'additifs.</li>
+                <li>• <strong>Vos photos en magasin :</strong> si vous choisissez de contribuer à la base citoyenne.</li>
+              </ul>
+            </div>
+
+            {/* Red Side: Ce que nous ne saurons jamais */}
+            <div style={{ background: "#FDF4F2", borderRadius: 24, padding: "28px 24px" }}>
+              <h3 style={{ fontSize: "1.2rem", color: "#C73E1D", fontWeight: 800, margin: "0 0 18px", display: "flex", alignItems: "center", gap: 10 }}>
+                <XCircle size={22} color="#C73E1D" /> Ce que nous ne saurons JAMAIS :
+              </h3>
+              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: 14, fontSize: "0.95rem", color: "#6A1400", lineHeight: 1.6 }}>
+                <li>• <strong>Votre géolocalisation continue :</strong> nous ne traquons jamais vos déplacements.</li>
+                <li>• <strong>Vos coordonnées bancaires :</strong> traitées par des passerelles de paiement sécurisées tierces.</li>
+                <li>• <strong>Vos données vendues à des distributeurs :</strong> aucun courtier n'a accès à notre base.</li>
+              </ul>
             </div>
           </div>
+        </section>
 
-          {/* Chapter 3 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-amber">
-                <Database size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  3. Durée de conservation et sécurité renforcée
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  L'historique de scan reste conservé sur votre téléphone mobile et peut être effacé par vos soins à tout instant. Les échanges entre l'application et nos serveurs sont protégés par chiffrement HTTPS/TLS 1.3 de bout en bout. Les comptes inactifs depuis plus de 24 mois sont automatiquement purgés.
-                </p>
-              </div>
+        {/* ONE-CLICK DATA CONTROL SECTION */}
+        <section
+          style={{
+            background: "#FAF8F5",
+            borderRadius: 36,
+            padding: "40px 36px",
+            border: "1px solid rgba(61, 58, 52, 0.08)",
+            marginBottom: 60,
+          }}
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+              gap: 32,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <h3 style={{ fontSize: "1.45rem", color: "#1F221B", fontWeight: 800, margin: "0 0 10px" }}>
+                Vous gardez le contrôle intégral
+              </h3>
+              <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.65, margin: 0 }}>
+                Conformément à la <strong>Loi organique tunisienne n° 2004-63</strong> de l'INPDP, vous pouvez exporter vos données ou demander la suppression définitive de votre compte par simple message à notre délégué à la protection des données.
+              </p>
             </div>
-          </div>
 
-          {/* Chapter 4 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <Mail size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  4. Exercice de vos droits auprès de l'INPDP
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Conformément à la <strong>Loi organique n° 2004-63</strong> portant sur la protection des données à caractère personnel en Tunisie, vous disposez des droits d'accès, d'opposition, de portabilité et de suppression intégrale de vos informations. Vous pouvez exercer ces droits à tout moment par simple message électronique adressé à notre DPO à : <a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700 }}>contact@eats.tn</a>.
-                </p>
-              </div>
+            <div style={{ display: "flex", flexWrap: "wrap", gap: 14 }}>
+              <a
+                href="mailto:contact@eats.tn?subject=Suppression%20de%20compte%20Eatsmart"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  background: "#FFFFFF",
+                  color: "#C73E1D",
+                  padding: "12px 20px",
+                  borderRadius: 9999,
+                  fontWeight: 700,
+                  fontSize: "0.92rem",
+                  textDecoration: "none",
+                  border: "1.5px solid rgba(199, 62, 29, 0.25)",
+                }}
+              >
+                <Trash2 size={16} /> Demander la suppression de mon compte
+              </a>
+
+              <a
+                href="mailto:contact@eats.tn?subject=Exportation%20de%20mes%20donnees"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  background: "#2D5A27",
+                  color: "#FFFFFF",
+                  padding: "12px 20px",
+                  borderRadius: 9999,
+                  fontWeight: 700,
+                  fontSize: "0.92rem",
+                  textDecoration: "none",
+                }}
+              >
+                <Download size={16} /> Exporter mes données (INPDP)
+              </a>
             </div>
           </div>
         </section>

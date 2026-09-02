@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="180" height="240" viewBox="0 0 180 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Main stem -->
+  <path d="M40 220 C60 170 85 110 145 35" stroke="#4B6840" stroke-width="3" stroke-linecap="round"/>
+  <!-- Leaf 1 -->
+  <path d="M145 35 C155 45 150 65 135 68 C120 70 125 50 145 35 Z" fill="#2D5A27" opacity="0.85"/>
+  <!-- Leaf 2 -->
+  <path d="M115 80 C135 75 145 90 135 105 C120 115 105 100 115 80 Z" fill="#3D7335" opacity="0.9"/>
+  <!-- Leaf 3 (left) -->
+  <path d="M95 105 C75 95 65 115 72 130 C80 142 100 125 95 105 Z" fill="#588C4F" opacity="0.85"/>
+  <!-- Leaf 4 -->
+  <path d="M80 145 C98 140 108 155 98 170 C85 180 72 165 80 145 Z" fill="#2D5A27" opacity="0.9"/>
+  <!-- Leaf 5 (left) -->
+  <path d="M65 170 C45 160 38 180 45 195 C55 205 72 190 65 170 Z" fill="#4B6840" opacity="0.8"/>
+  <!-- Olive 1 -->
+  <ellipse cx="118" cy="125" rx="9" ry="13" transform="rotate(25 118 125)" fill="#23351E"/>
+  <ellipse cx="116" cy="122" rx="3" ry="5" transform="rotate(25 116 122)" fill="#8FA885" opacity="0.6"/>
+  <!-- Olive 2 -->
+  <ellipse cx="68" cy="150" rx="8" ry="12" transform="rotate(-30 68 150)" fill="#3B2638"/>
+</svg>

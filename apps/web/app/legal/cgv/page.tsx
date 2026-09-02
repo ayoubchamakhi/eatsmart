@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { Breadcrumb } from "@/components/subpage/Breadcrumb";
-import { SubpageHero } from "@/components/subpage/SubpageHero";
+import { YukaFlankClouds } from "@/components/subpage/YukaFlankClouds";
 import { DownloadCtaBanner } from "@/components/subpage/DownloadCtaBanner";
 import {
   ShoppingBag,
@@ -12,23 +12,23 @@ import {
   RefreshCw,
   Scale,
   ShieldCheck,
-  FileCheck2,
-  Sparkles,
+  CheckCircle2,
 } from "lucide-react";
 
 export const metadata = {
   title: "Conditions Générales de Vente (CGV) | Eats.tn (Eatsmart)",
-  description:
-    "Conditions générales de vente de la plateforme eats.tn : statut d'Auto-entrepreneur, prix en Dinars Tunisiens (TND) TTC, droit de rétractation Loi 2000-83 et juridiction tunisienne.",
+  description: "Conditions Générales de Vente transparentes en Dinars Tunisiens (TND TTC) régies par la Loi n° 2000-83.",
 };
 
 export default function CGVPage() {
   return (
-    <div className="yuka-page-wrap">
+    <div className="yuka-page-wrap position-relative" style={{ overflowX: "hidden" }}>
       <Header />
 
-      <main className="yuka-container">
-        {/* Breadcrumb */}
+      {/* Flanking Mediterranean clouds and olive foliage */}
+      <YukaFlankClouds variant="legal" />
+
+      <main className="yuka-container position-relative" style={{ zIndex: 1, paddingBottom: 80 }}>
         <Breadcrumb
           items={[
             { label: "Informations Légales" },
@@ -36,156 +36,136 @@ export default function CGVPage() {
           ]}
         />
 
-        {/* Hero Section */}
-        <SubpageHero
-          badgeIcon={<ShoppingBag size={16} />}
-          badgeText="Commerce Électronique & Loi 2000-83"
-          badgeVariant="coral"
-          title="Conditions Générales de Vente"
-          description="Régies par la Loi n° 2000-83 du 9 août 2000 relative aux échanges et au commerce électroniques en République Tunisienne, garantissant une totale transparence avant commande."
-          imageSrc="/assets_v2/legal_cgv_shop.jpg"
-          imageAlt="Panier d'achats responsables et paiement sécurisé en Dinars Tunisiens TND"
-        />
+        {/* HERO */}
+        <section style={{ padding: "30px 0 60px" }}>
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gap: 48,
+              alignItems: "center",
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: 8,
+                  backgroundColor: "#FEF3EB",
+                  color: "#D9531E",
+                  padding: "7px 18px",
+                  borderRadius: 9999,
+                  fontSize: "0.85rem",
+                  fontWeight: 700,
+                  marginBottom: 24,
+                }}
+              >
+                <ShoppingBag size={16} />
+                <span>Commerce Électronique Tunisien · Loi 2000-83</span>
+              </div>
 
-        {/* Commercial Dashboard Card */}
-        <section style={{ marginBottom: 40 }}>
-          <div className="yuka-card" style={{ border: "1.5px solid rgba(217, 83, 30, 0.2)" }}>
-            <div style={{ display: "flex", alignItems: "center", gap: 14, marginBottom: 24 }}>
-              <div className="yuka-icon-bubble yuka-bubble-coral">
-                <FileCheck2 size={24} />
-              </div>
-              <div>
-                <h2 style={{ fontSize: "1.35rem", color: "#1F221B", margin: 0, fontWeight: 800 }}>
-                  Synthèse des garanties commerciales
-                </h2>
-                <p style={{ margin: 0, fontSize: "0.9rem", color: "#6E675C" }}>
-                  Informations clés obligatoires accessibles avant tout engagement ou paiement
-                </p>
-              </div>
+              <h1
+                style={{
+                  fontSize: "clamp(2.5rem, 5.2vw, 3.5rem)",
+                  color: "#1F221B",
+                  fontWeight: 800,
+                  lineHeight: 1.12,
+                  margin: "0 0 24px",
+                  fontFamily: "var(--font-display)",
+                  letterSpacing: "-0.02em",
+                }}
+              >
+                Conditions générales <br />
+                <span className="highlight-orange">de vente transparentes</span>
+              </h1>
+
+              <p
+                style={{
+                  color: "#5C564B",
+                  fontSize: "1.18rem",
+                  lineHeight: 1.7,
+                  margin: 0,
+                  maxWidth: 540,
+                }}
+              >
+                L'utilisation de base d'Eatsmart est <span className="highlight-green">100% gratuite</span>. Les fonctionnalités solidaires facultatives sont soumises à la Loi tunisienne n° 2000-83 avec des prix en Dinars Tunisiens (TND) nets de tout frais caché.
+              </p>
             </div>
 
             <div
               style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
-                gap: 16,
+                position: "relative",
+                height: 320,
+                borderRadius: 32,
+                overflow: "hidden",
+                boxShadow: "0 20px 50px rgba(31, 34, 27, 0.08)",
+                border: "1px solid rgba(61, 58, 52, 0.06)",
               }}
             >
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Devise contractuelle
-                </span>
-                <strong style={{ color: "#2D5A27", fontSize: "1.15rem" }}>Dinar Tunisien (TND)</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Taxes & Frais
-                </span>
-                <strong style={{ color: "#1F221B", fontSize: "1.15rem" }}>Toutes Taxes Comprises (TTC)</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Délai de rétractation
-                </span>
-                <strong style={{ color: "#2D5A27", fontSize: "1.15rem" }}>10 jours ouvrables (Loi 2000-83)</strong>
-              </div>
-
-              <div style={{ background: "#FAF8F5", padding: "18px 20px", borderRadius: 18, border: "1px solid rgba(61, 58, 52, 0.06)" }}>
-                <span style={{ color: "#6E675C", display: "block", fontSize: "0.78rem", textTransform: "uppercase", fontWeight: 700, letterSpacing: "0.04em", marginBottom: 4 }}>
-                  Livraison des options
-                </span>
-                <strong style={{ color: "#1F221B", fontSize: "1.15rem" }}>Instantanée et dématérialisée</strong>
-              </div>
+              <Image
+                src="/assets_v2/legal_cgv_shop.jpg"
+                alt="Panier d'achat responsable et prix en Dinars Tunisiens"
+                fill
+                style={{ objectFit: "cover" }}
+                priority
+              />
             </div>
           </div>
         </section>
 
-        {/* Detailed Clauses Chapters */}
-        <section style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 40 }}>
-          {/* Chapter 1 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <ShoppingBag size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  1. Objet et champ d'application
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Les présentes Conditions Générales de Vente (CGV) régissent les relations contractuelles entre <strong>Eats.tn</strong> (exploité sous le statut officiel d'<strong>Auto-entrepreneur</strong> en Tunisie, immatriculé au RNE sous le numéro <strong>1995597F</strong>) et toute personne physique ou morale souscrivant aux services numériques payants optionnels proposés dans l'application mobile Eatsmart.
-                </p>
-              </div>
+        {/* THREE CORE COMMERCIAL PILLARS */}
+        <section
+          style={{
+            background: "#FFFFFF",
+            borderRadius: 36,
+            padding: "48px 40px",
+            border: "1px solid rgba(61, 58, 52, 0.08)",
+            boxShadow: "0 16px 45px rgba(0, 0, 0, 0.03)",
+            marginBottom: 60,
+          }}
+        >
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+              gap: 32,
+            }}
+          >
+            <div>
+              <span style={{ fontSize: "2.6rem", fontWeight: 900, color: "#2D5A27", display: "block", lineHeight: 1, marginBottom: 8, fontFamily: "var(--font-display)" }}>
+                TND
+              </span>
+              <h3 style={{ fontSize: "1.2rem", color: "#1F221B", fontWeight: 800, margin: "0 0 10px" }}>
+                Dinar Tunisien TTC
+              </h3>
+              <p style={{ color: "#5C564B", fontSize: "0.95rem", lineHeight: 1.65, margin: 0 }}>
+                Tous les tarifs sont indiqués en Dinars Tunisiens Toutes Taxes Comprises. Aucun frais de conversion de devise ni supplément bancaire opaque.
+              </p>
             </div>
-          </div>
 
-          {/* Chapter 2 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-coral">
-                <CreditCard size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  2. Tarification en Dinars Tunisiens (TND) et modes de paiement
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  L'accès de base au scan et à l'analyse des produits alimentaires est <strong>100% gratuit</strong>. Les options d'abonnement solidaire ("Membre") sont facturées en <strong>Dinars Tunisiens (TND) Toutes Taxes Comprises (TTC)</strong> sans aucun frais caché. Le règlement s'effectue via les moyens de paiement électroniques sécurisés agréés en Tunisie (Carte bancaire nationale, ClicToPay, Sobflous ou virement bancaire).
-                </p>
-              </div>
+            <div>
+              <span style={{ fontSize: "2.6rem", fontWeight: 900, color: "#D9531E", display: "block", lineHeight: 1, marginBottom: 8, fontFamily: "var(--font-display)" }}>
+                10 Jours
+              </span>
+              <h3 style={{ fontSize: "1.2rem", color: "#1F221B", fontWeight: 800, margin: "0 0 10px" }}>
+                Rétractation intégrale
+              </h3>
+              <p style={{ color: "#5C564B", fontSize: "0.95rem", lineHeight: 1.65, margin: 0 }}>
+                Conformément à l'article 30 de la Loi 2000-83, vous disposez de 10 jours ouvrables pour annuler sans motif votre souscription avec remboursement complet.
+              </p>
             </div>
-          </div>
 
-          {/* Chapter 3 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-amber">
-                <Truck size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  3. Délivrance immédiate des fonctionnalités numériques
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Les services souscrits étant dématérialisés, l'activation des fonctionnalités numériques (mode hors-ligne, alertes personnalisées, historique illimité) intervient <strong>immédiatement</strong> dès confirmation du paiement. L'utilisateur reçoit une facture électronique horodatée par email.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Chapter 4 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-sage">
-                <RefreshCw size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  4. Droit de rétractation et remboursement (Loi 2000-83)
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Conformément à l'<strong>article 30 de la Loi tunisienne n° 2000-83</strong> relative aux échanges et au commerce électroniques, le consommateur bénéficie d'un délai légal de <strong>dix (10) jours ouvrables</strong> pour exercer son droit de rétractation à compter de la conclusion du contrat, sans pénalité ni motif. La notification s'effectue par email à <strong>contact@eats.tn</strong> et donne lieu à un remboursement complet sous dix jours.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Chapter 5 */}
-          <div className="yuka-card">
-            <div style={{ display: "flex", alignItems: "flex-start", gap: 18 }}>
-              <div className="yuka-icon-bubble yuka-bubble-coral">
-                <Scale size={24} />
-              </div>
-              <div>
-                <h3 style={{ fontSize: "1.25rem", color: "#1F221B", margin: "0 0 10px", fontWeight: 800 }}>
-                  5. Règlement des réclamations et juridiction compétente
-                </h3>
-                <p style={{ color: "#5C564B", fontSize: "1rem", lineHeight: 1.7, margin: 0 }}>
-                  Toute contestation fait l'objet d'une tentative de conciliation amiable préalable auprès de notre service client (<a href="mailto:contact@eats.tn" style={{ color: "#2D5A27", fontWeight: 700 }}>contact@eats.tn</a> / <a href="tel:+21655349948" style={{ color: "#2D5A27", fontWeight: 700 }}>+216 55 349 948</a>). En cas de désaccord persistant, les tribunaux compétents de Tunis et de l'Ariana sont seuls compétents pour trancher le litige.
-                </p>
-              </div>
+            <div>
+              <span style={{ fontSize: "2.6rem", fontWeight: 900, color: "#2D5A27", display: "block", lineHeight: 1, marginBottom: 8, fontFamily: "var(--font-display)" }}>
+                Direct
+              </span>
+              <h3 style={{ fontSize: "1.2rem", color: "#1F221B", fontWeight: 800, margin: "0 0 10px" }}>
+                Livraison numérique immédiate
+              </h3>
+              <p style={{ color: "#5C564B", fontSize: "0.95rem", lineHeight: 1.65, margin: 0 }}>
+                Les fonctionnalités dématérialisées de l'application mobile sont activées sur votre compte à la seconde même de la confirmation du paiement sécurisé.
+              </p>
             </div>
           </div>
         </section>
