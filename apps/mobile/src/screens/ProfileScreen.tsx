@@ -15,9 +15,19 @@ import {
   Trash2,
   Barcode,
   Sparkles,
+  Activity,
+  AlertCircle,
 } from 'lucide-react-native';
 import { colors, radii } from '@eatsmart/design-tokens';
-import { getScanHistory, getFavorites, clearScanHistory } from '../services/storage';
+import {
+  getScanHistory,
+  getFavorites,
+  clearScanHistory,
+  getHealthProfile,
+  saveHealthProfile,
+  type UserHealthProfile,
+  DEFAULT_HEALTH_PROFILE,
+} from '../services/storage';
 
 interface ProfileScreenProps {
   isArabic: boolean;
@@ -27,11 +37,29 @@ interface ProfileScreenProps {
 export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps) {
   const [scanCount, setScanCount] = useState(0);
   const [favCount, setFavCount] = useState(0);
+  const [healthProfile, setHealthProfile] = useState<UserHealthProfile>(DEFAULT_HEALTH_PROFILE);
 
   useEffect(() => {
     getScanHistory().then((h) => setScanCount(h.length));
     getFavorites().then((f) => setFavCount(f.length));
+    getHealthProfile().then(setHealthProfile);
   }, []);
+
+  const toggleAllergen = async (allergen: string) => {
+    const current = healthProfile.allergens;
+    const updated = current.includes(allergen)
+      ? current.filter((a) => a !== allergen)
+      : [...current, allergen];
+    const newProfile = { ...healthProfile, allergens: updated };
+    setHealthProfile(newProfile);
+    await saveHealthProfile(newProfile);
+  };
+
+  const toggleDiet = async (key: 'lowSugar' | 'lowSalt') => {
+    const newProfile = { ...healthProfile, [key]: !healthProfile[key] };
+    setHealthProfile(newProfile);
+    await saveHealthProfile(newProfile);
+  };
 
   const handleClearHistory = async () => {
     await clearScanHistory();
@@ -82,6 +110,85 @@ export function ProfileScreen({ isArabic, onToggleLanguage }: ProfileScreenProps
           <Text style={styles.statLabel}>
             {isArabic ? 'استقلالية' : 'Neutre'}
           </Text>
+        </View>
+      </View>
+
+      {/* Health Profile & Allergens Card */}
+      <View style={styles.card}>
+        <View style={styles.cardHeader}>
+          <Activity size={18} color={colors.sageDeep} />
+          <Text style={styles.cardTitle}>
+            {isArabic ? 'ملفي الصحي والتنبيهات' : 'Mon profil santé & alertes'}
+          </Text>
+        </View>
+        <Text style={styles.cardBody}>
+          {isArabic
+            ? 'حدد حساسياتك الغذائية ليقوم التطبيق بتنبيهك فوراً عند مسح منتوج غير ملائم.'
+            : 'Sélectionnez vos intolérances pour être immédiatement alerté lors d\'un scan.'}
+        </Text>
+
+        <Text style={[styles.fieldSectionLabel, { marginTop: 12 }]}>
+          {isArabic ? 'الحساسيات الغذائية :' : 'Allergènes à surveiller :'}
+        </Text>
+        <View style={styles.chipGrid}>
+          {['Gluten', 'Lait', 'Soja', 'Arachides', 'Poisson'].map((all) => {
+            const active = healthProfile.allergens.includes(all);
+            return (
+              <TouchableOpacity
+                key={all}
+                style={[styles.allergenToggleChip, active && styles.allergenToggleChipActive]}
+                onPress={() => toggleAllergen(all)}
+              >
+                <Text
+                  style={[
+                    styles.allergenToggleText,
+                    active && styles.allergenToggleTextActive,
+                  ]}
+                >
+                  {active ? `✓ ${all}` : `+ ${all}`}
+                </Text>
+              </TouchableOpacity>
+            );
+          })}
+        </View>
+
+        <Text style={[styles.fieldSectionLabel, { marginTop: 14 }]}>
+          {isArabic ? 'متابعة الحمية الصحية :' : 'Régimes & surveillance :'}
+        </Text>
+        <View style={styles.chipGrid}>
+          <TouchableOpacity
+            style={[
+              styles.allergenToggleChip,
+              healthProfile.lowSugar && styles.allergenToggleChipActive,
+            ]}
+            onPress={() => toggleDiet('lowSugar')}
+          >
+            <Text
+              style={[
+                styles.allergenToggleText,
+                healthProfile.lowSugar && styles.allergenToggleTextActive,
+              ]}
+            >
+              {healthProfile.lowSugar ? '✓ Sucre réduit (Diabète)' : '+ Sucre réduit (Diabète)'}
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={[
+              styles.allergenToggleChip,
+              healthProfile.lowSalt && styles.allergenToggleChipActive,
+            ]}
+            onPress={() => toggleDiet('lowSalt')}
+          >
+            <Text
+              style={[
+                styles.allergenToggleText,
+                healthProfile.lowSalt && styles.allergenToggleTextActive,
+              ]}
+            >
+              {healthProfile.lowSalt ? '✓ Sel réduit (Tension)' : '+ Sel réduit (Tension)'}
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
 
@@ -272,6 +379,38 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: colors.inkSoft,
     lineHeight: 20,
+  },
+  fieldSectionLabel: {
+    fontSize: 12,
+    fontWeight: '700',
+    color: colors.inkDark,
+    marginBottom: 6,
+  },
+  chipGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+  },
+  allergenToggleChip: {
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: radii.pill,
+    backgroundColor: '#F3F2EE',
+    borderWidth: 1,
+    borderColor: 'rgba(61, 58, 52, 0.08)',
+  },
+  allergenToggleChipActive: {
+    backgroundColor: colors.sageMist,
+    borderColor: colors.sageDeep,
+  },
+  allergenToggleText: {
+    fontSize: 12,
+    fontWeight: '600',
+    color: colors.inkSoft,
+  },
+  allergenToggleTextActive: {
+    color: colors.sageDeep,
+    fontWeight: '700',
   },
   langToggleRow: {
     flexDirection: 'row',

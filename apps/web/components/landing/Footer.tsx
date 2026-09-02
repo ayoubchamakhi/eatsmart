@@ -60,9 +60,9 @@ export function Footer({ isArabic }: FooterProps) {
         <div className="footer-col">
           <strong>À Propos</strong>
           <a href="#">{isArabic ? "فريق العمل" : "L'équipe"}</a>
-          <a href="#">{isArabic ? "اتصل بنا" : "Contact & Presse"}</a>
-          <a href="#">{isArabic ? "سياسة الخصوصية" : "Politique de confidentialité"}</a>
-          <a href="#">{isArabic ? "شروط الاستخدام" : "Conditions d'utilisation"}</a>
+          <a href="mailto:contact@eatsmart.tn">{isArabic ? "اتصل بنا" : "Contact & Presse"}</a>
+          <a href="/legal/privacy">{isArabic ? "سياسة الخصوصية" : "Politique de confidentialité"}</a>
+          <a href="/legal/terms">{isArabic ? "شروط الاستخدام" : "Conditions d'utilisation"}</a>
         </div>
       </div>
 

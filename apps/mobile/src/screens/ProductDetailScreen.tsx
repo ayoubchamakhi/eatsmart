@@ -23,7 +23,7 @@ import type { Product, Additive } from '@eatsmart/domain';
 import { getScoreColor } from '@eatsmart/domain';
 import { ScoreBadge } from '../components/ScoreBadge';
 import { NutriScoreBadge, NovaBadge } from '../components/NutriScoreBadge';
-import { isFavorite, toggleFavorite } from '../services/storage';
+import { isFavorite, toggleFavorite, getHealthProfile, checkHealthAlerts } from '../services/storage';
 
 interface ProductDetailScreenProps {
   product: Product;
@@ -40,9 +40,19 @@ export function ProductDetailScreen({
 }: ProductDetailScreenProps) {
   const [favorite, setFavorite] = useState(false);
   const [selectedAdditive, setSelectedAdditive] = useState<Additive | null>(null);
+  const [healthAlerts, setHealthAlerts] = useState<string[]>([]);
 
   useEffect(() => {
     isFavorite(product.id).then(setFavorite);
+    getHealthProfile().then((profile) => {
+      const alerts = checkHealthAlerts(product, profile);
+      setHealthAlerts(alerts);
+      if (alerts.length > 0) {
+        try {
+          Haptics.notificationAsync(Haptics.NotificationFeedbackType.Warning);
+        } catch {}
+      }
+    });
   }, [product.id]);
 
   const handleToggleFavorite = async () => {
@@ -79,6 +89,23 @@ export function ProductDetailScreen({
           />
         </TouchableOpacity>
       </View>
+
+      {/* Active Personal Health Warning Banner */}
+      {healthAlerts.length > 0 && (
+        <View style={styles.healthAlertBanner}>
+          <View style={styles.healthAlertHeader}>
+            <AlertTriangle size={18} color="#C2410C" />
+            <Text style={styles.healthAlertTitle}>
+              {isArabic ? 'تنبيه صحي مخصص لحالتك' : 'Alerte selon votre profil santé'}
+            </Text>
+          </View>
+          {healthAlerts.map((msg, i) => (
+            <Text key={i} style={styles.healthAlertText}>
+              • {msg}
+            </Text>
+          ))}
+        </View>
+      )}
 
       {/* Main Score Hero Card */}
       <View style={styles.heroCard}>
@@ -375,6 +402,32 @@ const styles = StyleSheet.create({
     fontSize: 15,
     fontWeight: '700',
     color: colors.inkDark,
+  },
+  healthAlertBanner: {
+    backgroundColor: '#FFF2EB',
+    borderRadius: radii.lg,
+    padding: 14,
+    marginBottom: 14,
+    borderWidth: 1.5,
+    borderColor: '#F97316',
+  },
+  healthAlertHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+    marginBottom: 6,
+  },
+  healthAlertTitle: {
+    fontSize: 13,
+    fontWeight: '800',
+    color: '#9A3412',
+  },
+  healthAlertText: {
+    fontSize: 12,
+    color: '#C2410C',
+    fontWeight: '600',
+    marginLeft: 4,
+    lineHeight: 18,
   },
   heroCard: {
     backgroundColor: '#FFFFFF',

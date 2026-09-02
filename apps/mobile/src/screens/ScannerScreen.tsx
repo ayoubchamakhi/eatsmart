@@ -10,20 +10,21 @@ import { SEED_PRODUCTS } from '@eatsmart/domain';
 interface ScannerScreenProps {
   onScanProduct: (product: Product) => void;
   onClose: () => void;
+  onContribute?: (barcode: string) => void;
   isArabic: boolean;
 }
 
-export function ScannerScreen({ onScanProduct, onClose, isArabic }: ScannerScreenProps) {
+export function ScannerScreen({ onScanProduct, onClose, onContribute, isArabic }: ScannerScreenProps) {
   const [permission, requestPermission] = useCameraPermissions();
   const [torchOn, setTorchOn] = useState(false);
   const [manualCode, setManualCode] = useState('');
   const [isScanningActive, setIsScanningActive] = useState(true);
+  const [unfoundBarcode, setUnfoundBarcode] = useState<string | null>(null);
 
   const handleBarcodeScanned = (result: BarcodeScanningResult) => {
     if (!isScanningActive) return;
     setIsScanningActive(false);
 
-    // Haptic feedback
     try {
       Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     } catch {}
@@ -34,8 +35,7 @@ export function ScannerScreen({ onScanProduct, onClose, isArabic }: ScannerScree
     if (match) {
       onScanProduct(match);
     } else {
-      // If code not directly in catalog, match first or create temporary result
-      onScanProduct(SEED_PRODUCTS[0]);
+      setUnfoundBarcode(barcode);
     }
   };
 
@@ -48,7 +48,7 @@ export function ScannerScreen({ onScanProduct, onClose, isArabic }: ScannerScree
     if (found) {
       onScanProduct(found);
     } else {
-      onScanProduct(SEED_PRODUCTS[0]);
+      setUnfoundBarcode(manualCode.trim() || '6190000000000');
     }
   };
 
@@ -184,6 +184,52 @@ export function ScannerScreen({ onScanProduct, onClose, isArabic }: ScannerScree
           )}
         </View>
       </View>
+
+      {/* Uncatalogued Barcode Bottom Sheet */}
+      {unfoundBarcode && (
+        <View style={styles.unfoundOverlay}>
+          <View style={styles.unfoundCard}>
+            <Text style={styles.unfoundTitle}>
+              {isArabic ? 'منتوج غير مسجل بعد' : 'Produit non répertorié'}
+            </Text>
+            <Text style={styles.unfoundCode}>{unfoundBarcode}</Text>
+            <Text style={styles.unfoundSubtitle}>
+              {isArabic
+                ? 'هذا الرمز الشريطي ليس في قاعدتنا بعد. هل ترغب في إضافته ومساعدة باقي التونسيين ؟'
+                : 'Ce code-barres n\'est pas encore dans notre catalogue. Voulez-vous l\'ajouter pour en faire profiter la communauté ?'}
+            </Text>
+
+            <View style={styles.unfoundActions}>
+              <TouchableOpacity
+                style={styles.unfoundCancelBtn}
+                onPress={() => {
+                  setUnfoundBarcode(null);
+                  setIsScanningActive(true);
+                }}
+              >
+                <Text style={styles.unfoundCancelText}>
+                  {isArabic ? 'إلغاء' : 'Annuler'}
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity
+                style={styles.unfoundAddBtn}
+                onPress={() => {
+                  const code = unfoundBarcode;
+                  setUnfoundBarcode(null);
+                  if (onContribute) {
+                    onContribute(code);
+                  }
+                }}
+              >
+                <Text style={styles.unfoundAddText}>
+                  {isArabic ? 'إضافة المنتوج' : 'Ajouter le produit'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+      )}
     </View>
   );
 }
@@ -369,5 +415,70 @@ const styles = StyleSheet.create({
     height: 28,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  unfoundOverlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: 'rgba(0, 0, 0, 0.7)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 24,
+    zIndex: 99,
+  },
+  unfoundCard: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: radii.xl,
+    padding: 22,
+    width: '100%',
+    maxWidth: 380,
+    alignItems: 'center',
+  },
+  unfoundTitle: {
+    fontSize: 17,
+    fontWeight: '800',
+    color: colors.inkDark,
+    marginBottom: 4,
+  },
+  unfoundCode: {
+    fontSize: 14,
+    fontFamily: 'monospace',
+    fontWeight: '700',
+    color: colors.sageDeep,
+    marginBottom: 10,
+  },
+  unfoundSubtitle: {
+    fontSize: 13,
+    color: colors.inkSoft,
+    textAlign: 'center',
+    lineHeight: 19,
+    marginBottom: 20,
+  },
+  unfoundActions: {
+    flexDirection: 'row',
+    gap: 10,
+    width: '100%',
+  },
+  unfoundCancelBtn: {
+    flex: 1,
+    paddingVertical: 12,
+    borderRadius: radii.pill,
+    backgroundColor: '#F3F2EE',
+    alignItems: 'center',
+  },
+  unfoundCancelText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: colors.inkSoft,
+  },
+  unfoundAddBtn: {
+    flex: 1.5,
+    paddingVertical: 12,
+    borderRadius: radii.pill,
+    backgroundColor: colors.sageDeep,
+    alignItems: 'center',
+  },
+  unfoundAddText: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: '#FFFFFF',
   },
 });

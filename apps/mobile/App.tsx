@@ -12,11 +12,13 @@ import { ScannerScreen } from './src/screens/ScannerScreen';
 import { ProductDetailScreen } from './src/screens/ProductDetailScreen';
 import { AlternativesScreen } from './src/screens/AlternativesScreen';
 import { ProfileScreen } from './src/screens/ProfileScreen';
+import { ContributeProductScreen } from './src/screens/ContributeProductScreen';
 import { addScanToHistory } from './src/services/storage';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<TabKey>('history');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [contributingBarcode, setContributingBarcode] = useState<string | null>(null);
   const [isArabic, setIsArabic] = useState(false);
 
   const handleSelectProduct = (product: Product) => {
@@ -34,7 +36,7 @@ export default function App() {
       <ExpoStatusBar style="dark" />
 
       {/* Main Top Header (hidden during scanner viewfinder) */}
-      {activeTab !== 'scan' && !selectedProduct && (
+      {activeTab !== 'scan' && !selectedProduct && !contributingBarcode && (
         <Header
           onScanPress={() => setActiveTab('scan')}
           isArabic={isArabic}
@@ -44,7 +46,18 @@ export default function App() {
 
       {/* Screen Body */}
       <View style={styles.body}>
-        {selectedProduct ? (
+        {contributingBarcode ? (
+          <ContributeProductScreen
+            barcode={contributingBarcode}
+            onBack={() => setContributingBarcode(null)}
+            onSuccess={(newProduct) => {
+              addScanToHistory(newProduct);
+              setSelectedProduct(newProduct);
+              setContributingBarcode(null);
+            }}
+            isArabic={isArabic}
+          />
+        ) : selectedProduct ? (
           <ProductDetailScreen
             product={selectedProduct}
             onBack={() => setSelectedProduct(null)}
@@ -58,6 +71,7 @@ export default function App() {
           <ScannerScreen
             onScanProduct={handleScanProduct}
             onClose={() => setActiveTab('history')}
+            onContribute={(b) => setContributingBarcode(b)}
             isArabic={isArabic}
           />
         ) : activeTab === 'alternatives' ? (
@@ -78,8 +92,8 @@ export default function App() {
         )}
       </View>
 
-      {/* Bottom Tab Navigation (hidden during scanner and product detail) */}
-      {activeTab !== 'scan' && !selectedProduct && (
+      {/* Bottom Tab Navigation (hidden during scanner, product detail, and contribution) */}
+      {activeTab !== 'scan' && !selectedProduct && !contributingBarcode && (
         <BottomTabBar
           activeTab={activeTab}
           onTabPress={(tab) => {
